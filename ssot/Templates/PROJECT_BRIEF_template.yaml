@@ -1,0 +1,182 @@
+# PROJECT_BRIEF SSOT TEMPLATE
+# Version: 2.0
+# Purpose: Goal, avatar, offer, constraints, CTA
+# Usage: Required for most copy/content tasks
+# Location: /ssot/[project_name]/PROJECT_BRIEF.yaml
+
+# ═══════════════════════════════════════════════════════════════
+# INSTRUCTIONS
+# ═══════════════════════════════════════════════════════════════
+# 1. Copy this template to /ssot/[project_name]/PROJECT_BRIEF.yaml
+# 2. Fill in all required fields
+# 3. Add optional fields as needed
+# 4. Lock version when ready for production
+# ═══════════════════════════════════════════════════════════════
+
+PROJECT_BRIEF:
+  # ─────────────────────────────────────────────────────────────
+  # META
+  # ─────────────────────────────────────────────────────────────
+  meta:
+    project_name: ""                    # e.g., "Sleep Energy Breakthrough"
+    version: "1.0"
+    status: "draft"                     # draft | review | locked
+    created: ""                         # ISO date
+    updated: ""                         # ISO date
+    owner: ""                           # Who owns this project
+
+  # ─────────────────────────────────────────────────────────────
+  # GOAL (What are we trying to achieve?)
+  # ─────────────────────────────────────────────────────────────
+  goal:
+    primary_objective: ""               # e.g., "Generate 100 qualified leads"
+    success_metrics:
+      - metric: ""                      # e.g., "Email signups"
+        target: ""                      # e.g., "500 in 30 days"
+      - metric: ""
+        target: ""
+    timeline: ""                        # e.g., "Launch by Feb 15, 2026"
+
+  # ─────────────────────────────────────────────────────────────
+  # AVATAR (Who are we talking to?)
+  # ─────────────────────────────────────────────────────────────
+  avatar:
+    name: ""                            # Give them a name, e.g., "Stressed Sarah"
+    demographics:
+      age_range: ""                     # e.g., "40-55"
+      gender: ""                        # e.g., "Female"
+      location: ""                      # e.g., "US/UK English-speaking"
+      income_level: ""                  # e.g., "Middle to upper-middle class"
+      occupation: ""                    # e.g., "Professional, possibly corporate"
+    
+    psychographics:
+      values: []                        # What they care about deeply
+      fears: []                         # What keeps them up at night
+      desires: []                       # What they dream about
+      frustrations: []                  # What annoys them daily
+    
+    situation:
+      current_state: ""                 # Where they are now
+      desired_state: ""                 # Where they want to be
+      failed_solutions: []              # What they've tried that didn't work
+      beliefs_about_problem: ""         # What they think is causing the issue
+    
+    awareness_level: ""                 # unaware | problem_aware | solution_aware | product_aware | most_aware
+    sophistication_level: ""            # 1 (naive) to 5 (seen everything)
+    
+    top_5_pains:                        # Ranked by intensity
+      - pain: ""
+        intensity: ""                   # 1-10
+      - pain: ""
+        intensity: ""
+      - pain: ""
+        intensity: ""
+      - pain: ""
+        intensity: ""
+      - pain: ""
+        intensity: ""
+    
+    top_5_desires:                      # Ranked by urgency
+      - desire: ""
+        urgency: ""                     # 1-10
+      - desire: ""
+        urgency: ""
+      - desire: ""
+        urgency: ""
+      - desire: ""
+        urgency: ""
+      - desire: ""
+        urgency: ""
+
+  # ─────────────────────────────────────────────────────────────
+  # OFFER (What are we selling?)
+  # ─────────────────────────────────────────────────────────────
+  offer:
+    name: ""                            # Product/service name
+    type: ""                            # course | coaching | saas | physical | service | info_product
+    price: ""                           # e.g., "$297" or "$47/month"
+    format: ""                          # e.g., "8-week program", "PDF guide", "Monthly subscription"
+    
+    core_promise: ""                    # One sentence: What transformation do they get?
+    
+    deliverables:                       # What they actually receive
+      - item: ""
+        value: ""                       # Perceived value
+      - item: ""
+        value: ""
+    
+    bonuses:                            # Additional value adds
+      - bonus: ""
+        value: ""
+      - bonus: ""
+        value: ""
+    
+    guarantee:
+      type: ""                          # money_back | results | satisfaction | none
+      terms: ""                         # e.g., "30-day no questions asked"
+      conditions: ""                    # Any conditions
+
+  # ─────────────────────────────────────────────────────────────
+  # CONSTRAINTS (What are the rules?)
+  # ─────────────────────────────────────────────────────────────
+  constraints:
+    platform:
+      primary: ""                       # e.g., "Facebook Ads", "Email", "Sales Page"
+      format_requirements: []           # e.g., "Max 2,000 words", "Mobile-first"
+      compliance_notes: []              # e.g., "No income claims", "FDA disclaimer required"
+    
+    brand:
+      voice_reference: ""               # Link to VOICE_GUIDE or brief description
+      visual_style: ""                  # e.g., "Clean, modern, trust-building"
+      taboos: []                        # Words/concepts to avoid
+    
+    legal:
+      disclaimers_required: []          # Required legal text
+      claims_to_avoid: []               # e.g., "No medical claims", "No guaranteed results"
+    
+    timeline:
+      deadline: ""                      # When must this be done?
+      milestones:
+        - milestone: ""
+          date: ""
+
+  # ─────────────────────────────────────────────────────────────
+  # CTA (What action do we want?)
+  # ─────────────────────────────────────────────────────────────
+  cta:
+    primary_action: ""                  # e.g., "Click to buy", "Enter email", "Book call"
+    button_text: ""                     # e.g., "Get Instant Access", "Start Free Trial"
+    url: ""                             # Where does the CTA go?
+    urgency:
+      type: ""                          # none | deadline | scarcity | consequence
+      details: ""                       # e.g., "Price increases Jan 31" (must be TRUE)
+      is_real: true                     # MUST be true - no fake urgency
+
+  # ─────────────────────────────────────────────────────────────
+  # CONTEXT (Additional background)
+  # ─────────────────────────────────────────────────────────────
+  context:
+    competitive_landscape: ""           # Brief on main competitors
+    differentiation: ""                 # Why us vs. them?
+    social_proof_available:
+      testimonials: 0                   # How many testimonials do we have?
+      case_studies: 0                   # How many case studies?
+      data_points: []                   # Any stats we can use?
+    
+    assets_available:
+      existing_copy: []                 # Links to existing copy
+      research: []                      # Links to research docs
+      images: []                        # Available imagery
+
+# ═══════════════════════════════════════════════════════════════
+# VALIDATION CHECKLIST
+# ═══════════════════════════════════════════════════════════════
+# Before locking this PROJECT_BRIEF:
+# [ ] Goal is specific and measurable
+# [ ] Avatar is detailed (not generic)
+# [ ] Offer is clearly defined with price
+# [ ] Constraints are documented
+# [ ] CTA is single and clear
+# [ ] All urgency claims are TRUE
+# [ ] Version number assigned
+# ═══════════════════════════════════════════════════════════════

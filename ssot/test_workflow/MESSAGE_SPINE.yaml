@@ -1,0 +1,98 @@
+# MESSAGE SPINE - Sleep Energy Breakthrough (Test)
+# Version: 0.1 (Test Workflow)
+# Status: UNLOCKED (pending intake)
+
+project_id: sleep_energy_test
+version: "0.1"
+created_at: "2026-01-11T02:00:00Z"
+status: draft
+
+# PROMISE
+promise:
+  primary: "Deep, restorative sleep AND daytime energy without medications"
+  emotional: "Wake up feeling like yourself again"
+  tangible: "Sleep through the night + energy that lasts all day"
+  timeframe: "7-14 days"
+
+# MECHANISM
+mechanism:
+  name: "Cortisol-Melatonin Rhythm Reset"
+  category: "biological"
+
+  explanation: |
+    Most sleep problems for women over 40 aren't about sleep hygiene.
+    They're about cortisol rhythm being reversed - high at night (when it should be low),
+    low in the morning (when it should be high). This blocks melatonin production
+    and destroys both sleep quality and daytime energy.
+
+  unique_element: "Fix the rhythm, not just the symptom"
+
+  why_it_works:
+    - "Cortisol follows a 24-hour rhythm that controls sleep-wake cycles"
+    - "When reversed, it blocks natural melatonin production at night"
+    - "Resetting the rhythm restores both sleep AND energy naturally"
+
+  vs_alternatives:
+    - "Sleep hygiene: Treats symptoms, not root cause (cortisol rhythm)"
+    - "Melatonin supplements: Can't work if cortisol is blocking production"
+    - "Sleep medications: Suppress symptoms, don't fix the biological rhythm"
+
+# PROOF PILLARS (Minimal for test)
+proof_pillars:
+  - pillar: "Cortisol rhythm controls sleep-wake cycle"
+    evidence_type: "Scientific mechanism"
+    strength: "Strong"
+    source_note: "(Would link to EVIDENCE_PACK in full workflow)"
+
+  - pillar: "Reversed cortisol rhythm is common in women 40+"
+    evidence_type: "Research finding"
+    strength: "Medium"
+    source_note: "(Would link to EVIDENCE_PACK in full workflow)"
+
+  - pillar: "Rhythm reset improves both sleep and energy"
+    evidence_type: "Outcome data"
+    strength: "Medium"
+    source_note: "(Would link to EVIDENCE_PACK in full workflow)"
+
+# OBJECTION HANDLERS (Minimal for test)
+objections:
+  - objection: "I've tried everything for sleep already"
+    handler: "You've tried to fix sleep directly. We're fixing the cortisol rhythm that CONTROLS sleep."
+    reframe: "Different root cause = different results"
+
+  - objection: "This sounds too simple to work"
+    handler: "Simple doesn't mean easy. But fixing root cause IS more effective than band-aids."
+    reframe: "Biology is elegant - we just need to work WITH it, not against it"
+
+# BELIEF SHIFTS (Minimal for test)
+belief_shifts:
+  from: "My sleep problem is about not being able to fall asleep"
+  to: "My sleep problem is about reversed cortisol rhythm blocking melatonin"
+
+  from_secondary: "I need better sleep hygiene or stronger supplements"
+  to_secondary: "I need to reset my cortisol-melatonin timing"
+
+# VOICE MARKERS (Minimal for test)
+voice:
+  tone: "Warm, understanding, science-backed but accessible"
+  avoid:
+    - "Hype or exaggeration"
+    - "Victim language"
+    - "AI-isms"
+
+  use:
+    - "You" focus (not "we" or "I")"
+    - "Short paragraphs"
+    - "Concrete examples over abstractions"
+
+# AWARENESS JOURNEY
+awareness:
+  entry_level: "problem_aware"
+  target_exit: "solution_aware"
+  asset_type: "advertorial"
+
+# META
+meta:
+  test_workflow: true
+  full_production: false
+  notes: "Minimal spine for testing ZPWO draft generation"

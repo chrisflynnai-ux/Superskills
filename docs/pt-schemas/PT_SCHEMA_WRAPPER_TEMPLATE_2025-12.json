@@ -1,0 +1,131 @@
+{
+  "_comment": "PT SCHEMA WRAPPER TEMPLATE (Draft 2025-12)",
+  "_version": "1.0",
+  "_description": "JSON format for packaging skills as SkillPacks with SkillCards, Recipes, and QAGates",
+  "_usage": "Use this wrapper to create portable skill card collections for Claude Code or other agentic systems",
+
+  "SkillPack": {
+    "name": "[SKILL_PACK_NAME]",
+    "version": "1.0",
+    "date": "2025-12",
+    "domains": ["Meta", "LeadGenFunnels", "QuizFunnels", "ColdOutreach", "CopyStrategy", "DesignSystem"],
+    "shared_object_schema": {
+      "ICP": ["industry", "role", "company_size", "geo", "sophistication_level"],
+      "Offer": ["offer_type", "price_tier", "primary_outcome", "timeframe", "constraints"],
+      "Anchor": ["metric_anchor", "report_artifact"],
+      "Proof": ["assets", "proof_gaps"],
+      "Routing": ["tiers", "rules", "destinations"],
+      "Tracking": ["events", "utm_schema", "crm_fields"],
+      "Awareness": ["entry_level", "exit_level", "belief_shift"],
+      "Voice": ["tone_dials", "forbidden_words", "required_patterns"]
+    },
+    "output_format_rules": [
+      "Every generated output must include: tokens used, SSOT refs, quality score.",
+      "Every asset must define: awareness level (entry/exit), belief shift, CTA.",
+      "All copy work must run through MMA validation before handoff.",
+      "Avoid AI-default patterns by explicitly referencing VOICE_GUIDE + MESSAGE_SPINE."
+    ]
+  },
+
+  "SkillCards": [
+    {
+      "id": "PT-XXX",
+      "name": "[Skill Card Name]",
+      "domain": "Meta | LeadGenFunnels | QuizFunnels | ColdOutreach | CopyStrategy | DesignSystem",
+      "purpose": "[One-liner purpose statement]",
+      "inputs": {
+        "required": ["PROJECT_BRIEF", "MESSAGE_SPINE"],
+        "optional": ["EVIDENCE_PACK", "VOICE_GUIDE", "OFFER_ARCHITECTURE"]
+      },
+      "outputs": ["OUTPUT_1", "OUTPUT_2", "OUTPUT_3"],
+      "method_steps": [
+        "Step 1: [Action]",
+        "Step 2: [Action]",
+        "Step 3: [Action]",
+        "Step 4: [Action]"
+      ],
+      "kpis": ["KPI_1", "KPI_2", "KPI_3"],
+      "awareness": {
+        "entry": "Unaware | Problem-Aware | Solution-Aware | Product-Aware | Most-Aware",
+        "exit": "Problem-Aware | Solution-Aware | Product-Aware | Most-Aware"
+      },
+      "prompts": {
+        "builder": "[Prompt to trigger this skill card]",
+        "validator": "[Prompt to validate output quality]"
+      }
+    },
+    {
+      "_comment": "Add more skill cards following same structure..."
+    }
+  ],
+
+  "Recipes": [
+    {
+      "name": "[Recipe Name]",
+      "description": "[When to use this recipe]",
+      "run_order": ["PT-001", "PT-002", "PT-003"],
+      "optional_additions": ["PT-004", "PT-005"],
+      "expected_duration": "[X hours/days]",
+      "success_criteria": "[What indicates completion]"
+    }
+  ],
+
+  "QAGates": {
+    "Funnel": [
+      "Hierarchy is clear in 3 seconds (headline/subhead/CTA).",
+      "Awareness journey is explicit (entry → exit).",
+      "Proof discipline maintained (all claims grounded)."
+    ],
+    "Quiz": [
+      "Each question maps to a segmentation variable.",
+      "Routing logic is deterministic.",
+      "Results page bridges to offer naturally."
+    ],
+    "Outreach": [
+      "First line is personalized and pattern-interrupting.",
+      "CTA is single and low-friction.",
+      "Follow-up sequence respects response/no-response logic."
+    ],
+    "Copy": [
+      "Kitchen Table Test passed (sounds human).",
+      "Mechanism is named consistently across assets.",
+      "No fake urgency/scarcity."
+    ],
+    "Design": [
+      "Tokens not vibes (all values numeric).",
+      "State coverage complete (hover/focus/active/disabled/loading/error).",
+      "Responsive pass at all breakpoints (375/768/1024/1440)."
+    ]
+  },
+
+  "IntegrationPoints": {
+    "SSOT_Objects": {
+      "PROJECT_BRIEF": "Goal, avatar, offer, constraints",
+      "MESSAGE_SPINE": "Promise, mechanism, proof pillars, objections",
+      "EVIDENCE_PACK": "Claims grounding, proof snippets, citations",
+      "VOICE_GUIDE": "Tone, taboos, rhythm, personality",
+      "OFFER_ARCHITECTURE": "Value Equation, tiers, UMP, UMS"
+    },
+    "Sister_Skills": {
+      "synchronous": ["Skills that must coordinate in real-time"],
+      "asynchronous": ["Skills that hand off sequentially"],
+      "support": ["Skills that provide supporting content"]
+    },
+    "Validation_Layer": {
+      "MMA": "7-dimension quality scoring",
+      "Python_Tools": "Deterministic validation (faster, reliable)",
+      "Human_Review": "Final polish and edge case handling"
+    }
+  },
+
+  "Metadata": {
+    "created_by": "[Agent/Human]",
+    "created_date": "[ISO Date]",
+    "last_updated": "[ISO Date]",
+    "constitutional_compliance": {
+      "version": "ULTRAMIND v2.0",
+      "verified": true
+    },
+    "tags": ["tag1", "tag2", "tag3"]
+  }
+}

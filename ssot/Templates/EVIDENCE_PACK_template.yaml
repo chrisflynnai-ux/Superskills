@@ -1,0 +1,270 @@
+# EVIDENCE_PACK SSOT TEMPLATE
+# Version: 1.0
+# Purpose: Claims grounding, citations, proof gaps
+# Usage: Required when copy makes factual claims - enforces proof discipline
+# Location: /ssot/[project_name]/EVIDENCE_PACK.yaml
+
+# ═══════════════════════════════════════════════════════════════
+# INSTRUCTIONS
+# ═══════════════════════════════════════════════════════════════
+# 1. Copy this template to /ssot/[project_name]/EVIDENCE_PACK.yaml
+# 2. Document ALL claims made in copy
+# 3. Map each claim to evidence
+# 4. Flag gaps before production (weak claims must be softened)
+# ═══════════════════════════════════════════════════════════════
+
+EVIDENCE_PACK:
+  # ─────────────────────────────────────────────────────────────
+  # META
+  # ─────────────────────────────────────────────────────────────
+  meta:
+    project_name: ""                    # Must match PROJECT_BRIEF
+    version: "1.0"
+    status: "draft"                     # draft | review | verified
+    created: ""
+    updated: ""
+    verified_by: ""                     # Who fact-checked this?
+    
+  # ─────────────────────────────────────────────────────────────
+  # PROOF DISCIPLINE RULES
+  # ─────────────────────────────────────────────────────────────
+  # Evidence Strength Levels:
+  # - GROUNDED: Direct citation, verifiable source
+  # - SUPPORTED: Reasonable inference from data
+  # - SOFT: Anecdotal, limited sample, needs qualifier
+  # - MISSING: No evidence - MUST soften language or remove
+  #
+  # Language Rules by Strength:
+  # - GROUNDED: Can use strong claims ("proven", "works", "will")
+  # - SUPPORTED: Use confident claims ("shown to", "research suggests")
+  # - SOFT: Use qualified claims ("may", "can help", "many report")
+  # - MISSING: Cannot claim - remove or add disclaimer
+  # ─────────────────────────────────────────────────────────────
+
+  # ─────────────────────────────────────────────────────────────
+  # TESTIMONIALS
+  # ─────────────────────────────────────────────────────────────
+  testimonials:
+    - id: "T001"
+      name: ""                          # Real name or anonymized
+      quote: |
+        [Exact testimonial text]
+      result_claimed: ""                # What result did they get?
+      timeframe: ""                     # How long did it take?
+      verified: false                   # Do we have proof? (email, video, etc.)
+      source: ""                        # Where did we get this? (email, survey, interview)
+      date_received: ""
+      permission_to_use: false          # Do we have written permission?
+      # Usage tracking
+      used_in:
+        - asset: ""                     # e.g., "sales_page_v1"
+          location: ""                  # e.g., "proof section"
+    
+    - id: "T002"
+      name: ""
+      quote: ""
+      result_claimed: ""
+      timeframe: ""
+      verified: false
+      source: ""
+      date_received: ""
+      permission_to_use: false
+      used_in: []
+
+  # ─────────────────────────────────────────────────────────────
+  # STATISTICS & DATA CLAIMS
+  # ─────────────────────────────────────────────────────────────
+  statistics:
+    - id: "S001"
+      claim: ""                         # The stat as stated in copy
+      # Example: "87% of users reported better sleep within 2 weeks"
+      actual_data: ""                   # The real underlying data
+      # Example: "87 of 100 survey respondents (self-reported)"
+      source: ""                        # Where does this come from?
+      # Example: "Internal customer survey, Dec 2025"
+      source_url: ""                    # Link if available
+      date_of_source: ""
+      sample_size: ""                   # How many people/data points?
+      methodology: ""                   # How was this collected?
+      strength: ""                      # grounded | supported | soft | missing
+      qualifiers_needed: ""             # What disclaimer is required?
+      # Example: "Based on self-reported survey data"
+      used_in: []
+    
+    - id: "S002"
+      claim: ""
+      actual_data: ""
+      source: ""
+      source_url: ""
+      date_of_source: ""
+      sample_size: ""
+      methodology: ""
+      strength: ""
+      qualifiers_needed: ""
+      used_in: []
+
+  # ─────────────────────────────────────────────────────────────
+  # SCIENTIFIC/RESEARCH CLAIMS
+  # ─────────────────────────────────────────────────────────────
+  research_claims:
+    - id: "R001"
+      claim: ""                         # How we state it in copy
+      # Example: "Research shows cortisol timing affects sleep quality"
+      study_reference: ""               # Actual study
+      # Example: "Smith et al., 2023, Journal of Sleep Research"
+      doi_or_url: ""                    # Link to study
+      relevant_finding: ""              # What the study actually found
+      our_interpretation: ""            # How we're applying it
+      strength: ""                      # grounded | supported | soft
+      accuracy_check: ""                # Does our claim match the research?
+      # Options: accurate | stretched | misrepresented
+      qualifiers_needed: ""
+      used_in: []
+    
+    - id: "R002"
+      claim: ""
+      study_reference: ""
+      doi_or_url: ""
+      relevant_finding: ""
+      our_interpretation: ""
+      strength: ""
+      accuracy_check: ""
+      qualifiers_needed: ""
+      used_in: []
+
+  # ─────────────────────────────────────────────────────────────
+  # CREDENTIALS & AUTHORITY CLAIMS
+  # ─────────────────────────────────────────────────────────────
+  credentials:
+    - id: "C001"
+      claim: ""                         # How we state it
+      # Example: "Developed by a board-certified sleep specialist"
+      actual_credential: ""             # The real credential
+      # Example: "Dr. Jane Smith, MD, ABSM certified"
+      verification: ""                  # How can this be verified?
+      strength: ""                      # grounded | supported | soft
+      used_in: []
+    
+    - id: "C002"
+      claim: ""
+      actual_credential: ""
+      verification: ""
+      strength: ""
+      used_in: []
+
+  # ─────────────────────────────────────────────────────────────
+  # RESULT/OUTCOME CLAIMS
+  # ─────────────────────────────────────────────────────────────
+  result_claims:
+    - id: "O001"
+      claim: ""                         # The outcome we promise
+      # Example: "Fall asleep in 15 minutes or less"
+      evidence_type: ""                 # testimonial | data | study | logical
+      evidence_ids: []                  # Links to T/S/R above
+      # Example: ["T001", "T003", "S001"]
+      strength: ""                      # grounded | supported | soft | missing
+      typical_vs_exceptional: ""        # Is this typical or best case?
+      # Example: "Typical result based on survey data"
+      disclaimer_needed: ""
+      # Example: "Results vary. Based on survey of 100 users."
+      used_in: []
+    
+    - id: "O002"
+      claim: ""
+      evidence_type: ""
+      evidence_ids: []
+      strength: ""
+      typical_vs_exceptional: ""
+      disclaimer_needed: ""
+      used_in: []
+
+  # ─────────────────────────────────────────────────────────────
+  # PROOF GAPS (Claims Without Evidence)
+  # ─────────────────────────────────────────────────────────────
+  proof_gaps:
+    - gap_id: "G001"
+      claim_in_copy: ""                 # What we're claiming
+      location: ""                      # Where in the copy
+      evidence_status: "missing"        # missing | weak | unverified
+      resolution_options:
+        - option: "remove"              # Delete the claim
+          new_copy: ""
+        - option: "soften"              # Weaken the language
+          new_copy: ""                  # e.g., "may help" instead of "will"
+        - option: "find_evidence"       # Go get proof
+          action_needed: ""
+      priority: ""                      # critical | high | medium | low
+      resolved: false
+      resolution_chosen: ""
+    
+    - gap_id: "G002"
+      claim_in_copy: ""
+      location: ""
+      evidence_status: ""
+      resolution_options: []
+      priority: ""
+      resolved: false
+      resolution_chosen: ""
+
+  # ─────────────────────────────────────────────────────────────
+  # DISCLAIMERS REQUIRED
+  # ─────────────────────────────────────────────────────────────
+  disclaimers:
+    - type: "results"                   # results | medical | income | testimonial
+      text: |
+        [Required disclaimer text]
+      placement: ""                     # Where must this appear?
+      # Example: "Footer of sales page, near testimonials"
+      applies_to: []                    # Which assets need this?
+      # Example: ["sales_page", "advertorial", "emails"]
+    
+    - type: "medical"
+      text: |
+        This product is not intended to diagnose, treat, cure, or prevent 
+        any disease. Consult your physician before starting any new 
+        health regimen.
+      placement: ""
+      applies_to: []
+
+  # ─────────────────────────────────────────────────────────────
+  # COMPLIANCE NOTES
+  # ─────────────────────────────────────────────────────────────
+  compliance:
+    platform_rules:
+      - platform: ""                    # e.g., "Facebook Ads"
+        restrictions: []                # What can't we say?
+        required_elements: []           # What must we include?
+    
+    legal_review:
+      reviewed_by: ""
+      review_date: ""
+      issues_flagged: []
+      approved: false
+
+# ═══════════════════════════════════════════════════════════════
+# VALIDATION CHECKLIST
+# ═══════════════════════════════════════════════════════════════
+# Before marking this EVIDENCE_PACK as verified:
+# [ ] All claims in copy are documented here
+# [ ] Each claim has evidence_id or is in proof_gaps
+# [ ] All proof_gaps have resolution_options
+# [ ] Critical gaps are resolved (not just flagged)
+# [ ] All testimonials have permission_to_use = true
+# [ ] Required disclaimers are documented
+# [ ] Compliance review complete (if applicable)
+# ═══════════════════════════════════════════════════════════════
+
+# ═══════════════════════════════════════════════════════════════
+# MMA INTEGRATION
+# ═══════════════════════════════════════════════════════════════
+# MMA Proof Discipline dimension checks:
+# - Are all claims mapped to evidence?
+# - Are MISSING claims softened or removed?
+# - Are disclaimers in place?
+# - Is language strength appropriate to evidence strength?
+#
+# If Proof Discipline < 9.0:
+# - Check for ungrounded claims
+# - Review proof_gaps section
+# - Soften language or add evidence
+# ═══════════════════════════════════════════════════════════════

@@ -1,0 +1,239 @@
+# MESSAGE_SPINE SSOT TEMPLATE
+# Version: 2.1
+# Purpose: Promise, mechanism, proof pillars, objections, CTA frame
+# Usage: Required for all copy/sales assets - THE source of truth for messaging
+# Location: /ssot/[project_name]/MESSAGE_SPINE.yaml
+
+# ═══════════════════════════════════════════════════════════════
+# INSTRUCTIONS
+# ═══════════════════════════════════════════════════════════════
+# 1. Copy this template to /ssot/[project_name]/MESSAGE_SPINE.yaml
+# 2. Fill in all required fields
+# 3. LOCK this before production copy - all assets reference this
+# 4. Any mechanism language MUST match this exactly (no drift)
+# ═══════════════════════════════════════════════════════════════
+
+MESSAGE_SPINE:
+  # ─────────────────────────────────────────────────────────────
+  # META
+  # ─────────────────────────────────────────────────────────────
+  meta:
+    project_name: ""                    # Must match PROJECT_BRIEF
+    version: "1.0"
+    status: "draft"                     # draft | review | locked
+    created: ""                         # ISO date
+    updated: ""                         # ISO date
+    locked_by: ""                       # Who approved the lock
+    checksum: ""                        # Auto-generated when locked
+
+  # ─────────────────────────────────────────────────────────────
+  # PROMISE (The One-Sentence Transformation)
+  # ─────────────────────────────────────────────────────────────
+  promise:
+    headline_promise: ""                # The big claim (what they get)
+    # Example: "Sleep through the night and wake with natural energy"
+    
+    sub_promise: ""                     # The supporting detail
+    # Example: "Without sleeping pills, melatonin, or changing your entire lifestyle"
+    
+    timeframe: ""                       # When do they see results?
+    # Example: "In as little as 7 days"
+    
+    # The complete promise statement (combine above):
+    complete_promise: ""
+    # Example: "Sleep through the night and wake with natural energy in as little 
+    #           as 7 days — without sleeping pills, melatonin, or changing your 
+    #           entire lifestyle."
+
+  # ─────────────────────────────────────────────────────────────
+  # MECHANISM (The "Why It Works" - CANONICAL)
+  # ─────────────────────────────────────────────────────────────
+  # ⚠️ CRITICAL: This mechanism paragraph is LOCKED.
+  # All copy assets MUST use this language exactly.
+  # No inventing new mechanisms. No drift.
+  # ─────────────────────────────────────────────────────────────
+  mechanism:
+    name: ""                            # Give your mechanism a name
+    # Example: "The Cortisol-Melatonin Reset Protocol"
+    
+    one_liner: ""                       # One sentence explanation
+    # Example: "Rebalances your body's natural sleep hormones by addressing 
+    #           the cortisol spike that wakes you at 3am."
+    
+    # THE CANONICAL MECHANISM PARAGRAPH
+    # This is the exact language used across ALL assets
+    canonical_paragraph: |
+      [Write 2-4 sentences explaining HOW it works]
+      [Include the scientific/logical reason]
+      [Make it believable and grounded]
+      [This exact text appears in sales page, emails, VSL, etc.]
+    
+    # Example:
+    # "Here's what most sleep solutions miss: it's not about making you drowsy.
+    #  It's about fixing the cortisol-melatonin timing that got disrupted.
+    #  When cortisol spikes at 3am instead of 7am, no amount of melatonin helps.
+    #  The Sleep Energy Protocol retrains your body's natural rhythm so you
+    #  fall asleep fast, stay asleep deep, and wake naturally refreshed."
+    
+    key_differentiator: ""              # What makes this different from other solutions
+    # Example: "Addresses the hormonal timing, not just the symptoms"
+    
+    credibility_anchor: ""              # Why should they believe this works?
+    # Example: "Based on chronobiology research from Stanford Sleep Lab"
+
+  # ─────────────────────────────────────────────────────────────
+  # PROOF PILLARS (The Evidence Structure)
+  # ─────────────────────────────────────────────────────────────
+  proof_pillars:
+    # Pillar 1: Social Proof (Others like them succeeded)
+    - pillar: "Social Proof"
+      type: "testimonials"              # testimonials | case_studies | numbers
+      strength: ""                      # strong | medium | weak
+      examples:
+        - proof_point: ""               # Specific testimonial or stat
+          source: ""                    # Where does this come from?
+          verified: false               # Is this verified/documented?
+        - proof_point: ""
+          source: ""
+          verified: false
+    
+    # Pillar 2: Credibility (Why the creator/method is trustworthy)
+    - pillar: "Credibility"
+      type: "authority"                 # authority | credentials | experience
+      strength: ""
+      examples:
+        - proof_point: ""
+          source: ""
+          verified: false
+    
+    # Pillar 3: Logic/Science (Why the mechanism makes sense)
+    - pillar: "Logic"
+      type: "mechanism"                 # mechanism | research | data
+      strength: ""
+      examples:
+        - proof_point: ""
+          source: ""
+          verified: false
+
+  # ─────────────────────────────────────────────────────────────
+  # OBJECTIONS (Top 5 Reasons They Won't Buy)
+  # ─────────────────────────────────────────────────────────────
+  objections:
+    - objection: ""                     # What they're thinking
+      # Example: "I've tried everything and nothing works for my sleep"
+      type: ""                          # skepticism | fear | timing | price | trust
+      counter: ""                       # How we address it
+      # Example: "That's because other solutions treat symptoms. This addresses 
+      #           the hormonal root cause most solutions ignore."
+      proof_needed: ""                  # What evidence supports the counter?
+      # Example: "Testimonial from someone who also 'tried everything'"
+    
+    - objection: ""
+      type: ""
+      counter: ""
+      proof_needed: ""
+    
+    - objection: ""
+      type: ""
+      counter: ""
+      proof_needed: ""
+    
+    - objection: ""
+      type: ""
+      counter: ""
+      proof_needed: ""
+    
+    - objection: ""
+      type: ""
+      counter: ""
+      proof_needed: ""
+
+  # ─────────────────────────────────────────────────────────────
+  # CTA FRAME (The Action Language)
+  # ─────────────────────────────────────────────────────────────
+  cta_frame:
+    primary_cta: ""                     # Main call to action
+    # Example: "Start Your Sleep Reset Today"
+    
+    button_text: ""                     # What the button says
+    # Example: "Get Instant Access"
+    
+    supporting_text: ""                 # Text around the CTA
+    # Example: "Join 3,000+ women who've reclaimed their sleep"
+    
+    urgency_frame: ""                   # Why act now (must be TRUE)
+    # Example: "Founding member pricing ends January 31"
+    
+    risk_reversal: ""                   # How we remove risk
+    # Example: "30-day money-back guarantee, no questions asked"
+
+  # ─────────────────────────────────────────────────────────────
+  # BELIEF LADDER (What They Need to Believe)
+  # ─────────────────────────────────────────────────────────────
+  belief_ladder:
+    # Current beliefs → Required beliefs for purchase
+    - current_belief: ""                # What they believe now
+      # Example: "Sleep problems are just part of getting older"
+      required_belief: ""               # What they need to believe
+      # Example: "Sleep problems are a hormonal timing issue that can be fixed"
+      bridge: ""                        # How we shift the belief
+      # Example: "New research shows cortisol timing, not age, causes 3am waking"
+    
+    - current_belief: ""
+      required_belief: ""
+      bridge: ""
+    
+    - current_belief: ""
+      required_belief: ""
+      bridge: ""
+
+  # ─────────────────────────────────────────────────────────────
+  # AWARENESS JOURNEY (How Copy Moves Them)
+  # ─────────────────────────────────────────────────────────────
+  awareness_journey:
+    entry_awareness: ""                 # Where they start
+    # Options: unaware | problem_aware | solution_aware | product_aware | most_aware
+    
+    exit_awareness: ""                  # Where they end up
+    # Should be: product_aware or most_aware (ready to buy)
+    
+    awareness_shifts:
+      - from: ""
+        to: ""
+        how: ""                         # What content/copy creates this shift
+        asset: ""                       # Which asset handles this shift
+
+  # ─────────────────────────────────────────────────────────────
+  # VOICE ALIGNMENT (How This Sounds)
+  # ─────────────────────────────────────────────────────────────
+  voice_alignment:
+    tone: ""                            # e.g., "Warm, knowledgeable, peer-to-peer"
+    reading_level: ""                   # e.g., "8th grade", "Professional"
+    pov: ""                             # 1st person | 2nd person | 3rd person
+    energy: ""                          # e.g., "Calm confidence, not hype"
+    reference_voice_guide: ""           # Link to VOICE_GUIDE.yaml if exists
+
+# ═══════════════════════════════════════════════════════════════
+# VALIDATION CHECKLIST
+# ═══════════════════════════════════════════════════════════════
+# Before locking this MESSAGE_SPINE:
+# [ ] Promise is specific and believable
+# [ ] Mechanism is unique and defensible
+# [ ] Canonical paragraph is written (will be used verbatim)
+# [ ] All 3 proof pillars have at least one example
+# [ ] Top 5 objections identified with counters
+# [ ] Belief ladder documented
+# [ ] Awareness journey mapped
+# [ ] Version number assigned
+# [ ] Checksum generated on lock
+# ═══════════════════════════════════════════════════════════════
+
+# ═══════════════════════════════════════════════════════════════
+# LOCK PROTOCOL
+# ═══════════════════════════════════════════════════════════════
+# When status changes to "locked":
+# 1. Generate checksum from canonical_paragraph
+# 2. All downstream copy MUST match mechanism language
+# 3. Any deviation triggers MMA validation failure
+# 4. To update: Create new version, re-lock, update all assets
+# ═══════════════════════════════════════════════════════════════

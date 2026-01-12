@@ -1,0 +1,624 @@
+# ULTRAMIND SSOT SCAFFOLD PACKAGE v2.1
+# Complete Templates for Core SSOT Objects
+# 
+# Updated: 2026-01-07
+# Aligned with: ULTRAMIND Constitution v2.1, 7S/7F Chain, Neuro-Box 6D
+#
+# CONTENTS:
+# 1. PROJECT_BRIEF_v2.1 (YAML + XML)
+# 2. MESSAGE_SPINE_v2.1 (YAML + XML)  
+# 3. EVIDENCE_PACK_v1.1 (YAML + XML)
+# 4. VOICE_GUIDE_v2.1 (YAML + XML)
+
+---
+
+# ═══════════════════════════════════════════════════════════════════
+# 1. PROJECT_BRIEF v2.1
+# Purpose: Strategic context, constraints, goals, timeline
+# Required for: Most tasks
+# ═══════════════════════════════════════════════════════════════════
+
+# --- YAML FORMAT ---
+
+PROJECT_BRIEF:
+  schema_version: "2.1"
+  created_date: "YYYY-MM-DD"
+  last_updated: "YYYY-MM-DD"
+  project_id: "project_[name]_[date]"
+  
+  # === CORE IDENTITY ===
+  project_name: "[Human-readable project name]"
+  codename: "[Internal codename if different]"
+  
+  # === GOAL & OUTCOME ===
+  goal:
+    primary: "[Single primary goal - what success looks like]"
+    secondary: "[Optional secondary goals]"
+    metrics:
+      - metric: "[KPI 1]"
+        target: "[Target value]"
+      - metric: "[KPI 2]"
+        target: "[Target value]"
+  
+  # === AVATAR ===
+  avatar:
+    name: "[Avatar name - e.g., 'Struggling Sarah']"
+    demographics:
+      age_range: "[e.g., 40-55]"
+      gender: "[if relevant]"
+      location: "[geographic relevance]"
+      income: "[if relevant]"
+    psychographics:
+      identity: "[Who they see themselves as]"
+      values: "[What they value most]"
+      fears: "[What keeps them up at night]"
+      desires: "[What they secretly want]"
+    pain_points:
+      - "[Pain point 1 - in their language]"
+      - "[Pain point 2 - in their language]"
+      - "[Pain point 3 - in their language]"
+    awareness_level: "[unaware | problem_aware | solution_aware | product_aware | most_aware]"
+    sophistication: "[novice | medium | expert]"
+    traffic_temperature: "[cold | warm | hot]"
+  
+  # === OFFER ===
+  offer:
+    name: "[Offer name]"
+    type: "[lead_magnet | tripwire | core | premium | continuity]"
+    price: "[Price point]"
+    delivery: "[How delivered - digital, physical, hybrid]"
+    transformation:
+      before: "[State before]"
+      after: "[State after]"
+      timeframe: "[Expected timeframe for results]"
+  
+  # === CONSTRAINTS ===
+  constraints:
+    timeline: "[Deadline or timeframe]"
+    budget: "[If relevant]"
+    platforms: 
+      - "[Platform 1 - e.g., Facebook/Instagram]"
+      - "[Platform 2]"
+    compliance:
+      - "[Compliance requirement 1 - e.g., no income claims]"
+      - "[Compliance requirement 2]"
+    brand_guidelines: "[Reference to brand guide if exists]"
+    legal_review_required: true | false
+  
+  # === CTA ===
+  cta:
+    primary_action: "[What you want them to do]"
+    destination: "[URL or next step]"
+    urgency_type: "[none | real_deadline | consequence_based]"
+    urgency_detail: "[If real deadline, what is it]"
+  
+  # === 7S FOCUS (Which dimensions are primary for this project?) ===
+  seven_s_focus:
+    primary: "[e.g., SAFE, SMART]"
+    secondary: "[e.g., SPECIAL, SIGNIFICANT]"
+    notes: "[Why these dimensions matter most for this project]"
+  
+  # === ASSETS NEEDED ===
+  assets:
+    - asset_type: "[advertorial | sales_page | vsl | email_sequence | lead_magnet]"
+      priority: "[P1 | P2 | P3]"
+      status: "[not_started | in_progress | complete]"
+  
+  # === RELATED SSOT ===
+  related_ssot:
+    message_spine: "[filename or 'to_create']"
+    evidence_pack: "[filename or 'to_create']"
+    voice_guide: "[filename or 'to_create']"
+
+---
+
+# --- XML FORMAT ---
+# <?xml version="1.0" encoding="UTF-8"?>
+# <PROJECT_BRIEF schema_version="2.1">
+#   <metadata>
+#     <project_id>project_sleep_energy_2026-01</project_id>
+#     <created_date>2026-01-07</created_date>
+#   </metadata>
+#   
+#   <goal>
+#     <primary>Generate first paying customers for Sleep Energy Breakthrough</primary>
+#     <metrics>
+#       <metric name="revenue" target="$5000"/>
+#       <metric name="customers" target="50"/>
+#     </metrics>
+#   </goal>
+#   
+#   <avatar>
+#     <name>Exhausted Emma</name>
+#     <awareness_level>problem_aware</awareness_level>
+#     <sophistication>medium</sophistication>
+#     <pain_points>
+#       <pain>Waking up at 3am every night</pain>
+#       <pain>Brain fog ruining productivity</pain>
+#     </pain_points>
+#   </avatar>
+#   
+#   <seven_s_focus>
+#     <primary>SAFE</primary>
+#     <primary>SMART</primary>
+#     <secondary>SPECIAL</secondary>
+#   </seven_s_focus>
+# </PROJECT_BRIEF>
+
+---
+
+# ═══════════════════════════════════════════════════════════════════
+# 2. MESSAGE_SPINE v2.1
+# Purpose: Promise, mechanism, proof pillars, objections
+# Required for: All copy tasks
+# ═══════════════════════════════════════════════════════════════════
+
+# --- YAML FORMAT ---
+
+MESSAGE_SPINE:
+  schema_version: "2.1"
+  created_date: "YYYY-MM-DD"
+  last_updated: "YYYY-MM-DD"
+  spine_id: "spine_[project]_[version]"
+  locked: false  # Set to true when finalized
+  
+  # === THE PROMISE ===
+  promise:
+    headline_promise: "[The big promise in 10 words or less]"
+    expanded_promise: "[Full promise statement - what they get]"
+    timeframe: "[When they'll see results]"
+    specificity_level: "[vague | specific | ultra_specific]"
+    
+    # 7S Integration: Promise should activate SPECIAL (unique to them)
+    seven_s_activation: "SPECIAL"
+  
+  # === THE MECHANISM ===
+  mechanism:
+    name: "[Proprietary mechanism name - e.g., 'Cortisol Reset Protocol']"
+    what_it_is: "[Plain English explanation]"
+    why_it_works: "[The 'aha' insight]"
+    why_different: "[How it differs from what they've tried]"
+    credibility_source: "[Science, experience, unique insight]"
+    
+    # Mechanism Language Lock (exact phrases to use consistently)
+    locked_phrases:
+      - "[Exact phrase 1 - use verbatim]"
+      - "[Exact phrase 2 - use verbatim]"
+      - "[Exact phrase 3 - use verbatim]"
+    
+    # 7S Integration: Mechanism activates SMART (makes sense)
+    seven_s_activation: "SMART"
+    
+    # Neuro-Box: Mechanism targets MIND (Acetylcholine - clarity)
+    neuro_target: "MIND"
+    neurotransmitter: "Acetylcholine"
+  
+  # === PROOF PILLARS ===
+  proof_pillars:
+    - pillar_id: "proof_1"
+      type: "[testimonial | case_study | data | credential | demonstration]"
+      claim: "[What this proof supports]"
+      evidence: "[The actual proof]"
+      source: "[Where it comes from]"
+      strength: "[strong | medium | needs_strengthening]"
+      
+    - pillar_id: "proof_2"
+      type: "[type]"
+      claim: "[claim]"
+      evidence: "[evidence]"
+      source: "[source]"
+      strength: "[strength]"
+      
+    - pillar_id: "proof_3"
+      type: "[type]"
+      claim: "[claim]"
+      evidence: "[evidence]"
+      source: "[source]"
+      strength: "[strength]"
+    
+    # 7S Integration: Proof activates SIGNIFICANT (others succeeded)
+    seven_s_activation: "SIGNIFICANT"
+  
+  # === OBJECTIONS ===
+  objections:
+    - objection: "[Common objection 1]"
+      category: "[price | time | trust | fit | timing]"
+      response: "[How we address it]"
+      proof_pillar_ref: "[Which proof pillar supports response]"
+      
+    - objection: "[Common objection 2]"
+      category: "[category]"
+      response: "[response]"
+      proof_pillar_ref: "[ref]"
+      
+    - objection: "[Common objection 3]"
+      category: "[category]"
+      response: "[response]"
+      proof_pillar_ref: "[ref]"
+  
+  # === BELIEF LADDER ===
+  belief_ladder:
+    - step: 1
+      old_belief: "[What they currently believe]"
+      new_belief: "[What we need them to believe]"
+      bridge: "[How we get them there]"
+      
+    - step: 2
+      old_belief: "[Next belief to shift]"
+      new_belief: "[Target belief]"
+      bridge: "[Bridge strategy]"
+      
+    - step: 3
+      old_belief: "[Final belief barrier]"
+      new_belief: "[Buying belief]"
+      bridge: "[Final bridge]"
+  
+  # === AWARENESS JOURNEY ===
+  awareness_journey:
+    entry_level: "[unaware | problem_aware | solution_aware | product_aware]"
+    exit_level: "[solution_aware | product_aware | most_aware]"
+    key_shifts: 
+      - "[Awareness shift 1]"
+      - "[Awareness shift 2]"
+  
+  # === 7S COVERAGE MAP ===
+  seven_s_coverage:
+    SAFE:
+      covered_by: "[Which section covers this]"
+      strength: "[1-10]"
+    SPECIAL:
+      covered_by: "[section]"
+      strength: "[1-10]"
+    SMART:
+      covered_by: "[section]"
+      strength: "[1-10]"
+    SIGNIFICANT:
+      covered_by: "[section]"
+      strength: "[1-10]"
+    SUPPORTED:
+      covered_by: "[section]"
+      strength: "[1-10]"
+    SUPERIOR:
+      covered_by: "[section]"
+      strength: "[1-10]"
+    STEAL:
+      covered_by: "[section]"
+      strength: "[1-10]"
+  
+  # === MMA VALIDATION HOOKS ===
+  mma_validation:
+    mechanism_locked: true | false
+    all_claims_grounded: true | false
+    objections_addressed: true | false
+    belief_ladder_complete: true | false
+    seven_s_coverage_min: 7  # Minimum score per dimension
+
+---
+
+# ═══════════════════════════════════════════════════════════════════
+# 3. EVIDENCE_PACK v1.1
+# Purpose: Claims grounding, citations, proof gaps
+# Highly Recommended for: All copy with factual claims
+# ═══════════════════════════════════════════════════════════════════
+
+# --- YAML FORMAT ---
+
+EVIDENCE_PACK:
+  schema_version: "1.1"
+  created_date: "YYYY-MM-DD"
+  last_updated: "YYYY-MM-DD"
+  pack_id: "evidence_[project]_[version]"
+  
+  # === TESTIMONIALS ===
+  testimonials:
+    - testimonial_id: "test_001"
+      name: "[Full name or initials]"
+      location: "[City, State if available]"
+      verified: true | false
+      verification_method: "[email | purchase_record | video | screenshot]"
+      quote: "[Exact testimonial text]"
+      result_claimed: "[Specific result mentioned]"
+      timeframe: "[How long it took]"
+      before_state: "[Their before state]"
+      after_state: "[Their after state]"
+      use_approved_for: "[all | sales_page_only | ads_excluded]"
+      date_received: "YYYY-MM-DD"
+      
+      # 7S: Testimonials feed SIGNIFICANT dimension
+      seven_s_target: "SIGNIFICANT"
+  
+  # === CASE STUDIES ===
+  case_studies:
+    - case_id: "case_001"
+      subject: "[Name or pseudonym]"
+      situation: "[Their starting situation]"
+      challenge: "[What they were struggling with]"
+      solution: "[How they used the product/service]"
+      results:
+        - result: "[Specific result 1]"
+          metric: "[Measurable if possible]"
+        - result: "[Specific result 2]"
+          metric: "[Measurable]"
+      timeframe: "[How long to achieve results]"
+      verified: true | false
+      supporting_evidence: "[Screenshots, data, etc.]"
+  
+  # === STATISTICS & DATA ===
+  statistics:
+    - stat_id: "stat_001"
+      claim: "[The statistical claim]"
+      figure: "[The number/percentage]"
+      source: "[Where it comes from]"
+      source_url: "[URL if available]"
+      source_date: "YYYY-MM-DD"
+      source_credibility: "[peer_reviewed | industry_report | internal_data | third_party]"
+      context: "[Important context for the stat]"
+      expiration: "[When this stat may become outdated]"
+      
+      # Can be used for: [list of claim types]
+      valid_for_claims:
+        - "[Claim type 1]"
+        - "[Claim type 2]"
+  
+  # === CREDENTIALS & AUTHORITY ===
+  credentials:
+    - credential_id: "cred_001"
+      type: "[degree | certification | experience | media | award]"
+      title: "[The credential]"
+      issuing_body: "[Who issued it]"
+      date_earned: "YYYY-MM-DD"
+      verification: "[How it can be verified]"
+      relevance: "[Why it matters for this offer]"
+  
+  # === SCIENTIFIC BACKING ===
+  scientific_backing:
+    - study_id: "study_001"
+      title: "[Study title]"
+      authors: "[Author names]"
+      publication: "[Journal or publication]"
+      year: "YYYY"
+      doi_or_url: "[DOI or URL]"
+      key_finding: "[The relevant finding]"
+      how_we_use_it: "[How this supports our claims]"
+      limitations: "[Any limitations to note]"
+      peer_reviewed: true | false
+  
+  # === CLAIMS MAPPING ===
+  claims_map:
+    - claim: "[Claim made in copy]"
+      evidence_refs: 
+        - "[stat_001]"
+        - "[test_003]"
+      strength: "[strong | adequate | weak | ungrounded]"
+      action_if_weak: "[soften_language | add_evidence | remove_claim]"
+  
+  # === PROOF GAPS ===
+  proof_gaps:
+    - gap_id: "gap_001"
+      claim_needing_proof: "[Claim that lacks strong evidence]"
+      current_strength: "[weak | ungrounded]"
+      evidence_needed: "[What would strengthen this]"
+      priority: "[high | medium | low]"
+      workaround: "[How to handle until evidence obtained]"
+  
+  # === COMPLIANCE NOTES ===
+  compliance:
+    income_claims_allowed: true | false
+    health_claims_allowed: true | false
+    testimonial_disclaimer_required: true | false
+    disclaimer_text: "[Required disclaimer language]"
+    platform_restrictions:
+      - platform: "[Facebook]"
+        restrictions: "[What can't be said]"
+  
+  # === MMA VALIDATION ===
+  mma_validation:
+    all_claims_grounded: true | false
+    ungrounded_claims_count: 0
+    weak_claims_count: 0
+    proof_discipline_score: "[1-10]"
+
+---
+
+# ═══════════════════════════════════════════════════════════════════
+# 4. VOICE_GUIDE v2.1
+# Purpose: Tone, taboos, rhythm, personality
+# Highly Recommended for: Consistent brand voice across assets
+# ═══════════════════════════════════════════════════════════════════
+
+# --- YAML FORMAT ---
+
+VOICE_GUIDE:
+  schema_version: "2.1"
+  created_date: "YYYY-MM-DD"
+  last_updated: "YYYY-MM-DD"
+  guide_id: "voice_[brand]_[version]"
+  
+  # === BRAND IDENTITY ===
+  brand:
+    name: "[Brand name]"
+    tagline: "[Brand tagline if exists]"
+    personality_archetype: "[e.g., Sage, Rebel, Caregiver, Creator]"
+    one_line_voice: "[Describe voice in one sentence]"
+  
+  # === TONE DIALS (1-10 scale) ===
+  tone_dials:
+    warmth: 7          # 1=Clinical, 10=Best friend
+    authority: 6       # 1=Peer, 10=Expert/Guru
+    humor: 4           # 1=Serious, 10=Playful
+    urgency: 5         # 1=Relaxed, 10=Time-sensitive
+    complexity: 5      # 1=Simple, 10=Technical
+    formality: 4       # 1=Casual, 10=Professional
+    boldness: 6        # 1=Conservative, 10=Provocative
+    empathy: 8         # 1=Logical, 10=Emotional
+  
+  # === CORE ATTRIBUTES ===
+  core_attributes:
+    - attribute: "[Attribute 1 - e.g., 'Warm']"
+      how_it_manifests: "[How this shows up in copy - e.g., 'Uses we language, empathy before solution']"
+    - attribute: "[Attribute 2 - e.g., 'Intelligent']"
+      how_it_manifests: "[Complex ideas simply explained, never dumbs down]"
+    - attribute: "[Attribute 3 - e.g., 'Conversational']"
+      how_it_manifests: "[Contractions, questions, short paragraphs]"
+  
+  # === LANGUAGE PATTERNS ===
+  language_patterns:
+    sentence_length:
+      typical: "[short | medium | long | varied]"
+      short_range: "5-10 words"
+      medium_range: "12-18 words"
+      long_range: "20+ words"
+      mix: "[e.g., '60% short, 30% medium, 10% long']"
+    
+    paragraph_length: "[1-2 sentences | 3-4 sentences | varied]"
+    
+    vocabulary:
+      technical_level: "[layperson | semi_technical | expert]"
+      reading_level: "[grade level or description]"
+      jargon_policy: "[avoid | use_sparingly | embrace]"
+    
+    grammar:
+      contractions: "[always | usually | sometimes | never]"
+      sentence_fragments: "[yes | occasionally | no]"
+      starting_with_and_but: "[yes | no]"
+      active_vs_passive: "[mostly_active | mixed | formal_passive]"
+    
+    questions:
+      frequency: "[frequent | occasional | rare]"
+      types: "[rhetorical | direct | both]"
+    
+    pov_preferred: "[first_person | second_person | third_person | mixed]"
+  
+  # === SIGNATURE ELEMENTS ===
+  signature_phrases:
+    transitions:
+      - "Here's the thing..."
+      - "But here's what's crazy..."
+      - "Let me explain..."
+    openings:
+      - "[Typical way to start]"
+    closings:
+      - "[Typical way to end]"
+    expressions:
+      - "[Characteristic expressions]"
+  
+  # === FORBIDDEN ELEMENTS ===
+  forbidden:
+    words:
+      - "[Word 1 - e.g., 'revolutionary']"
+      - "[Word 2 - e.g., 'synergy']"
+      - "[Word 3 - e.g., 'leverage' as verb]"
+    phrases:
+      - "[Phrase 1 - e.g., 'In today's fast-paced world']"
+      - "[Phrase 2 - e.g., 'It's important to note']"
+    tones:
+      - "[Tone to avoid - e.g., 'condescending']"
+      - "[Tone to avoid - e.g., 'hype-y']"
+    approaches:
+      - "[Approach to avoid - e.g., 'fear-based manipulation']"
+  
+  # === AI DETOX CHECKLIST ===
+  ai_detox:
+    watch_for:
+      - "Excessive hedging ('It's worth noting that...')"
+      - "Overly formal transitions"
+      - "Generic opening lines"
+      - "Repetitive sentence structures"
+      - "Overuse of 'Additionally,' 'Furthermore,' 'Moreover'"
+    
+    replace_with:
+      - "Direct statements"
+      - "Natural conversational bridges"
+      - "Specific, concrete openings"
+      - "Varied rhythm"
+      - "Simple connectors or none"
+  
+  # === NEURO-BOX ALIGNMENT ===
+  neuro_voice_alignment:
+    BODY_safe:
+      tone: "[How voice creates safety - e.g., 'Reassuring, grounded']"
+      example: "[Example phrase]"
+    HEART_special:
+      tone: "[How voice creates connection - e.g., 'Warm, personal']"
+      example: "[Example phrase]"
+    MIND_smart:
+      tone: "[How voice conveys intelligence - e.g., 'Clear, logical']"
+      example: "[Example phrase]"
+    SPIRIT_significant:
+      tone: "[How voice conveys importance - e.g., 'Inspiring, meaningful']"
+      example: "[Example phrase]"
+    PSYCHE_supported:
+      tone: "[How voice enables action - e.g., 'Direct, confident']"
+      example: "[Example phrase]"
+    CONSCIENCE_superior:
+      tone: "[How voice creates belonging - e.g., 'Inclusive, community']"
+      example: "[Example phrase]"
+  
+  # === EXAMPLE PARAGRAPHS ===
+  examples:
+    - context: "[e.g., 'Opening hook']"
+      example: |
+        [2-3 sentences showing voice in action]
+    
+    - context: "[e.g., 'Explaining mechanism']"
+      example: |
+        [2-3 sentences showing voice in action]
+    
+    - context: "[e.g., 'Soft CTA']"
+      example: |
+        [2-3 sentences showing voice in action]
+  
+  # === PLATFORM ADAPTATIONS ===
+  platform_adaptations:
+    email:
+      adjustments: "[How voice adapts for email]"
+    social:
+      adjustments: "[How voice adapts for social]"
+    sales_page:
+      adjustments: "[How voice adapts for sales]"
+    video_script:
+      adjustments: "[How voice adapts for video]"
+  
+  # === MMA VALIDATION ===
+  mma_validation:
+    voice_consistency_target: 9.0
+    kitchen_table_test: "[Would this sound natural in conversation?]"
+    brand_recognition_test: "[Could you identify brand from style alone?]"
+
+---
+
+# ═══════════════════════════════════════════════════════════════════
+# USAGE INSTRUCTIONS
+# ═══════════════════════════════════════════════════════════════════
+
+# 1. Copy the relevant template section
+# 2. Replace all [bracketed] placeholders with actual content
+# 3. Save as: ssot/[project_name]/[OBJECT_NAME].yaml
+# 4. Reference in skills via SSOT contract
+
+# FILE NAMING CONVENTION:
+# ssot/
+#   sleep_energy/
+#     PROJECT_BRIEF.yaml
+#     MESSAGE_SPINE.yaml
+#     EVIDENCE_PACK.yaml
+#     VOICE_GUIDE.yaml
+
+# LOCKING PROTOCOL:
+# - Set locked: true when object is finalized
+# - Locked objects should not be modified without version increment
+# - MMA validates against locked objects
+
+# 7S INTEGRATION:
+# - PROJECT_BRIEF defines which 7S dimensions are primary focus
+# - MESSAGE_SPINE maps content to 7S coverage
+# - EVIDENCE_PACK feeds SIGNIFICANT dimension (proof)
+# - VOICE_GUIDE aligns tone to Neuro-Box dimensions
+
+---
+
+# VERSION HISTORY
+# v2.1 (2026-01-07): Added 7S/7F Chain integration, Neuro-Box alignment,
+#                    MMA validation hooks, expanded all templates
+# v2.0 (2025-12-26): Initial structured templates
+# v1.0 (Original):   Basic field definitions only

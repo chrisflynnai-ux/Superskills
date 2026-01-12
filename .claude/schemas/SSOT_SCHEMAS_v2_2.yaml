@@ -1,0 +1,539 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# ULTRAMIND SSOT SCHEMAS v2.2
+# Production-Ready Templates with Corrected Neuro Mappings + 7S/7F Integration
+# ═══════════════════════════════════════════════════════════════════════════════
+#
+# Version: 2.2.0
+# Updated: 2026-01-07
+# Aligned with: ULTRAMIND Constitution v2.1, 6D Agentic Super-Resonance Model
+#
+# CONTENTS:
+# 1. PROJECT_BRIEF_v2.1 (YAML + XML)
+# 2. MESSAGE_SPINE_v2.2 (YAML + XML) — Corrected Neuro Mappings
+# 3. EVIDENCE_PACK_v1.1 (YAML + XML)
+# 4. VOICE_GUIDE_v2.1 (YAML + XML)
+#
+# NEURO MAPPING CORRECTION (per Constitution v2.1):
+# ┌─────────────┬────────────────┬─────────┬───────────┬──────────┐
+# │ DIMENSION   │ NEUROTRANSMIT  │ 7S      │ 7F        │ AGENTIC  │
+# ├─────────────┼────────────────┼─────────┼───────────┼──────────┤
+# │ BODY        │ Dopamine       │ SAFE    │ FILTER    │ HEAL     │
+# │ HEART       │ GABA           │ SPECIAL │ FRAME     │ RENEW    │
+# │ MIND        │ Acetylcholine  │ SMART   │ FOCUS     │ RESONATE │
+# │ SPIRIT      │ Serotonin      │ SIGNIF. │ FORM      │ PERSUADE │
+# │ PSYCHE      │ Adrenaline     │ SUPPORT │ FIXATE    │ DESIGN   │
+# │ CONSCIENCE  │ Oxytocin       │ SUPERIOR│ FORGE     │ DEVELOP  │
+# │ SOUL        │ Zero Point     │ STEAL   │ FLOW      │ TRANSFORM│
+# └─────────────┴────────────────┴─────────┴───────────┴──────────┘
+# ═══════════════════════════════════════════════════════════════════════════════
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# 1. PROJECT_BRIEF_v2.1
+# ═══════════════════════════════════════════════════════════════════════════════
+
+---
+# PROJECT_BRIEF_v2.1.yaml (Template)
+schema: PROJECT_BRIEF_v2.1
+version: "2.1"
+
+meta:
+  project_id: "PB-XXXX"
+  created_date: "YYYY-MM-DD"
+  updated_date: "YYYY-MM-DD"
+  owner: ""
+
+objective:
+  primary_goal: ""
+  success_metrics: 
+    - metric: "CTR"
+      target: ""
+    - metric: "CVR"
+      target: ""
+    - metric: "AOV"
+      target: ""
+
+avatar:
+  name: ""
+  awareness_stage: "Unaware | Problem-Aware | Solution-Aware | Product-Aware | Most-Aware"
+  traffic_temperature: "cold | warm | hot"
+  pains: []
+  desires: []
+  objections: []
+
+offer:
+  name: ""
+  type: "lead_magnet | tripwire | core | premium | continuity"
+  price: ""
+  guarantee: ""
+  transformation:
+    before: ""
+    after: ""
+    timeframe: ""
+
+deliverables:
+  - type: "advertorial"
+    priority: "P1"
+  - type: "sales_page"
+    priority: "P1"
+  - type: "email_sequence"
+    priority: "P2"
+
+constraints:
+  compliance:
+    - "No fake scarcity"
+    - "No claims beyond EVIDENCE_PACK"
+  brand:
+    - "Tone must match VOICE_GUIDE"
+  platform:
+    - platform: ""
+      restrictions: []
+
+# 7S Focus (which dimensions are primary for this project)
+seven_s_focus:
+  primary: ["SAFE", "SMART"]  # Most important for this project
+  secondary: ["SPECIAL", "SIGNIFICANT"]
+  notes: ""
+
+inputs:
+  required:
+    - "MESSAGE_SPINE"
+  optional:
+    - "EVIDENCE_PACK"
+    - "VOICE_GUIDE"
+
+---
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# 2. MESSAGE_SPINE_v2.2 (Corrected Neuro Mappings)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+---
+# MESSAGE_SPINE_v2.2.yaml (Template — Corrected Neuro + 7S Integration)
+schema: MESSAGE_SPINE_v2.2
+version: "2.2"
+
+meta:
+  project_id: "PB-XXXX"
+  offer_name: ""
+  created_date: "YYYY-MM-DD"
+  updated_date: "YYYY-MM-DD"
+  owner: ""
+  locked: false
+
+north_star:
+  core_promise: ""
+  unique_mechanism:
+    name: ""
+    plain_english: ""
+    locked_phrases:
+      - ""  # Use verbatim in all copy
+      - ""
+  primary_cta:
+    action: ""
+    label: ""
+
+proof_pillars:
+  - pp_id: "P01"
+    headline: ""
+    proof_refs: ["E01", "E02"]
+  - pp_id: "P02"
+    headline: ""
+    proof_refs: ["E03"]
+
+objections:
+  - ob_id: "O01"
+    objection: ""
+    response: ""
+    proof_refs: ["E04"]
+
+claims:
+  - claim_id: "C01"
+    claim: ""
+    proof_refs: ["E01"]
+    strength: "strong | medium | weak"
+    allowed_language:
+      - "may"
+      - "can help support"
+      - "for some people"
+    forbidden_language:
+      - "cures"
+      - "guarantees"
+
+belief_ladder:
+  - step: 1
+    old_belief: ""
+    new_belief: ""
+    bridge: ""
+  - step: 2
+    old_belief: ""
+    new_belief: ""
+    bridge: ""
+
+awareness_journey:
+  entry: "Problem-Aware"
+  exit: "Product-Aware"
+  key_shifts:
+    - ""
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# NEURO-BOX 6D (CORRECTED per Constitution v2.1)
+# ═══════════════════════════════════════════════════════════════════════════════
+neuro_box:
+  
+  # AXIS A: BODY ↔ HEART (Vertical - Lifting)
+  body_dopamine:
+    seven_s: "SAFE"
+    seven_f: "FILTER"
+    agentic: "HEAL"
+    intent: "Safety, trust, risk removal"
+    question: "Am I safe here?"
+    triggers:
+      - "guarantee language"
+      - "risk reversal"
+      - "credentials/authority"
+      - "validation ('not your fault')"
+    copy_elements:
+      - "Money-back guarantee"
+      - "Trusted by X people"
+      - "You're protected"
+  
+  heart_gaba:
+    seven_s: "SPECIAL"
+    seven_f: "FRAME"
+    agentic: "RENEW"
+    intent: "Emotional connection, uniqueness, feeling seen"
+    question: "Is this unique for me?"
+    triggers:
+      - "personal stories"
+      - "emotional language"
+      - "exclusivity ('not for everyone')"
+      - "identity transformation"
+    copy_elements:
+      - "You're different from most"
+      - "Finally, someone who understands"
+      - "This speaks to YOU"
+
+  # AXIS B: MIND ↔ SPIRIT (Horizontal - Advancing)
+  mind_acetylcholine:
+    seven_s: "SMART"
+    seven_f: "FOCUS"
+    agentic: "RESONATE"
+    intent: "Clarity, understanding, mechanism comprehension"
+    question: "Does this make sense?"
+    triggers:
+      - "clear explanation"
+      - "step-by-step process"
+      - "data/evidence"
+      - "logical structure"
+    copy_elements:
+      - "Here's exactly how it works"
+      - "The science behind it"
+      - "Step 1, Step 2, Step 3"
+    critical_note: "*** CLARITY IS EVERYTHING ***"
+  
+  spirit_serotonin:
+    seven_s: "SIGNIFICANT"
+    seven_f: "FORM"
+    agentic: "PERSUADE"
+    intent: "Social proof, significance, what others want"
+    question: "Do others want this?"
+    triggers:
+      - "testimonials"
+      - "case studies"
+      - "community size"
+      - "expert endorsements"
+    copy_elements:
+      - "Join thousands who..."
+      - "Others like you have..."
+      - "As featured in..."
+
+  # AXIS C: PSYCHE ↔ CONSCIENCE (Depth - Expanding)
+  psyche_adrenaline:
+    seven_s: "SUPPORTED"
+    seven_f: "FIXATE"
+    agentic: "DESIGN"
+    intent: "Action readiness, clear path, momentum"
+    question: "Can I act NOW?"
+    triggers:
+      - "clear CTA"
+      - "simple next step"
+      - "real urgency (truthful)"
+      - "friction removal"
+    copy_elements:
+      - "Click the button below"
+      - "Here's your next step"
+      - "Start in the next 5 minutes"
+  
+  conscience_oxytocin:
+    seven_s: "SUPERIOR"
+    seven_f: "FORGE"
+    agentic: "DEVELOP"
+    intent: "Belonging, community, support, connection"
+    question: "Do I belong here?"
+    triggers:
+      - "community emphasis"
+      - "support promises"
+      - "team introductions"
+      - "care demonstration"
+    copy_elements:
+      - "Welcome to the family"
+      - "You're not alone"
+      - "We're here for you"
+
+  # CENTER: SOUL (Transform)
+  soul_zero_point:
+    seven_s: "STEAL"
+    seven_f: "FLOW"
+    agentic: "TRANSFORM"
+    intent: "Integration, incredible value, transformation"
+    question: "Is this an incredible deal?"
+    triggers:
+      - "value stack"
+      - "price anchoring"
+      - "bonus stacking"
+      - "worth vs price comparison"
+    copy_elements:
+      - "Worth $X, yours for $Y"
+      - "Everything included"
+      - "You're practically stealing"
+
+# 7S Coverage Map (which sections cover which dimensions)
+seven_s_coverage:
+  SAFE:
+    covered_by: ["guarantee", "credentials", "proof_pillars"]
+    target_strength: 8
+  SPECIAL:
+    covered_by: ["promise", "story", "identity_framing"]
+    target_strength: 8
+  SMART:
+    covered_by: ["mechanism", "process", "faq"]
+    target_strength: 9
+  SIGNIFICANT:
+    covered_by: ["testimonials", "case_studies", "social_proof"]
+    target_strength: 8
+  SUPPORTED:
+    covered_by: ["cta", "next_steps", "path_clarity"]
+    target_strength: 9
+  SUPERIOR:
+    covered_by: ["community", "support", "belonging"]
+    target_strength: 7
+  STEAL:
+    covered_by: ["offer_stack", "bonuses", "value_comparison"]
+    target_strength: 8
+
+locked_object_rules:
+  locked_sections: 
+    - "north_star"
+    - "unique_mechanism"
+    - "claims"
+  change_protocol: "PATCH_REQUEST → Offer Architect → version bump"
+
+---
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# 3. EVIDENCE_PACK_v1.1
+# ═══════════════════════════════════════════════════════════════════════════════
+
+---
+# EVIDENCE_PACK_v1.1.yaml (Template)
+schema: EVIDENCE_PACK_v1.1
+version: "1.1"
+
+meta:
+  project_id: "PB-XXXX"
+  product: ""
+  created_date: "YYYY-MM-DD"
+  updated_date: "YYYY-MM-DD"
+  owner: ""
+  compliance_notes:
+    - "No disease claims"
+    - "No guaranteed outcomes"
+    - "Testimonials = individual results"
+
+sources:
+  - src_id: "S01"
+    type: "study | review | testimonial | competitor | internal | interview | expert"
+    title: ""
+    author: ""
+    date: ""
+    url: ""
+    file_ref: ""
+    reliability: "high | medium | low"
+    notes: ""
+
+evidence_items:
+  - ev_id: "E01"
+    type: "study | testimonial | lab | mechanism | expert | observational"
+    source_ref: "S01"
+    claim_supported: "C01"
+    excerpt: ""
+    interpretation: ""
+    strength: "strong | medium | weak"
+    
+    # 7S Integration: Which dimension does this evidence support?
+    seven_s_target: "SIGNIFICANT"  # Most evidence feeds SIGNIFICANT
+    
+    allowed_language:
+      - "may support"
+      - "associated with"
+      - "in one study"
+    forbidden_language:
+      - "cures"
+      - "treats"
+      - "guarantees"
+
+proof_gaps:
+  - gap_id: "G01"
+    claim_needed: "C03"
+    seven_s_dimension: "SAFE"  # Which dimension is weak?
+    why_needed: ""
+    plan_to_fill: ""
+    workaround: ""  # How to handle until filled
+
+# Claims → Evidence Mapping
+claims_map:
+  - claim_id: "C01"
+    claim_text: ""
+    evidence_refs: ["E01", "E02"]
+    strength: "strong | adequate | weak | ungrounded"
+    action_if_weak: "soften_language | add_evidence | remove_claim"
+
+# MMA Validation
+mma_validation:
+  all_claims_grounded: false
+  ungrounded_claims: []
+  weak_claims: []
+  proof_discipline_score: 0  # Target: ≥9
+
+---
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# 4. VOICE_GUIDE_v2.1
+# ═══════════════════════════════════════════════════════════════════════════════
+
+---
+# VOICE_GUIDE_v2.1.yaml (Template)
+schema: VOICE_GUIDE_v2.1
+version: "2.1"
+
+meta:
+  brand: ""
+  owner: ""
+  created_date: "YYYY-MM-DD"
+  updated_date: "YYYY-MM-DD"
+
+# Tone Dials (1-10 scale)
+tone_dials:
+  warmth: 7        # 1=Clinical, 10=Best friend
+  authority: 7     # 1=Peer, 10=Expert guru
+  urgency: 5       # 1=Relaxed, 10=Time-sensitive
+  playfulness: 4   # 1=Serious, 10=Playful
+  empathy: 8       # 1=Logical only, 10=Deeply emotional
+  complexity: 5    # 1=Simple, 10=Technical
+  boldness: 6      # 1=Conservative, 10=Provocative
+
+# Language Patterns
+language_patterns:
+  sentence_length: "varied"  # short | medium | long | varied
+  paragraph_length: "2-4 lines max"
+  contractions: "always"  # always | usually | sometimes | never
+  questions: "frequent"   # frequent | occasional | rare
+  pov: "second_person"    # first | second | third | mixed
+
+# Required Patterns (always do)
+required_patterns:
+  - "Kitchen table language"
+  - "Short paragraphs (max 3-4 lines)"
+  - "Varied sentence rhythm"
+  - "Concrete sensory examples"
+  - "One idea per paragraph"
+
+# Forbidden Words
+forbidden_words:
+  - "unlock"
+  - "revolutionary"
+  - "leverage"
+  - "synergy"
+  - "game-changer"
+  - "cutting-edge"
+
+# Forbidden Phrases (AI-isms)
+forbidden_phrases:
+  - "In today's fast-paced world"
+  - "It's important to note that"
+  - "Embark on a transformative journey"
+  - "Let's dive in"
+  - "Without further ado"
+
+# Taboo Moves (never do)
+taboo_moves:
+  - "fake scarcity"
+  - "shame-based pressure"
+  - "medical cure claims"
+  - "income guarantees"
+  - "condescending tone"
+
+# Style Rules
+style_rules:
+  formatting:
+    bold_max_per_section: 2
+    use_em_dash: true
+    ellipses_allowed: true
+    subhead_frequency: "every 3-5 paragraphs"
+  
+  rhythm:
+    vary_sentence_length: true
+    short_punchy_after_long: true
+    fragment_sentences_allowed: true
+
+# Signature Phrases (brand-specific)
+signature_phrases:
+  transitions:
+    - "Here's the thing..."
+    - "But here's what's crazy..."
+    - "Let me explain..."
+  openings:
+    - ""
+  closings:
+    - ""
+
+# Examples
+examples:
+  do:
+    - "Here's the thing…"
+    - "Let's make this simple."
+    - "You've tried everything. Nothing worked. I get it."
+  dont:
+    - "Embark on a transformative journey"
+    - "Cutting-edge ecosystem synergies"
+    - "It's important to note that in today's landscape..."
+
+# Neuro-Voice Alignment (how voice activates each dimension)
+neuro_voice_alignment:
+  body_safe:
+    tone: "Reassuring, grounded, certain"
+    example: "You're completely protected. Zero risk."
+  heart_special:
+    tone: "Warm, personal, intimate"
+    example: "I know exactly what you're going through."
+  mind_smart:
+    tone: "Clear, logical, precise"
+    example: "Here's exactly how it works, step by step."
+  spirit_significant:
+    tone: "Inspiring, social, meaningful"
+    example: "Thousands of people just like you have already..."
+  psyche_supported:
+    tone: "Direct, confident, action-oriented"
+    example: "Click below. It takes 30 seconds."
+  conscience_superior:
+    tone: "Inclusive, caring, community"
+    example: "Welcome to the family. You're one of us now."
+
+# MMA Validation Targets
+mma_validation:
+  voice_consistency_target: 9.0
+  kitchen_table_test: true
+  ai_detox_pass: true
+
+---

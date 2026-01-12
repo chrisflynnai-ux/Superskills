@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+═══════════════════════════════════════════════════════════════════════════════
+ULTRAMIND SSOT SCHEMAS v2.2 — XML FORMATS
+Production-Ready Templates with Corrected Neuro Mappings + 7S/7F Integration
+
+Version: 2.2.0
+Updated: 2026-01-07
+Aligned with: ULTRAMIND Constitution v2.1, 6D Agentic Super-Resonance Model
+═══════════════════════════════════════════════════════════════════════════════
+-->
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════
+     1. PROJECT_BRIEF_v2.1.xml
+     ═══════════════════════════════════════════════════════════════════════════════ -->
+
+<PROJECT_BRIEF schema="PROJECT_BRIEF_v2.1" version="2.1">
+  <Meta>
+    <ProjectID>PB-XXXX</ProjectID>
+    <CreatedDate>YYYY-MM-DD</CreatedDate>
+    <UpdatedDate>YYYY-MM-DD</UpdatedDate>
+    <Owner></Owner>
+  </Meta>
+
+  <Objective>
+    <PrimaryGoal></PrimaryGoal>
+    <SuccessMetrics>
+      <Metric name="CTR" target=""/>
+      <Metric name="CVR" target=""/>
+      <Metric name="AOV" target=""/>
+    </SuccessMetrics>
+  </Objective>
+
+  <Avatar>
+    <Name></Name>
+    <AwarenessStage>Problem-Aware</AwarenessStage>
+    <TrafficTemperature>cold</TrafficTemperature>
+    <Pains>
+      <Pain></Pain>
+    </Pains>
+    <Desires>
+      <Desire></Desire>
+    </Desires>
+    <Objections>
+      <Objection></Objection>
+    </Objections>
+  </Avatar>
+
+  <Offer>
+    <Name></Name>
+    <Type>core</Type>
+    <Price></Price>
+    <Guarantee></Guarantee>
+    <Transformation>
+      <Before></Before>
+      <After></After>
+      <Timeframe></Timeframe>
+    </Transformation>
+  </Offer>
+
+  <Deliverables>
+    <Item type="advertorial" priority="P1"/>
+    <Item type="sales_page" priority="P1"/>
+    <Item type="email_sequence" priority="P2"/>
+  </Deliverables>
+
+  <Constraints>
+    <Compliance>
+      <Rule>No fake scarcity</Rule>
+      <Rule>No claims beyond EVIDENCE_PACK</Rule>
+    </Compliance>
+    <Brand>
+      <Rule>Tone must match VOICE_GUIDE</Rule>
+    </Brand>
+    <Platform name="">
+      <Restriction></Restriction>
+    </Platform>
+  </Constraints>
+
+  <!-- 7S Focus: Which dimensions are primary for this project -->
+  <SevenSFocus>
+    <Primary>SAFE</Primary>
+    <Primary>SMART</Primary>
+    <Secondary>SPECIAL</Secondary>
+    <Secondary>SIGNIFICANT</Secondary>
+    <Notes></Notes>
+  </SevenSFocus>
+
+  <Inputs>
+    <Required>
+      <Item>MESSAGE_SPINE</Item>
+    </Required>
+    <Optional>
+      <Item>EVIDENCE_PACK</Item>
+      <Item>VOICE_GUIDE</Item>
+    </Optional>
+  </Inputs>
+</PROJECT_BRIEF>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════
+     2. MESSAGE_SPINE_v2.2.xml (Corrected Neuro Mappings)
+     ═══════════════════════════════════════════════════════════════════════════════ -->
+
+<MESSAGE_SPINE schema="MESSAGE_SPINE_v2.2" version="2.2">
+  <Meta>
+    <ProjectID>PB-XXXX</ProjectID>
+    <OfferName></OfferName>
+    <CreatedDate>YYYY-MM-DD</CreatedDate>
+    <UpdatedDate>YYYY-MM-DD</UpdatedDate>
+    <Owner></Owner>
+    <Locked>false</Locked>
+  </Meta>
+
+  <NorthStar>
+    <CorePromise></CorePromise>
+    <UniqueMechanism>
+      <Name></Name>
+      <PlainEnglish></PlainEnglish>
+      <LockedPhrases>
+        <Phrase></Phrase>
+        <Phrase></Phrase>
+      </LockedPhrases>
+    </UniqueMechanism>
+    <PrimaryCTA>
+      <Action></Action>
+      <Label></Label>
+    </PrimaryCTA>
+  </NorthStar>
+
+  <ProofPillars>
+    <Pillar id="P01">
+      <Headline></Headline>
+      <ProofRefs>
+        <Ref>E01</Ref>
+        <Ref>E02</Ref>
+      </ProofRefs>
+    </Pillar>
+  </ProofPillars>
+
+  <Objections>
+    <Objection id="O01">
+      <Text></Text>
+      <Response></Response>
+      <ProofRefs>
+        <Ref>E03</Ref>
+      </ProofRefs>
+    </Objection>
+  </Objections>
+
+  <Claims>
+    <Claim id="C01">
+      <Text></Text>
+      <ProofRefs>
+        <Ref>E01</Ref>
+      </ProofRefs>
+      <Strength>strong</Strength>
+      <AllowedLanguage>
+        <Phrase>may</Phrase>
+        <Phrase>can help support</Phrase>
+        <Phrase>for some people</Phrase>
+      </AllowedLanguage>
+      <ForbiddenLanguage>
+        <Phrase>cures</Phrase>
+        <Phrase>guarantees</Phrase>
+      </ForbiddenLanguage>
+    </Claim>
+  </Claims>
+
+  <BeliefLadder>
+    <Step order="1">
+      <OldBelief></OldBelief>
+      <NewBelief></NewBelief>
+      <Bridge></Bridge>
+    </Step>
+    <Step order="2">
+      <OldBelief></OldBelief>
+      <NewBelief></NewBelief>
+      <Bridge></Bridge>
+    </Step>
+  </BeliefLadder>
+
+  <AwarenessJourney>
+    <Entry>Problem-Aware</Entry>
+    <Exit>Product-Aware</Exit>
+    <KeyShifts>
+      <Shift></Shift>
+    </KeyShifts>
+  </AwarenessJourney>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════════
+       NEURO-BOX 6D (CORRECTED per Constitution v2.1)
+       ═══════════════════════════════════════════════════════════════════════════ -->
+  <NeuroBox>
+    
+    <!-- AXIS A: BODY ↔ HEART (Vertical - Lifting) -->
+    <Axis id="body_dopamine" dimension="BODY" neurotransmitter="Dopamine">
+      <SevenS>SAFE</SevenS>
+      <SevenF>FILTER</SevenF>
+      <Agentic>HEAL</Agentic>
+      <Intent>Safety, trust, risk removal</Intent>
+      <Question>Am I safe here?</Question>
+      <Triggers>
+        <Trigger>guarantee language</Trigger>
+        <Trigger>risk reversal</Trigger>
+        <Trigger>credentials/authority</Trigger>
+        <Trigger>validation ('not your fault')</Trigger>
+      </Triggers>
+      <CopyElements>
+        <Element>Money-back guarantee</Element>
+        <Element>Trusted by X people</Element>
+        <Element>You're protected</Element>
+      </CopyElements>
+    </Axis>
+    
+    <Axis id="heart_gaba" dimension="HEART" neurotransmitter="GABA">
+      <SevenS>SPECIAL</SevenS>
+      <SevenF>FRAME</SevenF>
+      <Agentic>RENEW</Agentic>
+      <Intent>Emotional connection, uniqueness, feeling seen</Intent>
+      <Question>Is this unique for me?</Question>
+      <Triggers>
+        <Trigger>personal stories</Trigger>
+        <Trigger>emotional language</Trigger>
+        <Trigger>exclusivity ('not for everyone')</Trigger>
+        <Trigger>identity transformation</Trigger>
+      </Triggers>
+      <CopyElements>
+        <Element>You're different from most</Element>
+        <Element>Finally, someone who understands</Element>
+        <Element>This speaks to YOU</Element>
+      </CopyElements>
+    </Axis>
+
+    <!-- AXIS B: MIND ↔ SPIRIT (Horizontal - Advancing) -->
+    <Axis id="mind_acetylcholine" dimension="MIND" neurotransmitter="Acetylcholine">
+      <SevenS>SMART</SevenS>
+      <SevenF>FOCUS</SevenF>
+      <Agentic>RESONATE</Agentic>
+      <Intent>Clarity, understanding, mechanism comprehension</Intent>
+      <Question>Does this make sense?</Question>
+      <CriticalNote>*** CLARITY IS EVERYTHING ***</CriticalNote>
+      <Triggers>
+        <Trigger>clear explanation</Trigger>
+        <Trigger>step-by-step process</Trigger>
+        <Trigger>data/evidence</Trigger>
+        <Trigger>logical structure</Trigger>
+      </Triggers>
+      <CopyElements>
+        <Element>Here's exactly how it works</Element>
+        <Element>The science behind it</Element>
+        <Element>Step 1, Step 2, Step 3</Element>
+      </CopyElements>
+    </Axis>
+    
+    <Axis id="spirit_serotonin" dimension="SPIRIT" neurotransmitter="Serotonin">
+      <SevenS>SIGNIFICANT</SevenS>
+      <SevenF>FORM</SevenF>
+      <Agentic>PERSUADE</Agentic>
+      <Intent>Social proof, significance, what others want</Intent>
+      <Question>Do others want this?</Question>
+      <Triggers>
+        <Trigger>testimonials</Trigger>
+        <Trigger>case studies</Trigger>
+        <Trigger>community size</Trigger>
+        <Trigger>expert endorsements</Trigger>
+      </Triggers>
+      <CopyElements>
+        <Element>Join thousands who...</Element>
+        <Element>Others like you have...</Element>
+        <Element>As featured in...</Element>
+      </CopyElements>
+    </Axis>
+
+    <!-- AXIS C: PSYCHE ↔ CONSCIENCE (Depth - Expanding) -->
+    <Axis id="psyche_adrenaline" dimension="PSYCHE" neurotransmitter="Adrenaline">
+      <SevenS>SUPPORTED</SevenS>
+      <SevenF>FIXATE</SevenF>
+      <Agentic>DESIGN</Agentic>
+      <Intent>Action readiness, clear path, momentum</Intent>
+      <Question>Can I act NOW?</Question>
+      <Triggers>
+        <Trigger>clear CTA</Trigger>
+        <Trigger>simple next step</Trigger>
+        <Trigger>real urgency (truthful)</Trigger>
+        <Trigger>friction removal</Trigger>
+      </Triggers>
+      <CopyElements>
+        <Element>Click the button below</Element>
+        <Element>Here's your next step</Element>
+        <Element>Start in the next 5 minutes</Element>
+      </CopyElements>
+    </Axis>
+    
+    <Axis id="conscience_oxytocin" dimension="CONSCIENCE" neurotransmitter="Oxytocin">
+      <SevenS>SUPERIOR</SevenS>
+      <SevenF>FORGE</SevenF>
+      <Agentic>DEVELOP</Agentic>
+      <Intent>Belonging, community, support, connection</Intent>
+      <Question>Do I belong here?</Question>
+      <Triggers>
+        <Trigger>community emphasis</Trigger>
+        <Trigger>support promises</Trigger>
+        <Trigger>team introductions</Trigger>
+        <Trigger>care demonstration</Trigger>
+      </Triggers>
+      <CopyElements>
+        <Element>Welcome to the family</Element>
+        <Element>You're not alone</Element>
+        <Element>We're here for you</Element>
+      </CopyElements>
+    </Axis>
+
+    <!-- CENTER: SOUL (Transform) -->
+    <Axis id="soul_zero_point" dimension="SOUL" neurotransmitter="Zero Point">
+      <SevenS>STEAL</SevenS>
+      <SevenF>FLOW</SevenF>
+      <Agentic>TRANSFORM</Agentic>
+      <Intent>Integration, incredible value, transformation</Intent>
+      <Question>Is this an incredible deal?</Question>
+      <Triggers>
+        <Trigger>value stack</Trigger>
+        <Trigger>price anchoring</Trigger>
+        <Trigger>bonus stacking</Trigger>
+        <Trigger>worth vs price comparison</Trigger>
+      </Triggers>
+      <CopyElements>
+        <Element>Worth $X, yours for $Y</Element>
+        <Element>Everything included</Element>
+        <Element>You're practically stealing</Element>
+      </CopyElements>
+    </Axis>
+  </NeuroBox>
+
+  <!-- 7S Coverage Map -->
+  <SevenSCoverage>
+    <Dimension name="SAFE" target_strength="8">
+      <CoveredBy>guarantee</CoveredBy>
+      <CoveredBy>credentials</CoveredBy>
+      <CoveredBy>proof_pillars</CoveredBy>
+    </Dimension>
+    <Dimension name="SPECIAL" target_strength="8">
+      <CoveredBy>promise</CoveredBy>
+      <CoveredBy>story</CoveredBy>
+      <CoveredBy>identity_framing</CoveredBy>
+    </Dimension>
+    <Dimension name="SMART" target_strength="9">
+      <CoveredBy>mechanism</CoveredBy>
+      <CoveredBy>process</CoveredBy>
+      <CoveredBy>faq</CoveredBy>
+    </Dimension>
+    <Dimension name="SIGNIFICANT" target_strength="8">
+      <CoveredBy>testimonials</CoveredBy>
+      <CoveredBy>case_studies</CoveredBy>
+      <CoveredBy>social_proof</CoveredBy>
+    </Dimension>
+    <Dimension name="SUPPORTED" target_strength="9">
+      <CoveredBy>cta</CoveredBy>
+      <CoveredBy>next_steps</CoveredBy>
+      <CoveredBy>path_clarity</CoveredBy>
+    </Dimension>
+    <Dimension name="SUPERIOR" target_strength="7">
+      <CoveredBy>community</CoveredBy>
+      <CoveredBy>support</CoveredBy>
+      <CoveredBy>belonging</CoveredBy>
+    </Dimension>
+    <Dimension name="STEAL" target_strength="8">
+      <CoveredBy>offer_stack</CoveredBy>
+      <CoveredBy>bonuses</CoveredBy>
+      <CoveredBy>value_comparison</CoveredBy>
+    </Dimension>
+  </SevenSCoverage>
+
+  <LockedObjectRules>
+    <LockedSections>
+      <Section>north_star</Section>
+      <Section>unique_mechanism</Section>
+      <Section>claims</Section>
+    </LockedSections>
+    <ChangeProtocol>PATCH_REQUEST → Offer Architect → version bump</ChangeProtocol>
+  </LockedObjectRules>
+</MESSAGE_SPINE>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════
+     3. EVIDENCE_PACK_v1.1.xml
+     ═══════════════════════════════════════════════════════════════════════════════ -->
+
+<EVIDENCE_PACK schema="EVIDENCE_PACK_v1.1" version="1.1">
+  <Meta>
+    <ProjectID>PB-XXXX</ProjectID>
+    <Product></Product>
+    <CreatedDate>YYYY-MM-DD</CreatedDate>
+    <UpdatedDate>YYYY-MM-DD</UpdatedDate>
+    <Owner></Owner>
+    <ComplianceNotes>
+      <Note>No disease claims</Note>
+      <Note>No guaranteed outcomes</Note>
+      <Note>Testimonials describe individual experiences</Note>
+    </ComplianceNotes>
+  </Meta>
+
+  <Sources>
+    <Source id="S01">
+      <Type>study</Type>
+      <Title></Title>
+      <Author></Author>
+      <Date></Date>
+      <URL></URL>
+      <FileRef></FileRef>
+      <Reliability>high</Reliability>
+      <Notes></Notes>
+    </Source>
+  </Sources>
+
+  <EvidenceItems>
+    <Evidence id="E01">
+      <Type>study</Type>
+      <SourceRef>S01</SourceRef>
+      <ClaimSupported>C01</ClaimSupported>
+      <Excerpt></Excerpt>
+      <Interpretation></Interpretation>
+      <Strength>strong</Strength>
+      
+      <!-- 7S Integration: Which dimension does this evidence support? -->
+      <SevenSTarget>SIGNIFICANT</SevenSTarget>
+      
+      <AllowedLanguage>
+        <Phrase>may support</Phrase>
+        <Phrase>associated with</Phrase>
+        <Phrase>in one study</Phrase>
+      </AllowedLanguage>
+      <ForbiddenLanguage>
+        <Phrase>cures</Phrase>
+        <Phrase>treats</Phrase>
+        <Phrase>guarantees</Phrase>
+      </ForbiddenLanguage>
+    </Evidence>
+  </EvidenceItems>
+
+  <ProofGaps>
+    <Gap id="G01">
+      <ClaimNeeded>C03</ClaimNeeded>
+      <SevenSDimension>SAFE</SevenSDimension>
+      <WhyNeeded></WhyNeeded>
+      <PlanToFill></PlanToFill>
+      <Workaround></Workaround>
+    </Gap>
+  </ProofGaps>
+
+  <ClaimsMap>
+    <Claim id="C01">
+      <Text></Text>
+      <EvidenceRefs>
+        <Ref>E01</Ref>
+        <Ref>E02</Ref>
+      </EvidenceRefs>
+      <Strength>strong</Strength>
+      <ActionIfWeak>soften_language</ActionIfWeak>
+    </Claim>
+  </ClaimsMap>
+
+  <MMAValidation>
+    <AllClaimsGrounded>false</AllClaimsGrounded>
+    <UngroundedClaims></UngroundedClaims>
+    <WeakClaims></WeakClaims>
+    <ProofDisciplineScore>0</ProofDisciplineScore>
+  </MMAValidation>
+</EVIDENCE_PACK>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════
+     4. VOICE_GUIDE_v2.1.xml
+     ═══════════════════════════════════════════════════════════════════════════════ -->
+
+<VOICE_GUIDE schema="VOICE_GUIDE_v2.1" version="2.1">
+  <Meta>
+    <Brand></Brand>
+    <Owner></Owner>
+    <CreatedDate>YYYY-MM-DD</CreatedDate>
+    <UpdatedDate>YYYY-MM-DD</UpdatedDate>
+  </Meta>
+
+  <!-- Tone Dials (1-10 scale) -->
+  <ToneDials>
+    <Warmth>7</Warmth>
+    <Authority>7</Authority>
+    <Urgency>5</Urgency>
+    <Playfulness>4</Playfulness>
+    <Empathy>8</Empathy>
+    <Complexity>5</Complexity>
+    <Boldness>6</Boldness>
+  </ToneDials>
+
+  <LanguagePatterns>
+    <SentenceLength>varied</SentenceLength>
+    <ParagraphLength>2-4 lines max</ParagraphLength>
+    <Contractions>always</Contractions>
+    <Questions>frequent</Questions>
+    <POV>second_person</POV>
+  </LanguagePatterns>
+
+  <RequiredPatterns>
+    <Pattern>Kitchen table language</Pattern>
+    <Pattern>Short paragraphs (max 3-4 lines)</Pattern>
+    <Pattern>Varied sentence rhythm</Pattern>
+    <Pattern>Concrete sensory examples</Pattern>
+    <Pattern>One idea per paragraph</Pattern>
+  </RequiredPatterns>
+
+  <ForbiddenWords>
+    <Word>unlock</Word>
+    <Word>revolutionary</Word>
+    <Word>leverage</Word>
+    <Word>synergy</Word>
+    <Word>game-changer</Word>
+    <Word>cutting-edge</Word>
+  </ForbiddenWords>
+
+  <ForbiddenPhrases>
+    <Phrase>In today's fast-paced world</Phrase>
+    <Phrase>It's important to note that</Phrase>
+    <Phrase>Embark on a transformative journey</Phrase>
+    <Phrase>Let's dive in</Phrase>
+    <Phrase>Without further ado</Phrase>
+  </ForbiddenPhrases>
+
+  <TabooMoves>
+    <Move>fake scarcity</Move>
+    <Move>shame-based pressure</Move>
+    <Move>medical cure claims</Move>
+    <Move>income guarantees</Move>
+    <Move>condescending tone</Move>
+  </TabooMoves>
+
+  <StyleRules>
+    <Formatting>
+      <BoldMaxPerSection>2</BoldMaxPerSection>
+      <UseEmDash>true</UseEmDash>
+      <EllipsesAllowed>true</EllipsesAllowed>
+      <SubheadFrequency>every 3-5 paragraphs</SubheadFrequency>
+    </Formatting>
+    <Rhythm>
+      <VarySentenceLength>true</VarySentenceLength>
+      <ShortPunchyAfterLong>true</ShortPunchyAfterLong>
+      <FragmentSentencesAllowed>true</FragmentSentencesAllowed>
+    </Rhythm>
+  </StyleRules>
+
+  <SignaturePhrases>
+    <Transitions>
+      <Phrase>Here's the thing...</Phrase>
+      <Phrase>But here's what's crazy...</Phrase>
+      <Phrase>Let me explain...</Phrase>
+    </Transitions>
+    <Openings>
+      <Phrase></Phrase>
+    </Openings>
+    <Closings>
+      <Phrase></Phrase>
+    </Closings>
+  </SignaturePhrases>
+
+  <Examples>
+    <Do>
+      <Example>Here's the thing…</Example>
+      <Example>Let's make this simple.</Example>
+      <Example>You've tried everything. Nothing worked. I get it.</Example>
+    </Do>
+    <Dont>
+      <Example>Embark on a transformative journey</Example>
+      <Example>Cutting-edge ecosystem synergies</Example>
+      <Example>It's important to note that in today's landscape...</Example>
+    </Dont>
+  </Examples>
+
+  <!-- Neuro-Voice Alignment -->
+  <NeuroVoiceAlignment>
+    <Dimension id="body_safe">
+      <Tone>Reassuring, grounded, certain</Tone>
+      <Example>You're completely protected. Zero risk.</Example>
+    </Dimension>
+    <Dimension id="heart_special">
+      <Tone>Warm, personal, intimate</Tone>
+      <Example>I know exactly what you're going through.</Example>
+    </Dimension>
+    <Dimension id="mind_smart">
+      <Tone>Clear, logical, precise</Tone>
+      <Example>Here's exactly how it works, step by step.</Example>
+    </Dimension>
+    <Dimension id="spirit_significant">
+      <Tone>Inspiring, social, meaningful</Tone>
+      <Example>Thousands of people just like you have already...</Example>
+    </Dimension>
+    <Dimension id="psyche_supported">
+      <Tone>Direct, confident, action-oriented</Tone>
+      <Example>Click below. It takes 30 seconds.</Example>
+    </Dimension>
+    <Dimension id="conscience_superior">
+      <Tone>Inclusive, caring, community</Tone>
+      <Example>Welcome to the family. You're one of us now.</Example>
+    </Dimension>
+  </NeuroVoiceAlignment>
+
+  <MMAValidation>
+    <VoiceConsistencyTarget>9.0</VoiceConsistencyTarget>
+    <KitchenTableTest>true</KitchenTableTest>
+    <AIDetoxPass>true</AIDetoxPass>
+  </MMAValidation>
+</VOICE_GUIDE>

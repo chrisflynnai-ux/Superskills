@@ -1,0 +1,275 @@
+# OFFER_ARCHITECTURE SSOT TEMPLATE
+# Version: 2.0
+# Purpose: Value Equation, tiers, pricing, bonuses - the complete offer design
+# Usage: Required for sales/offer skills - defines what we're selling and why it's valuable
+# Location: /ssot/[project_name]/OFFER_ARCHITECTURE.yaml
+
+# ═══════════════════════════════════════════════════════════════
+# INSTRUCTIONS
+# ═══════════════════════════════════════════════════════════════
+# 1. Copy this template to /ssot/[project_name]/OFFER_ARCHITECTURE.yaml
+# 2. Complete the Value Equation first (it drives everything)
+# 3. Design tiers if applicable
+# 4. Map bonuses to objections
+# ═══════════════════════════════════════════════════════════════
+
+OFFER_ARCHITECTURE:
+  # ─────────────────────────────────────────────────────────────
+  # META
+  # ─────────────────────────────────────────────────────────────
+  meta:
+    offer_name: ""                      # Name of the offer
+    project_name: ""                    # Must match PROJECT_BRIEF
+    version: "1.0"
+    status: "draft"                     # draft | review | locked
+    created: ""
+    updated: ""
+
+  # ─────────────────────────────────────────────────────────────
+  # VALUE EQUATION (Alex Hormozi Framework)
+  # ─────────────────────────────────────────────────────────────
+  # Value = (Dream Outcome × Perceived Likelihood) / (Time Delay × Effort)
+  #
+  # To increase value:
+  # - Maximize: Dream Outcome, Perceived Likelihood
+  # - Minimize: Time Delay, Effort/Sacrifice
+  # ─────────────────────────────────────────────────────────────
+  value_equation:
+    dream_outcome:
+      what: ""                          # The ultimate result they want
+      # Example: "Sleep through the night and wake refreshed"
+      how_we_deliver: ""                # How our offer delivers this
+      # Example: "Cortisol reset protocol fixes the 3am wake pattern"
+      how_we_amplify: ""                # How we make this feel even bigger
+      # Example: "Frame as 'get your life back' not just 'sleep better'"
+      score: 0                          # 1-10 (how compelling is this outcome?)
+    
+    perceived_likelihood:
+      proof_elements: []                # What makes them believe it'll work?
+      # Example: ["3,000+ success stories", "30-day guarantee", "Doctor-developed"]
+      risk_reversals: []                # How we remove risk
+      # Example: ["Full refund", "Keep bonuses", "No questions asked"]
+      how_we_amplify: ""                # How we boost confidence
+      # Example: "Specific testimonials from people 'just like them'"
+      score: 0                          # 1-10 (how likely do they believe success is?)
+    
+    time_delay:
+      time_to_first_result: ""          # When do they see something?
+      # Example: "First night improvements for many"
+      time_to_full_result: ""           # When is transformation complete?
+      # Example: "Full reset in 14-21 days"
+      how_we_minimize: ""               # How we speed up perception
+      # Example: "Quick-start guide, Day 1 wins, progress tracker"
+      score: 0                          # 1-10 (lower is better - how fast?)
+    
+    effort_sacrifice:
+      effort_required: ""               # What do they have to do?
+      # Example: "15 minutes per evening, simple protocol"
+      sacrifices_required: []           # What do they give up?
+      # Example: ["Some screen time before bed", "Caffeine after 2pm"]
+      how_we_minimize: ""               # How we make it easier
+      # Example: "Done-for-you templates, no willpower required"
+      score: 0                          # 1-10 (lower is better - how easy?)
+    
+    # Overall Value Score
+    # Formula: (dream_outcome × perceived_likelihood) / (time_delay × effort_sacrifice)
+    calculated_value_score: 0           # Auto-calculate or manual estimate
+
+  # ─────────────────────────────────────────────────────────────
+  # CORE OFFER
+  # ─────────────────────────────────────────────────────────────
+  core_offer:
+    name: ""                            # Product name
+    tagline: ""                         # One-line description
+    type: ""                            # course | coaching | saas | physical | service | info_product
+    
+    price:
+      amount: ""                        # e.g., "$297"
+      payment_options:
+        - option: ""                    # e.g., "One-time $297"
+        - option: ""                    # e.g., "3 payments of $99"
+      anchor_price: ""                  # Higher price to compare against
+      # Example: "$997 value" or "normally $497"
+    
+    delivery:
+      format: ""                        # e.g., "Online course", "PDF", "Coaching calls"
+      access: ""                        # e.g., "Lifetime", "12 months", "Ongoing"
+      platform: ""                      # e.g., "Member portal", "Email delivery"
+    
+    components:                         # What's included in the core offer
+      - component: ""
+        description: ""
+        value: ""                       # Perceived value
+      # Example:
+      # component: "Sleep Reset Protocol"
+      # description: "7-module video training on resetting your cortisol rhythm"
+      # value: "$297"
+
+  # ─────────────────────────────────────────────────────────────
+  # BONUSES (Stacked Value)
+  # ─────────────────────────────────────────────────────────────
+  bonuses:
+    strategy: ""                        # How bonuses work together
+    # Example: "Each bonus addresses a specific objection or speeds results"
+    
+    items:
+      - bonus_name: ""
+        description: ""
+        value: ""                       # Perceived value
+        addresses_objection: ""         # Which objection does this neutralize?
+        value_equation_impact: ""       # Which VE component does this boost?
+        # Example:
+        # bonus_name: "Quick-Start Checklist"
+        # description: "Get started tonight with this one-page protocol"
+        # value: "$47"
+        # addresses_objection: "I don't have time to learn a new system"
+        # value_equation_impact: "Minimizes time_delay and effort"
+      
+      - bonus_name: ""
+        description: ""
+        value: ""
+        addresses_objection: ""
+        value_equation_impact: ""
+    
+    total_bonus_value: ""               # Sum of all bonus values
+    
+    scarcity:                           # Are bonuses time-limited?
+      is_scarce: false
+      type: ""                          # deadline | quantity | evergreen
+      details: ""                       # Must be TRUE
+      # Example: "Founding member bonuses available until Jan 31 (real deadline)"
+
+  # ─────────────────────────────────────────────────────────────
+  # GUARANTEE
+  # ─────────────────────────────────────────────────────────────
+  guarantee:
+    type: ""                            # money_back | results | satisfaction | conditional
+    duration: ""                        # e.g., "30 days", "60 days"
+    terms: |
+      [Full guarantee language]
+    conditions: []                      # Any conditions for refund?
+    # Example: ["Must complete modules 1-3", "No questions asked"]
+    name: ""                            # Give it a name if compelling
+    # Example: "Sleep or It's Free Guarantee"
+
+  # ─────────────────────────────────────────────────────────────
+  # TIERS (If Multiple Options)
+  # ─────────────────────────────────────────────────────────────
+  tiers:
+    has_tiers: false                    # true if offering multiple levels
+    
+    decoy_strategy: ""                  # How tiers work together
+    # Example: "Basic exists to make Pro look like the obvious choice"
+    
+    tier_list:
+      - tier_name: ""                   # e.g., "Basic", "Pro", "VIP"
+        price: ""
+        includes: []                    # What's in this tier
+        excludes: []                    # What's NOT in this tier (vs higher)
+        best_for: ""                    # Who should choose this
+        is_recommended: false           # Is this the "most popular" option?
+      
+      - tier_name: ""
+        price: ""
+        includes: []
+        excludes: []
+        best_for: ""
+        is_recommended: false
+
+  # ─────────────────────────────────────────────────────────────
+  # PRICING PSYCHOLOGY
+  # ─────────────────────────────────────────────────────────────
+  pricing_psychology:
+    anchor: ""                          # Higher price to compare
+    # Example: "Value of $2,347" or "Coaching clients pay $5,000"
+    
+    reframe: ""                         # How to think about the cost
+    # Example: "Less than $1/day for a year of great sleep"
+    
+    roi_calculation: ""                 # Return on investment framing
+    # Example: "One good night's sleep = more productive day = worth more than $297"
+    
+    comparison: ""                      # What else costs this much?
+    # Example: "Less than a month of sleeping pills that don't work"
+
+  # ─────────────────────────────────────────────────────────────
+  # URGENCY & SCARCITY (Must Be TRUE)
+  # ─────────────────────────────────────────────────────────────
+  urgency_scarcity:
+    has_urgency: false
+    type: ""                            # deadline | quantity | bonus_expiry | price_increase
+    
+    details:
+      what: ""                          # What's the urgency?
+      when: ""                          # When does it expire?
+      is_real: true                     # ⚠️ MUST BE TRUE - no fake urgency
+      consequence: ""                   # What happens if they miss it?
+    
+    # If scarcity
+    scarcity_reason: ""                 # WHY is it limited?
+    # Example: "We limit cohorts to 50 for quality coaching"
+
+  # ─────────────────────────────────────────────────────────────
+  # OBJECTION MAPPING
+  # ─────────────────────────────────────────────────────────────
+  objection_handling:
+    # Map each objection to how the offer handles it
+    - objection: ""
+      handled_by: ""                    # Which offer element addresses this?
+      # Example:
+      # objection: "What if it doesn't work for me?"
+      # handled_by: "30-day money-back guarantee"
+    
+    - objection: ""
+      handled_by: ""
+    
+    - objection: ""
+      handled_by: ""
+
+  # ─────────────────────────────────────────────────────────────
+  # OFFER STACK SUMMARY (For Sales Page)
+  # ─────────────────────────────────────────────────────────────
+  offer_stack:
+    headline: ""                        # "Here's Everything You Get..."
+    
+    stack:
+      - item: ""
+        value: ""
+      # Build the visual stack:
+      # - item: "Sleep Reset Protocol (7 modules)"
+      #   value: "$297"
+      # - item: "Quick-Start Checklist"
+      #   value: "$47"
+    
+    total_value: ""                     # Sum of all values
+    your_price: ""                      # What they actually pay
+    savings: ""                         # Difference
+
+# ═══════════════════════════════════════════════════════════════
+# VALIDATION CHECKLIST
+# ═══════════════════════════════════════════════════════════════
+# Before locking this OFFER_ARCHITECTURE:
+# [ ] Value Equation complete (all 4 components scored)
+# [ ] Core offer clearly defined
+# [ ] At least 2-3 bonuses (each addresses an objection)
+# [ ] Guarantee is compelling and clear
+# [ ] All urgency/scarcity is TRUE (no fake deadlines)
+# [ ] Pricing psychology documented
+# [ ] Offer stack builds value visually
+# [ ] Objection mapping complete
+# ═══════════════════════════════════════════════════════════════
+
+# ═══════════════════════════════════════════════════════════════
+# SKILL INTEGRATION
+# ═══════════════════════════════════════════════════════════════
+# Skills that use OFFER_ARCHITECTURE:
+# - Product Creation Genius (designs the offer)
+# - Sales Page Copywriter (presents the offer)
+# - Quick Info Product Builder (creates tripwires/leads)
+# - Offer Architect (validates value equation)
+#
+# MMA checks:
+# - Is value equation balanced?
+# - Are all urgency claims TRUE?
+# - Do bonuses map to objections?
+# ═══════════════════════════════════════════════════════════════

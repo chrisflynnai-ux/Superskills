@@ -1,0 +1,505 @@
+# SKILLS MANIFEST v2.1
+## ULTRAMIND Complete Inventory
+
+**Version:** 2.1.0  
+**Updated:** 2026-01-07  
+**Aligned With:** Constitution v2.1, Lean Stack v2.0, SSOT Schemas v2.2
+
+---
+
+## MANIFEST SUMMARY
+
+| Category | Production | Building | To Build | Total |
+|----------|------------|----------|----------|-------|
+| Meta/Orchestration | 4 | 1 | 2 | 7 |
+| Copy/Persuasion | 9 | 0 | 1 | 10 |
+| Product/Offer | 3 | 0 | 1 | 4 |
+| Research/Intelligence | 1 | 0 | 2 | 3 |
+| Design/Visual | 1 | 0 | 1 | 2 |
+| Tools/Scripts | 0 | 0 | 4 | 4 |
+| **TOTAL** | **18** | **1** | **11** | **30** |
+
+---
+
+## CATEGORY: META / ORCHESTRATION
+
+### Production Ready ✅
+
+```yaml
+- skill_id: skill.skill_builder.v1_2_0
+  name: "Skill Builder"
+  file: skill_builder_v1.2.0.xml
+  version: "1.2.0"
+  status: production
+  location: .claude/skills/meta/
+  purpose: "Build new skills following L1-L4 architecture"
+  ssot_inputs: [PROJECT_BRIEF]
+  ssot_outputs: [SKILL_XML]
+
+- skill_id: skill.xml_skill_template.v2_1
+  name: "XML Skill Template"
+  file: xml_skill_template_v2.1.xml
+  version: "2.1"
+  status: production
+  location: .claude/skills/meta/
+  purpose: "Template structure for all skills"
+  ssot_inputs: []
+  ssot_outputs: []
+
+- skill_id: skill.sales_copy_consistency_contract.v1_0_0
+  name: "Sales Copy Consistency Contract"
+  file: sales_copy_consistency_contract_v1.0.0.xml
+  version: "1.0.0"
+  status: production
+  location: .claude/skills/meta/
+  purpose: "Cross-asset consistency validation"
+  ssot_inputs: [MESSAGE_SPINE, VOICE_GUIDE]
+  ssot_outputs: [CONSISTENCY_REPORT]
+
+- skill_id: skill.tools_workflow_engineer.v1_0_0
+  name: "Tools & Workflow Engineer"
+  file: tools_workflow_engineer.xml
+  version: "1.0.0"
+  status: production
+  location: .claude/skills/meta/
+  purpose: "Orchestrate multi-tool workflows with Zero-Point discipline"
+  ssot_inputs: [PROJECT_BRIEF, WORKFLOW_STATE]
+  ssot_outputs: [WORKFLOW_PLAN, TOOLCHAIN_PLAN, RUNBOOK, PATCH_PROPOSALS]
+  special_notes:
+    - "Implements Zero-Point / FLOW center discipline"
+    - "Heal & Renew built into every run"
+    - "3-phase waveforms (Draft → Produce → Polish)"
+    - "Dual-Brain Pods (Left/Right per phase)"
+    - "Integrates with ZPWO as toolchain planner"
+```
+
+### Building 🔨
+
+```yaml
+- skill_id: skill.zpwo.v1_0_0
+  name: "Zero-Point Workflow Orchestrator"
+  file: zpwo_v1.0.0.xml
+  version: "1.0.0"
+  status: building
+  priority: 1
+  location: .claude/skills/meta/
+  purpose: "Master orchestrator for all production workflows"
+  spec: docs/specs/ZPWO_BUILD_SPEC.md
+  dependencies: [tools_workflow_engineer]
+  notes: "May delegate toolchain planning to TWE"
+```
+
+### To Build 📋
+
+```yaml
+- skill_id: skill.mma_master_monitor_agent.v1_0_0
+  name: "MMA Master Monitor Agent"
+  file: mma_master_monitor_agent_v1.0.0.xml
+  version: "1.0.0"
+  status: to_build
+  priority: 2
+  location: .claude/skills/meta/
+  purpose: "7D quality guardian with routing logic"
+  spec: docs/architecture/MMA_MASTER_MONITOR_AGENT_v1.0.0.md
+  notes: "Spec complete, needs XML skill wrapper"
+
+- skill_id: skill.upgrade_patch_generator.v1_0_0
+  name: "Upgrade Patch Generator"
+  file: upgrade_patch_generator_v1.0.0.xml
+  version: "1.0.0"
+  status: to_build
+  priority: 9
+  location: .claude/skills/meta/
+  purpose: "Self-improving system evolution"
+  spec: docs/specs/UPGRADE_PATCH_GENERATOR_BUILD_SPEC.md
+```
+
+---
+
+## CATEGORY: COPY / PERSUASION
+
+### Production Ready ✅
+
+```yaml
+- skill_id: skill.strategic_copy_director.v2_1_0
+  name: "Strategic Copy Director"
+  file: strategic_copy_director_v2.1.0.xml
+  version: "2.1.0"
+  status: production
+  location: .claude/skills/copy/
+  purpose: "Route and direct all copy assets with 7S coverage"
+  ssot_inputs: [PROJECT_BRIEF, MESSAGE_SPINE, EVIDENCE_PACK, VOICE_GUIDE]
+  ssot_outputs: [ASSET_BRIEFS, ROUTING_DECISIONS]
+  upgraded: "2026-01-07 (7S/7F integration)"
+
+- skill_id: skill.human_persuasion_editor.v2_1_0
+  name: "Human Persuasion Editor"
+  file: human_persuasion_editor_v2.1.0.xml
+  version: "2.1.0"
+  status: production
+  location: .claude/skills/copy/
+  purpose: "7S/7F optimization, axis balance checking"
+  ssot_inputs: [MESSAGE_SPINE, VOICE_GUIDE, DRAFT_COPY]
+  ssot_outputs: [OPTIMIZED_COPY, SEVEN_S_COVERAGE_MAP]
+  upgraded: "2026-01-07 (corrected neuro mappings)"
+
+- skill_id: skill.neuro_resonance_auditor.v2_1_0
+  name: "Neuro-Resonance Auditor"
+  file: neuro_resonance_auditor_v2.1.0.xml
+  version: "2.1.0"
+  status: production
+  location: .claude/skills/copy/
+  purpose: "6D axis balance validation"
+  ssot_inputs: [MESSAGE_SPINE, DRAFT_COPY]
+  ssot_outputs: [AXIS_BALANCE_REPORT, RECOMMENDATIONS]
+  upgraded: "2026-01-07 (6D model alignment)"
+
+- skill_id: skill.master_writing_partner.v2_0
+  name: "Master Writing Partner"
+  file: master_writing_partner_v2.0.xml
+  version: "2.0"
+  status: production
+  location: .claude/skills/copy/
+  purpose: "Voice matching, polish, AI detox"
+  ssot_inputs: [VOICE_GUIDE, DRAFT_COPY]
+  ssot_outputs: [POLISHED_COPY]
+
+- skill_id: skill.advertorial_copy_master.v2_0_0
+  name: "Advertorial Copy Master"
+  file: advertorial_copy_master_v2.0.0.xml
+  version: "2.0.0"
+  status: production
+  location: .claude/skills/copy/
+  purpose: "Native ad / advertorial creation"
+  ssot_inputs: [PROJECT_BRIEF, MESSAGE_SPINE, EVIDENCE_PACK, VOICE_GUIDE]
+  ssot_outputs: [ADVERTORIAL_DRAFT]
+
+- skill_id: skill.sales_page_copywriter_lite.v2_0_0
+  name: "Sales Page Copywriter Lite"
+  file: sales_page_copywriter_lite_v2.0.0.xml
+  version: "2.0.0"
+  status: production
+  location: .claude/skills/copy/
+  purpose: "Sales page creation"
+  ssot_inputs: [PROJECT_BRIEF, MESSAGE_SPINE, EVIDENCE_PACK, VOICE_GUIDE]
+  ssot_outputs: [SALES_PAGE_DRAFT]
+
+- skill_id: skill.email_campaign_copy_genius.v2_0_0
+  name: "Email Campaign Copy Genius"
+  file: email_campaign_copy_genius_v2.0.0.xml
+  version: "2.0.0"
+  status: production
+  location: .claude/skills/copy/
+  purpose: "Email sequences (welcome, launch, nurture)"
+  ssot_inputs: [PROJECT_BRIEF, MESSAGE_SPINE, VOICE_GUIDE]
+  ssot_outputs: [EMAIL_SEQUENCE]
+
+- skill_id: skill.vsl_script_writer.v1_0
+  name: "VSL Script Writer"
+  file: vsl_script_writer_long_form_v1.0.xml
+  version: "1.0"
+  status: production
+  location: .claude/skills/copy/
+  purpose: "Video sales letter scripts"
+  ssot_inputs: [PROJECT_BRIEF, MESSAGE_SPINE, EVIDENCE_PACK]
+  ssot_outputs: [VSL_SCRIPT]
+
+- skill_id: skill.sales_page_deconstructor.v1_0_0
+  name: "Sales Page Deconstructor"
+  file: sales_page_deconstructor_revision_architect_v1.0.0.xml
+  version: "1.0.0"
+  status: production
+  location: .claude/skills/copy/
+  purpose: "Analyze and improve existing sales pages"
+  ssot_inputs: [EXISTING_PAGE, MESSAGE_SPINE]
+  ssot_outputs: [ANALYSIS_REPORT, REVISION_PLAN]
+```
+
+### To Build 📋
+
+```yaml
+- skill_id: skill.ad_copy_genius.v1_0_0
+  name: "Ad Copy Genius"
+  file: ad_copy_genius_v1.0.0.xml
+  version: "1.0.0"
+  status: to_build
+  priority: 10
+  location: .claude/skills/copy/
+  purpose: "Paid traffic creative (Meta, Google, YouTube)"
+  spec: null
+```
+
+---
+
+## CATEGORY: PRODUCT / OFFER
+
+### Production Ready ✅
+
+```yaml
+- skill_id: skill.product_creation_genius.v2_0
+  name: "Product Creation Genius"
+  file: product_creation_genius_v2.0.xml
+  version: "2.0"
+  status: production
+  location: .claude/skills/product/
+  purpose: "End-to-end product development"
+  ssot_inputs: [PROJECT_BRIEF, AVATAR]
+  ssot_outputs: [PRODUCT_SPEC, TRANSFORMATION_MAP]
+
+- skill_id: skill.transformation_ecosystem_architect.v2_0_0
+  name: "Transformation Ecosystem Architect"
+  file: transformation_ecosystem_architect_v2.0.0.xml
+  version: "2.0.0"
+  status: production
+  location: .claude/skills/product/
+  purpose: "90-day arcs, milestones, support architecture"
+  ssot_inputs: [PROJECT_BRIEF, AVATAR]
+  ssot_outputs: [TRANSFORMATION_MAP]
+
+- skill_id: skill.quick_info_product_builder.v2_0_0
+  name: "Quick Info Product Builder"
+  file: quick_info_product_builder_lite_v2.0.0.xml
+  version: "2.0.0"
+  status: production
+  location: .claude/skills/product/
+  purpose: "Lead magnets, tripwires, bonuses"
+  ssot_inputs: [PROJECT_BRIEF, MESSAGE_SPINE]
+  ssot_outputs: [QUICK_WIN_PRODUCT]
+```
+
+### To Build 📋
+
+```yaml
+- skill_id: skill.offer_architect.v2_0
+  name: "Offer Architect"
+  file: offer_architect_v2.0.xml
+  version: "2.0"
+  status: to_build
+  priority: 3
+  location: .claude/skills/product/
+  purpose: "Value Equation, tiers, pricing, positioning"
+  spec: null
+  integrates: [KB-OFFER-TIERING-VALIDATION-v1.0.xml]
+```
+
+---
+
+## CATEGORY: RESEARCH / INTELLIGENCE
+
+### Production Ready ✅
+
+```yaml
+- skill_id: skill.market_intelligence_synthesizer.v2_0_0
+  name: "Market Intelligence Synthesizer"
+  file: market_intelligence_synthesizer_v2.0.0.xml
+  version: "2.0.0"
+  status: production
+  location: .claude/skills/research/
+  purpose: "Research synthesis and insight extraction"
+  ssot_inputs: [PROJECT_BRIEF, RAW_RESEARCH]
+  ssot_outputs: [RESEARCH_SYNTHESIS, EVIDENCE_PACK_ITEMS]
+```
+
+### To Build 📋
+
+```yaml
+- skill_id: skill.framework_extractor.v1_0
+  name: "Framework Extractor"
+  file: framework_extractor_v1.0.xml
+  version: "1.0"
+  status: to_build
+  priority: 4
+  location: .claude/skills/research/
+  purpose: "Pattern mining from successful content"
+  spec: docs/specs/FRAMEWORK_EXTRACTOR_BUILD_SPEC.md
+
+- skill_id: skill.skeptic_avatar_red_team.v1_0
+  name: "Skeptic Avatar Red Team"
+  file: skeptic_avatar_red_team_v1.0.xml
+  version: "1.0"
+  status: to_build
+  priority: 5
+  location: .claude/skills/research/
+  purpose: "Objection stress testing, belief gap analysis"
+  spec: docs/specs/SKEPTIC_AVATAR_RED_TEAM_BUILD_SPEC.md
+```
+
+---
+
+## CATEGORY: DESIGN / VISUAL
+
+### Production Ready ✅
+
+```yaml
+- skill_id: skill.strategic_design_master.v1_0_0
+  name: "Strategic Design Master"
+  file: strategic_design_master_v1.0.0.xml
+  version: "1.0.0"
+  status: production
+  location: .claude/skills/design/
+  purpose: "Brand direction, visual systems"
+  ssot_inputs: [PROJECT_BRIEF, VOICE_GUIDE]
+  ssot_outputs: [DESIGN_BRIEF, VISUAL_DIRECTION]
+```
+
+### To Build 📋
+
+```yaml
+- skill_id: skill.image_planner.v1_0
+  name: "Image Planner"
+  file: image_planner_v1.0.xml
+  version: "1.0"
+  status: to_build
+  priority: 11
+  location: .claude/skills/design/
+  purpose: "Asset creation briefs, visual concepts"
+  spec: null
+```
+
+---
+
+## CATEGORY: TOOLS / SCRIPTS
+
+### To Build 📋 (Per Lean Stack v2.0)
+
+```yaml
+- skill_id: skill.web_intelligence.v1_0
+  name: "Web Intelligence Skill"
+  file: web_intelligence_skill_v1.0.xml
+  version: "1.0"
+  status: to_build
+  priority: 6
+  location: .claude/skills/tools/
+  purpose: "Search → Fetch → Extract → Cite → EP"
+  replaces: "Exa MCP"
+  lean_stack_tier: "Tier 1 (Skill-Wrapped API)"
+
+- skill_id: skill.repo_ops.v1_0
+  name: "Repo Ops Skill"
+  file: repo_ops_skill_v1.0.xml
+  version: "1.0"
+  status: to_build
+  priority: 7
+  location: .claude/skills/tools/
+  purpose: "gh + git workflows"
+  replaces: "GitHub MCP"
+  lean_stack_tier: "Tier 0 (Deterministic Core)"
+
+- skill_id: skill.script_runner.v1_0
+  name: "Script Runner Skill"
+  file: script_runner_skill_v1.0.xml
+  version: "1.0"
+  status: to_build
+  priority: 8
+  location: .claude/skills/tools/
+  purpose: "Python/bash kit + output validators"
+  replaces: "Terminal MCP"
+  lean_stack_tier: "Tier 0 (Deterministic Core)"
+
+- skill_id: skill.knowledge_graph.v1_0
+  name: "Knowledge Graph Skill"
+  file: knowledge_graph_skill_v1.0.xml
+  version: "1.0"
+  status: to_build
+  priority: 8
+  location: .claude/skills/tools/
+  purpose: "Docling + LangExtract → Neo4j"
+  integrates: ["Docling", "LangExtract", "Neo4j", "Zilliz"]
+  lean_stack_tier: "Tier 1 (Skill-Wrapped API)"
+```
+
+---
+
+## FRAMEWORK KNOWLEDGE BASES
+
+```yaml
+frameworks:
+  - id: kb.consciousness_convection.v1_1
+    name: "KB-CONSCIOUSNESS-CONVECTION"
+    file: KB-CONSCIOUSNESS-CONVECTION-v1.1.xml
+    version: "1.1"
+    purpose: "6D Agentic Super-Resonance + 7S/7F Chain"
+    location: docs/architecture/
+
+  - id: kb.offer_tiering_validation.v1_0
+    name: "KB-OFFER-TIERING-VALIDATION"
+    file: KB-OFFER-TIERING-VALIDATION-v1.0.xml
+    version: "1.0"
+    purpose: "Offer tier validation framework"
+    location: .claude/skills/product/
+
+  - id: ssot.schemas.v2_2
+    name: "SSOT Schemas"
+    file: SSOT_SCHEMAS_v2.2.yaml
+    version: "2.2"
+    purpose: "PROJECT_BRIEF, MESSAGE_SPINE, EVIDENCE_PACK, VOICE_GUIDE templates"
+    location: .claude/schemas/
+```
+
+---
+
+## ARCHITECTURE DOCUMENTS
+
+```yaml
+architecture:
+  - id: doc.constitution.v2_1
+    name: "ULTRAMIND Constitution"
+    file: ULTRAMIND_CONSTITUTION_v2.1.md
+    version: "2.1"
+    purpose: "Supreme governing law"
+    location: docs/constitution/
+
+  - id: doc.lean_stack.v2_0
+    name: "ULTRAMIND Lean Stack"
+    file: ULTRAMIND_LEAN_STACK.md
+    version: "2.0"
+    purpose: "Technical architecture, Skills > MCPs"
+    location: docs/architecture/
+
+  - id: doc.full_ecosystem.v2_0
+    name: "ULTRAMIND Full Ecosystem"
+    file: ULTRAMIND_FULL_ECOSYSTEM.md
+    version: "2.0"
+    purpose: "Complete vision, Agentic Superhighway"
+    location: docs/architecture/
+
+  - id: doc.sub_agent_configs.v2_0
+    name: "SUB_AGENT_CONFIGURATIONS"
+    file: SUB_AGENT_CONFIGURATIONS.yaml
+    version: "2.0"
+    purpose: "Agent wiring + MMA integration"
+    location: .claude/agents/
+```
+
+---
+
+## BUILD QUEUE (Priority Order)
+
+| Priority | Skill | Status | Dependency |
+|----------|-------|--------|------------|
+| 1 | ZPWO v1.0.0 | 🔨 Building | TWE (done) |
+| 2 | MMA XML wrapper | 📋 Queued | ZPWO |
+| 3 | Offer Architect v2.0 | 📋 Queued | ZPWO |
+| 4 | Framework Extractor v1.0 | 📋 Queued | — |
+| 5 | Skeptic Avatar Red Team v1.0 | 📋 Queued | — |
+| 6 | Web Intelligence Skill v1.0 | 📋 Queued | — |
+| 7 | Repo Ops Skill v1.0 | 📋 Queued | — |
+| 8 | Script Runner / KG Skills | 📋 Queued | — |
+| 9 | Upgrade Patch Generator v1.0 | 📋 Queued | ZPWO + MMA |
+| 10 | Ad Copy Genius v1.0 | 📋 Queued | — |
+| 11 | Image Planner v1.0 | 📋 Queued | — |
+
+---
+
+## VERSION HISTORY
+
+| Version | Date | Changes |
+|---------|------|---------|
+| 2.1.0 | 2026-01-07 | Added TWE v1.0.0, updated skill counts, aligned with Lean Stack v2.0, added framework KBs |
+| 2.0.0 | 2026-01-07 | Major restructure with categories, 7S/7F integration |
+| 1.0.0 | 2026-01-01 | Initial manifest |
+
+---
+
+*SKILLS_MANIFEST v2.1 — Complete ULTRAMIND Inventory*
+*Token Discipline = Accuracy Discipline*
