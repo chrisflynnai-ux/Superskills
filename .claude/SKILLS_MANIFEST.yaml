@@ -1,0 +1,534 @@
+# ULTRAMIND SKILLS MANIFEST v3.0.0 (ANTIGRAVITY-READY)
+manifest_version: "3.0.0"
+updated: "2026-01-12"
+philosophy: "Progressive Disclosure - Light Center, Heavy Edges"
+antigravity_compatible: true
+
+# ============================================================
+# VISUAL MAPPING (For Antigravity IDE 3D Visualization)
+# ============================================================
+neuro_box_axes:
+  x_axis:
+    name: "MIND ↔ SPIRIT"
+    poles:
+      left: "MIND (Logic/Acetylcholine/1.25Hz)"
+      right: "SPIRIT (Proof/Serotonin/0.75Hz)"
+    tracking: "Technical Resonance ↔ Agentic Persuasion"
+
+  y_axis:
+    name: "BODY ↔ HEART"
+    poles:
+      bottom: "BODY (Safety/Dopamine/1.5Hz)"
+      top: "HEART (Status/GABA/1.0Hz)"
+    tracking: "Safety Foundation ↔ Status Elevation"
+
+  z_axis:
+    name: "PSYCH ↔ COSMIC"
+    poles:
+      back: "PSYCH (Identity/Oxytocin/0.3Hz)"
+      front: "COSMIC (Action/Adrenaline/0.5Hz)"
+    tracking: "Inner Development ↔ Outer Design"
+
+  center:
+    name: "FLOW (Zero-Point)"
+    dimension: 7
+    function: "Fragment & Facilitate - Absolute FLOW"
+    color: "#FFFFFF"
+
+# ============================================================
+# META & ORCHESTRATION (The Conductor Layer)
+# ============================================================
+meta_orchestration:
+  zpwo:
+    name: "Zero-Point Workflow Orchestrator (Micro)"
+    file: "skills/meta/zpwo_v3_MICRO.xml"
+    axis: "CENTER (7th Dimension)"
+    position:
+      dimension: 7
+      coordinates: [0, 0, 0]
+      color: "#FFFFFF"
+    load_cost: high
+    progressive_layers:
+      L1: 400
+      L2: 1500
+      L3: 1000
+      L4: 600
+    status: production
+    dependencies: []
+    consumed_by: [advertorial_master, sales_page_lite, email_genius, market_intel]
+
+  mma:
+    name: "MMA Master Monitor Agent"
+    file: "skills/meta/mma_master_monitor_agent_v1_0_0.xml"
+    axis: "BODY (Bottom/Safety)"
+    position:
+      dimension: "Y-BOTTOM"
+      coordinates: [0, -1, 0]
+      color: "#FF6B6B"
+    load_cost: medium
+    status: building
+    dependencies: []
+    consumed_by: [zpwo, advertorial_master, sales_page_lite]
+
+  skill_builder:
+    name: "Skill Builder v1.2.0"
+    file: "skills/meta/skill_builder_v1.2.0.xml"
+    axis: "MIND (Left/Logic)"
+    position:
+      dimension: "X-LEFT"
+      coordinates: [-1, 0, 0]
+      color: "#4A90E2"
+    load_cost: medium
+    status: production
+    dependencies: []
+    consumed_by: []
+
+  tools_workflow_engineer:
+    name: "Tools & Workflow Engineer"
+    file: "skills/systems/tools_workflow_architect_v1.0.0.xml"
+    axis: "MIND (Left/Logic)"
+    position:
+      dimension: "X-LEFT"
+      coordinates: [-0.8, 0, 0]
+      color: "#4A90E2"
+    load_cost: medium
+    status: production
+    dependencies: []
+    consumed_by: [zpwo]
+
+# ============================================================
+# COPY & PERSUASION (The Resonance Layer)
+# ============================================================
+copy_persuasion:
+  advertorial_master:
+    name: "Advertorial Copy Master"
+    file: "skills/copy/advertorial_copy_master_v2.0.0.xml"
+    axis: "MIND-SPIRIT (X-Axis)"
+    position:
+      dimension: "X-AXIS"
+      coordinates: [-0.5, 0, 0.2]
+      color: "#4ECDC4"
+    load_cost: high
+    progressive_layers:
+      L1: 600
+      L2: 4000
+      L3: 3000
+      L4: 2000
+    status: production
+    dependencies: [market_intel, zpwo]
+    consumed_by: [sales_page_lite]
+    awareness_journey: "Unaware → Solution-Aware"
+
+  sales_page_lite:
+    name: "Sales Page Copywriter Lite"
+    file: "skills/copy/sales_page_copywriter_lite_v2.0.0.xml"
+    axis: "MIND-SPIRIT (X-Axis)"
+    position:
+      dimension: "X-AXIS"
+      coordinates: [0, 0, 0.3]
+      color: "#4ECDC4"
+    load_cost: high
+    progressive_layers:
+      L1: 500
+      L2: 3500
+      L3: 2500
+      L4: 1500
+    status: production
+    dependencies: [advertorial_master, zpwo]
+    consumed_by: [email_genius]
+    awareness_journey: "Solution-Aware → Most-Aware"
+
+  human_persuasion_editor:
+    name: "Human Persuasion Editor"
+    file: "skills/copy/human_persuasion_editor_v2.1.0.xml"
+    axis: "SPIRIT (Right/Proof)"
+    position:
+      dimension: "X-RIGHT"
+      coordinates: [1, 0, 0]
+      color: "#95E1D3"
+    load_cost: high
+    status: production
+    dependencies: []
+    consumed_by: [advertorial_master, sales_page_lite, email_genius]
+    specialization: "7S/7F optimization, AI detox"
+
+  strategic_copy_director:
+    name: "Strategic Copy Director"
+    file: "skills/copy/strategic_copy_director_v2_1_0.xml"
+    axis: "SPIRIT (Right/Proof)"
+    position:
+      dimension: "X-RIGHT"
+      coordinates: [0.8, 0, 0]
+      color: "#95E1D3"
+    load_cost: high
+    status: production
+    dependencies: []
+    consumed_by: [advertorial_master, sales_page_lite]
+
+  neuro_resonance_auditor:
+    name: "Neuro-Resonance Auditor"
+    file: "skills/copy/neuro_resonance_auditor_v2.1.0.xml"
+    axis: "SPIRIT (Right/Proof)"
+    position:
+      dimension: "X-RIGHT"
+      coordinates: [0.9, 0.2, 0]
+      color: "#95E1D3"
+    load_cost: medium
+    status: production
+    dependencies: []
+    consumed_by: [human_persuasion_editor]
+    specialization: "6D axis balance validation"
+
+  email_genius:
+    name: "Email Campaign Copy Genius"
+    file: "skills/email/EMAIL_COPY_GENIUS_v2_0_COMPLETE.md"
+    axis: "HEART (Top/Status)"
+    position:
+      dimension: "Y-TOP"
+      coordinates: [0, 1, 0]
+      color: "#FFE66D"
+    load_cost: high
+    status: production
+    dependencies: [sales_page_lite, zpwo]
+    consumed_by: []
+    awareness_journey: "Varies → +1 Level per email"
+
+  vsl_writer:
+    name: "VSL Script Writer (Long Form)"
+    file: "skills/copy/long_form_vsl_script_architect_v2.0.xml"
+    axis: "COSMIC (Front/Action)"
+    position:
+      dimension: "Z-FRONT"
+      coordinates: [0, 0, 1]
+      color: "#F38181"
+    load_cost: high
+    status: production
+    dependencies: [zpwo]
+    consumed_by: []
+    awareness_journey: "Problem-Aware → Most-Aware"
+
+  master_writing_partner:
+    name: "Master Writing Partner"
+    file: "skills/copy/master_writing_partner_v2.0.xml"
+    axis: "SPIRIT (Right/Proof)"
+    position:
+      dimension: "X-RIGHT"
+      coordinates: [0.7, 0.1, 0]
+      color: "#95E1D3"
+    load_cost: medium
+    status: production
+    dependencies: []
+    consumed_by: []
+    specialization: "Voice matching, polish, AI detox"
+
+  sales_page_deconstructor:
+    name: "Sales Page Deconstructor"
+    file: "skills/copy/sales_page_deconstructor_revision_architect_v1.0.0.xml"
+    axis: "MIND (Left/Logic)"
+    position:
+      dimension: "X-LEFT"
+      coordinates: [-0.6, 0, 0.1]
+      color: "#4A90E2"
+    load_cost: medium
+    status: production
+    dependencies: []
+    consumed_by: []
+    specialization: "Analyze & improve existing pages"
+
+# ============================================================
+# RESEARCH & INTELLIGENCE (The Back/Psych Layer)
+# ============================================================
+research_intelligence:
+  market_intel:
+    name: "Market Intelligence Synthesizer"
+    file: "skills/research/market_intelligence_synthesizer_v2.1.xml"
+    axis: "PSYCH (Back/Identity)"
+    position:
+      dimension: "Z-BACK"
+      coordinates: [0, 0, -1]
+      color: "#7B68EE"
+    load_cost: medium
+    status: production
+    dependencies: []
+    consumed_by: [advertorial_master, sales_page_lite, zpwo]
+    specialization: "Research synthesis, insight extraction"
+
+  framework_extractor:
+    name: "Framework Extractor"
+    file: "skills/research/framework_extractor_v1.0.xml"
+    axis: "PSYCH (Back/Identity)"
+    position:
+      dimension: "Z-BACK"
+      coordinates: [-0.3, 0, -0.8]
+      color: "#7B68EE"
+    load_cost: medium
+    status: to_build
+    dependencies: []
+    consumed_by: [market_intel]
+    specialization: "Pattern mining from successful content"
+
+  skeptic_avatar_red_team:
+    name: "Skeptic Avatar Red Team"
+    file: "skills/research/skeptic_avatar_red_team_v1.0.xml"
+    axis: "PSYCH (Back/Identity)"
+    position:
+      dimension: "Z-BACK"
+      coordinates: [0.3, 0, -0.8]
+      color: "#7B68EE"
+    load_cost: medium
+    status: to_build
+    dependencies: []
+    consumed_by: [advertorial_master, sales_page_lite]
+    specialization: "Objection stress testing, belief gap analysis"
+
+# ============================================================
+# PRODUCT & OFFER (The Cosmic/Action Layer)
+# ============================================================
+product_offer:
+  quick_info_builder:
+    name: "Quick Info Product Builder Lite"
+    file: "skills/product/quick_info_product_builder_lite_v2.0.0.xml"
+    axis: "COSMIC (Front/Action)"
+    position:
+      dimension: "Z-FRONT"
+      coordinates: [0, -0.3, 0.8]
+      color: "#F38181"
+    load_cost: medium
+    status: production
+    dependencies: [zpwo]
+    consumed_by: []
+    specialization: "Lead magnets, tripwires, bonuses"
+
+  product_creation_genius:
+    name: "Product Creation Genius"
+    file: "skills/product/product_creation_genius_v2.0.xml"
+    axis: "COSMIC (Front/Action)"
+    position:
+      dimension: "Z-FRONT"
+      coordinates: [0, 0, 0.9]
+      color: "#F38181"
+    load_cost: high
+    status: production
+    dependencies: []
+    consumed_by: []
+    specialization: "End-to-end product development"
+
+  transformation_ecosystem_architect:
+    name: "Transformation Ecosystem Architect"
+    file: "skills/product/transformation_ecosystem_architect_v2.0.xml"
+    axis: "COSMIC (Front/Action)"
+    position:
+      dimension: "Z-FRONT"
+      coordinates: [0, 0.2, 0.9]
+      color: "#F38181"
+    load_cost: high
+    status: production
+    dependencies: []
+    consumed_by: []
+    specialization: "90-day arcs, milestones, support architecture"
+
+  offer_architect:
+    name: "Offer Architect"
+    file: "skills/product/offer_architect_v2.0.xml"
+    axis: "COSMIC (Front/Action)"
+    position:
+      dimension: "Z-FRONT"
+      coordinates: [0, 0.1, 0.85]
+      color: "#F38181"
+    load_cost: high
+    status: to_build
+    dependencies: []
+    consumed_by: [sales_page_lite]
+    specialization: "Value Equation, tiers, pricing, positioning"
+
+# ============================================================
+# DESIGN & VISUAL (The Spirit/Right Layer)
+# ============================================================
+design_visual:
+  strategic_design_master:
+    name: "Strategic Design Master"
+    file: "skills/design/strategic_design_master_v1.0.0.xml"
+    axis: "SPIRIT (Right/Proof)"
+    position:
+      dimension: "X-RIGHT"
+      coordinates: [0.9, 0.3, 0]
+      color: "#95E1D3"
+    load_cost: high
+    status: production
+    dependencies: []
+    consumed_by: []
+    specialization: "Brand direction, visual systems"
+
+  image_planner:
+    name: "Image Planner & Coordinator"
+    file: "skills/design/image_planner_coordinator_v1.0.xml"
+    axis: "SPIRIT (Right/Proof)"
+    position:
+      dimension: "X-RIGHT"
+      coordinates: [0.85, 0.4, 0]
+      color: "#95E1D3"
+    load_cost: medium
+    status: production
+    dependencies: []
+    consumed_by: []
+    specialization: "Asset creation briefs, visual concepts"
+
+  design_wireframe_architect:
+    name: "Design Wireframe Architect"
+    file: "skills/design/design_wireframe_architect_v1.1.xml"
+    axis: "SPIRIT (Right/Proof)"
+    position:
+      dimension: "X-RIGHT"
+      coordinates: [0.8, 0.35, 0]
+      color: "#95E1D3"
+    load_cost: medium
+    status: production
+    dependencies: []
+    consumed_by: []
+    specialization: "UI/UX wireframes, layout planning"
+
+# ============================================================
+# EXTERNAL GOOGLE STACK (Antigravity Edges)
+# ============================================================
+google_stack:
+  stitch:
+    name: "Stitch UI Designer"
+    capability: "UI Design → Figma/Code"
+    axis: "SPIRIT (Right/Proof)"
+    position:
+      dimension: "X-RIGHT"
+      coordinates: [1, 0.5, 0.2]
+      color: "#34A853"
+    integration_type: "external"
+    provider: "Google AI"
+    status: available
+
+  opal:
+    name: "Opal Mini-App Builder"
+    capability: "No-Code Prototypes"
+    axis: "COSMIC (Front/Action)"
+    position:
+      dimension: "Z-FRONT"
+      coordinates: [0.2, 0, 1]
+      color: "#4285F4"
+    integration_type: "external"
+    provider: "Google AI"
+    status: available
+
+  veo_flow:
+    name: "Veo 3 & Flow"
+    capability: "Cinematic Video with Audio"
+    axis: "HEART (Top/Status)"
+    position:
+      dimension: "Y-TOP"
+      coordinates: [0, 1, 0.3]
+      color: "#EA4335"
+    integration_type: "external"
+    provider: "Google AI"
+    status: available
+
+  antigravity_ide:
+    name: "Antigravity IDE"
+    capability: "Visual project management & 3D skill mapping"
+    axis: "CENTER (7th Dimension)"
+    position:
+      dimension: 7
+      coordinates: [0, 0, 0]
+      color: "#FBBC04"
+    integration_type: "external"
+    provider: "Google AI"
+    status: available
+    sync_with: [SESSION_STATE.json, SKILLS_MANIFEST.yaml]
+
+# ============================================================
+# ROUTING TABLE (Command → Skill Mapping)
+# ============================================================
+routing:
+  "/intake": "market_intel"
+  "/draft": "zpwo"
+  "/produce": "zpwo"
+  "/polish": "human_persuasion_editor"
+  "/advertorial": "advertorial_master"
+  "/salespage": "sales_page_lite"
+  "/email": "email_genius"
+  "/infoproduct": "quick_info_builder"
+  "/vsl": "vsl_writer"
+  "/design": "strategic_design_master"
+  "/validate": "mma"
+  "/deconstruct": "sales_page_deconstructor"
+  "/status": "zpwo"
+  "/ship": "zpwo"
+  "/gc": "zpwo"
+
+# ============================================================
+# LOAD DISCIPLINE
+# ============================================================
+load_rules:
+  always_loaded:
+    - "This manifest (metadata only)"
+
+  load_on_command:
+    - "L1 (Quick Reference) when skill triggered"
+    - "L2 (Core Procedure) when executing"
+    - "L3 (Advanced Patterns) when complexity detected"
+    - "L4 (Output Templates) when generating deliverables"
+
+  unload_after:
+    - "Phase completion"
+    - "Context usage >70%"
+    - "Manual /gc trigger"
+
+# ============================================================
+# CONTEXT BUDGET TARGETS
+# ============================================================
+context_targets:
+  manifest: "< 500 tokens"
+  claude_md: "< 2000 tokens"
+  skill_l1: "< 600 tokens"
+  skill_l2: "< 4000 tokens"
+  skill_l3: "< 3000 tokens"
+  skill_l4: "< 2000 tokens"
+  total_baseline: "< 3000 tokens (manifest + claude.md + 1 skill L1)"
+
+# ============================================================
+# ANTIGRAVITY INTEGRATION
+# ============================================================
+antigravity_integration:
+  session_state_sync:
+    path: ".claude/SESSION_STATE.json"
+    auto_update: true
+    sync_frequency: "on_phase_transition"
+
+  visual_tracking:
+    enabled: true
+    axes_display: "3D"
+    progress_indicators:
+      x_axis: "Mind-Spirit Balance"
+      y_axis: "Safety-Status Foundation"
+      z_axis: "Identity-Action Drive"
+
+  manager_view:
+    skill_graph: "enabled"
+    dependency_visualization: "enabled"
+    context_monitor: "real-time"
+    gc_alerts: "enabled_at_70_percent"
+
+  state_persistence:
+    ssot_objects: ["PROJECT_BRIEF", "MESSAGE_SPINE", "EVIDENCE_PACK", "VOICE_GUIDE"]
+    runtime_state: "SESSION_STATE.json"
+    checksum_validation: "enabled"
+    drift_detection: "continuous"
+
+# ============================================================
+# VALIDATION
+# ============================================================
+validation:
+  last_validated: "2026-01-12"
+  validator: "Claude Sonnet 4.5"
+  checksum_method: "SHA256"
+  drift_detection: "validate_ssot_lock.py"
+  antigravity_compatible: true
+  total_skills_cataloged: 30
+  skills_production_ready: 18
+  skills_building: 1
+  skills_to_build: 11

@@ -1,0 +1,72 @@
+{
+  "folders": [
+    {
+      "name": "ULTRAMIND v3.0.0",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "workspace.name": "ULTRAMIND",
+    "workspace.type": "antigravity_project",
+
+    "ultramind": {
+      "version": "3.0.0",
+      "architecture": "zero_point_workflow_orchestrator",
+      "status": "production_ready",
+      "antigravity_compatible": true,
+
+      "core_files": {
+        "control_plane": "CLAUDE.md",
+        "skills_manifest": ".claude/SKILLS_MANIFEST.yaml",
+        "session_state": ".claude/SESSION_STATE.json",
+        "antigravity_meta": ".claude/ANTIGRAVITY_META.json",
+        "meta_orchestrator": ".claude/skills/meta/zpwo_v3_MICRO.xml"
+      },
+
+      "initialization": {
+        "splash_screen": "ANTIGRAVITY_QUICKSTART.md",
+        "welcome_guide": "ANTIGRAVITY_WELCOME.md",
+        "access_guide": "ANTIGRAVITY_ACCESS_GUIDE.md"
+      },
+
+      "neuro_box": {
+        "dimensions": 7,
+        "skills_total": 30,
+        "skills_production": 18,
+        "skills_building": 1,
+        "skills_to_build": 11
+      },
+
+      "context_budget": {
+        "baseline": 2500,
+        "capacity": 200000,
+        "gc_threshold": 70
+      }
+    },
+
+    "files.associations": {
+      "CLAUDE.md": "markdown",
+      "*.yaml": "yaml",
+      "SESSION_STATE.json": "jsonc",
+      "ANTIGRAVITY_META.json": "jsonc"
+    },
+
+    "files.exclude": {
+      "**/.git": true,
+      "**/.DS_Store": true,
+      "**/node_modules": true,
+      "**/__pycache__": true,
+      "**/*.pyc": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "redhat.vscode-yaml",
+      "yzhang.markdown-all-in-one"
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": []
+  }
+}

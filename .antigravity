@@ -1,0 +1,65 @@
+{
+  "project": {
+    "name": "ULTRAMIND",
+    "version": "3.0.0",
+    "type": "zero_point_workflow_orchestrator",
+    "created": "2026-01-12",
+    "status": "active"
+  },
+
+  "workspace": {
+    "root": ".",
+    "active": true,
+    "indexed": true
+  },
+
+  "antigravity_integration": {
+    "enabled": true,
+    "version": "1.0",
+    "features": {
+      "3d_visualization": true,
+      "dependency_graph": true,
+      "real_time_monitoring": true,
+      "session_sync": true
+    }
+  },
+
+  "entry_points": {
+    "control_plane": "CLAUDE.md",
+    "skills_manifest": ".claude/SKILLS_MANIFEST.yaml",
+    "session_state": ".claude/SESSION_STATE.json",
+    "ide_config": ".claude/ANTIGRAVITY_META.json"
+  },
+
+  "documentation": {
+    "quick_start": "ANTIGRAVITY_QUICKSTART.md",
+    "full_guide": "ANTIGRAVITY_WELCOME.md",
+    "access_guide": "ANTIGRAVITY_ACCESS_GUIDE.md",
+    "deployment_complete": "DEPLOYMENT_COMPLETE.md"
+  },
+
+  "indexing": {
+    "include": [
+      "CLAUDE.md",
+      ".claude/**/*.yaml",
+      ".claude/**/*.json",
+      ".claude/**/*.xml",
+      "*.md",
+      "docs/**/*",
+      "ssot/**/*"
+    ],
+    "exclude": [
+      "node_modules",
+      ".git",
+      "__pycache__",
+      "*.pyc",
+      ".DS_Store",
+      "design-assets/**",
+      "**/*.psd",
+      "**/*.ai",
+      "**/*.fig",
+      "**/*.sketch",
+      "assets/raw/**"
+    ]
+  }
+}

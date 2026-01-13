@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+  <name>ULTRAMIND</name>
+  <comment>Zero-Point Workflow Orchestrator v3.0.0</comment>
+  <projects>
+  </projects>
+  <buildSpec>
+  </buildSpec>
+  <natures>
+    <nature>com.google.antigravity.project</nature>
+  </natures>
+  <linkedResources>
+    <link>
+      <name>CLAUDE.md</name>
+      <type>1</type>
+      <location>CLAUDE.md</location>
+    </link>
+    <link>
+      <name>.claude</name>
+      <type>2</type>
+      <location>.claude</location>
+    </link>
+  </linkedResources>
+</projectDescription>

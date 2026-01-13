@@ -1,0 +1,475 @@
+{
+  "project": {
+    "name": "ULTRAMIND",
+    "version": "3.0.0",
+    "type": "zero_point_workflow_orchestrator",
+    "status": "production_ready",
+    "created": "2026-01-12",
+    "philosophy": "Light Center, Heavy Edges"
+  },
+
+  "welcome_message": {
+    "title": "Welcome to ULTRAMIND v3.0.0",
+    "subtitle": "Zero-Point Workflow Orchestrator | Antigravity Integration Ready",
+    "tagline": "30 specialist skills, 100% focused execution, 75% less context waste",
+    "quick_start_file": "ANTIGRAVITY_QUICKSTART.md",
+    "full_guide_file": "ANTIGRAVITY_WELCOME.md"
+  },
+
+  "core_files": [
+    {
+      "path": "/ULTRAMIND/CLAUDE.md",
+      "name": "Control Plane",
+      "size_kb": 7.4,
+      "tokens": 2000,
+      "purpose": "Routes commands to specialized skills",
+      "always_loaded": true
+    },
+    {
+      "path": "/ULTRAMIND/.claude/SKILLS_MANIFEST.yaml",
+      "name": "Discovery Index",
+      "size_kb": 16,
+      "tokens": 2000,
+      "purpose": "30 skills with 3D coordinates, dependencies, Google Stack",
+      "always_loaded": true
+    },
+    {
+      "path": "/ULTRAMIND/.claude/SESSION_STATE.json",
+      "name": "Active Memory",
+      "size_kb": 2.2,
+      "tokens": 200,
+      "purpose": "Live project state, phase tracking, Neuro Box progress",
+      "always_loaded": false,
+      "sync_frequency": "on_phase_transition"
+    },
+    {
+      "path": "/ULTRAMIND/.claude/skills/meta/zpwo_v3_MICRO.xml",
+      "name": "Meta-Orchestrator",
+      "size_kb": 21,
+      "tokens_progressive": {
+        "L1": 400,
+        "L2": 1500,
+        "L3": 1000,
+        "L4": 600
+      },
+      "purpose": "Coordinates all workflows (Draft→Produce→Polish)",
+      "always_loaded": false
+    }
+  ],
+
+  "context_budget": {
+    "baseline": {
+      "tokens": 2500,
+      "percent": 1.25,
+      "files": ["CLAUDE.md", "SKILLS_MANIFEST.yaml"]
+    },
+    "discovery": {
+      "tokens": 3100,
+      "percent": 1.55,
+      "files": ["baseline", "skill L1"]
+    },
+    "execution": {
+      "tokens": 7100,
+      "percent": 3.55,
+      "files": ["baseline", "skill L1+L2"]
+    },
+    "complex": {
+      "tokens": 10100,
+      "percent": 5.05,
+      "files": ["baseline", "skill L1+L2+L3"]
+    },
+    "total_capacity": 200000,
+    "gc_threshold": 70
+  },
+
+  "neuro_box_architecture": {
+    "dimensions": 7,
+    "center": {
+      "name": "FLOW (Zero-Point)",
+      "dimension": 7,
+      "coordinates": [0, 0, 0],
+      "color": "#FFFFFF",
+      "function": "Fragment & Facilitate",
+      "skill": "ZPWO"
+    },
+    "axes": [
+      {
+        "name": "X-Axis: MIND ↔ SPIRIT",
+        "left": {
+          "pole": "MIND",
+          "attributes": "Logic, Acetylcholine, 1.25Hz",
+          "coordinates": [-1, 0, 0],
+          "color": "#4A90E2"
+        },
+        "right": {
+          "pole": "SPIRIT",
+          "attributes": "Proof, Serotonin, 0.75Hz",
+          "coordinates": [1, 0, 0],
+          "color": "#95E1D3"
+        },
+        "tracking": "Technical Resonance ↔ Agentic Persuasion"
+      },
+      {
+        "name": "Y-Axis: BODY ↔ HEART",
+        "bottom": {
+          "pole": "BODY",
+          "attributes": "Safety, Dopamine, 1.5Hz",
+          "coordinates": [0, -1, 0],
+          "color": "#FF6B6B"
+        },
+        "top": {
+          "pole": "HEART",
+          "attributes": "Status, GABA, 1.0Hz",
+          "coordinates": [0, 1, 0],
+          "color": "#FFE66D"
+        },
+        "tracking": "Safety Foundation ↔ Status Elevation"
+      },
+      {
+        "name": "Z-Axis: PSYCH ↔ COSMIC",
+        "back": {
+          "pole": "PSYCH",
+          "attributes": "Identity, Oxytocin, 0.3Hz",
+          "coordinates": [0, 0, -1],
+          "color": "#7B68EE"
+        },
+        "front": {
+          "pole": "COSMIC",
+          "attributes": "Action, Adrenaline, 0.5Hz",
+          "coordinates": [0, 0, 1],
+          "color": "#F38181"
+        },
+        "tracking": "Inner Development ↔ Outer Design"
+      }
+    ]
+  },
+
+  "current_project": {
+    "name": "Sleep Energy Breakthrough",
+    "avatar": "Hormonal women 40+",
+    "mechanism": "Cortisol-Melatonin Reset",
+    "phase": "intake",
+    "deliverables": [
+      "Advertorial (cold traffic)",
+      "Sales Page (warm traffic)",
+      "Email Sequence (nurture)"
+    ]
+  },
+
+  "quick_commands": [
+    {
+      "command": "/status",
+      "purpose": "Show current state",
+      "loads": "zpwo L1",
+      "context_cost": "+400 tokens"
+    },
+    {
+      "command": "/intake",
+      "purpose": "Lock project foundation",
+      "loads": "market_intel L1+L2",
+      "context_cost": "+5000 tokens",
+      "creates": ["PROJECT_BRIEF.yaml", "MESSAGE_SPINE.yaml"]
+    },
+    {
+      "command": "/advertorial",
+      "purpose": "Cold traffic pre-sell",
+      "loads": "advertorial_master L1+L2",
+      "context_cost": "+4600 tokens",
+      "axis": "MIND-SPIRIT (X)"
+    },
+    {
+      "command": "/draft",
+      "purpose": "Fast angle exploration",
+      "loads": "current_skill L2",
+      "context_cost": "Variable",
+      "generates": "3-10 angles"
+    },
+    {
+      "command": "/produce",
+      "purpose": "Quality-gated build",
+      "loads": "current_skill L2+L3",
+      "context_cost": "Variable",
+      "validates": "MMA 7D quality check"
+    },
+    {
+      "command": "/polish",
+      "purpose": "Final human finish",
+      "loads": "human_persuasion_editor L1+L2",
+      "context_cost": "+4000 tokens",
+      "applies": "AI detox, voice consistency"
+    },
+    {
+      "command": "/gc",
+      "purpose": "Clean context memory",
+      "loads": "None",
+      "context_cost": "-Variable",
+      "triggers": "Auto at 70% usage"
+    }
+  ],
+
+  "skill_catalog": {
+    "total_skills": 30,
+    "production_ready": 18,
+    "building": 1,
+    "to_build": 11,
+    "categories": [
+      {
+        "name": "Meta/Orchestration",
+        "count": 4,
+        "skills": ["ZPWO", "MMA", "Skill Builder", "Tools Workflow Engineer"]
+      },
+      {
+        "name": "Copy/Persuasion",
+        "count": 9,
+        "skills": [
+          "Advertorial Master",
+          "Sales Page Lite",
+          "Human Persuasion Editor",
+          "Strategic Copy Director",
+          "Neuro-Resonance Auditor",
+          "Email Genius",
+          "VSL Writer",
+          "Master Writing Partner",
+          "Sales Page Deconstructor"
+        ]
+      },
+      {
+        "name": "Research/Intelligence",
+        "count": 3,
+        "skills": [
+          "Market Intel",
+          "Framework Extractor (to build)",
+          "Skeptic Avatar Red Team (to build)"
+        ]
+      },
+      {
+        "name": "Product/Offer",
+        "count": 4,
+        "skills": [
+          "Quick Info Builder",
+          "Product Creation Genius",
+          "Transformation Ecosystem Architect",
+          "Offer Architect (to build)"
+        ]
+      },
+      {
+        "name": "Design/Visual",
+        "count": 3,
+        "skills": [
+          "Strategic Design Master",
+          "Image Planner",
+          "Design Wireframe Architect"
+        ]
+      },
+      {
+        "name": "Google Stack",
+        "count": 4,
+        "external": true,
+        "skills": ["Stitch", "Opal", "Veo 3 & Flow", "Antigravity IDE"]
+      }
+    ]
+  },
+
+  "antigravity_features": {
+    "visual_mapping": {
+      "enabled": true,
+      "display": "3D",
+      "skill_constellation": true,
+      "dependency_graph": true,
+      "color_coding": true
+    },
+    "real_time_monitoring": {
+      "context_usage": true,
+      "phase_tracking": true,
+      "gc_alerts": true,
+      "sync_status": true
+    },
+    "manager_view": {
+      "skill_graph": true,
+      "progress_axes": true,
+      "ssot_status": true,
+      "session_continuity": true
+    },
+    "sync_config": {
+      "session_state_path": ".claude/SESSION_STATE.json",
+      "auto_update": true,
+      "frequency": "on_phase_transition",
+      "checksum_validation": true
+    }
+  },
+
+  "workflow_phases": [
+    {
+      "phase": "intake",
+      "goal": "Lock foundation",
+      "creates": ["PROJECT_BRIEF", "MESSAGE_SPINE", "EVIDENCE_PACK"],
+      "locks": true,
+      "next": "draft"
+    },
+    {
+      "phase": "draft",
+      "goal": "Angle exploration",
+      "generates": "3-10 variations",
+      "validates": "Strategy alignment ≥7.0",
+      "next": "production"
+    },
+    {
+      "phase": "production",
+      "goal": "Quality-gated build",
+      "validates": "MMA 7D (average ≥8.0, critical ≥9.0)",
+      "max_fix_loops": 3,
+      "circuit_breaker": true,
+      "next": "polish"
+    },
+    {
+      "phase": "polish",
+      "goal": "Human-like finish",
+      "applies": ["AI detox", "Voice consistency", "Kitchen Table Test"],
+      "validates": "Final MMA",
+      "next": "complete"
+    },
+    {
+      "phase": "complete",
+      "goal": "Ship deliverables",
+      "generates": ["FINAL_ASSET_PACK", "QA_REPORT", "DEPLOYMENT_NOTES"],
+      "archives": "SESSION_STATE",
+      "next": null
+    }
+  ],
+
+  "quality_gates": {
+    "mma_7d": {
+      "dimensions": [
+        {
+          "name": "Strategy Alignment",
+          "threshold": 8.0,
+          "weight": "critical"
+        },
+        {
+          "name": "Proof Discipline",
+          "threshold": 9.0,
+          "weight": "critical"
+        },
+        {
+          "name": "CTA Integrity",
+          "threshold": 9.0,
+          "weight": "critical"
+        },
+        {
+          "name": "Ethical Guardrails",
+          "threshold": 9.0,
+          "weight": "critical"
+        },
+        {
+          "name": "Voice Consistency",
+          "threshold": 8.0,
+          "weight": "high"
+        },
+        {
+          "name": "Clarity + Structure",
+          "threshold": 8.0,
+          "weight": "high"
+        },
+        {
+          "name": "Resonance",
+          "threshold": 8.0,
+          "weight": "high"
+        }
+      ],
+      "pass_rules": {
+        "average": 8.0,
+        "minimum": 7.0,
+        "critical_minimum": 9.0
+      }
+    },
+    "circuit_breakers": {
+      "max_fix_loops": 3,
+      "consecutive_failures": 2,
+      "escalation_required": true
+    }
+  },
+
+  "ui_config": {
+    "splash_screen": {
+      "show_on_init": true,
+      "file": "ANTIGRAVITY_QUICKSTART.md",
+      "duration_ms": 5000,
+      "dismissible": true
+    },
+    "status_bar": {
+      "show_phase": true,
+      "show_context": true,
+      "show_loaded_skill": true,
+      "color_by_axis": true
+    },
+    "skill_constellation": {
+      "default_view": "3D",
+      "rotation_enabled": true,
+      "zoom_enabled": true,
+      "show_dependencies": true,
+      "show_labels": true,
+      "color_by_axis": true
+    },
+    "notifications": {
+      "gc_threshold_warning": 70,
+      "circuit_breaker_alert": true,
+      "phase_transition_toast": true,
+      "skill_load_indicator": true
+    }
+  },
+
+  "next_steps": [
+    {
+      "order": 1,
+      "action": "Run /status",
+      "purpose": "Verify initialization",
+      "expected": "Phase: intake, Context: ~2.5K tokens"
+    },
+    {
+      "order": 2,
+      "action": "Run /intake",
+      "purpose": "Lock project foundation",
+      "expected": "PROJECT_BRIEF + MESSAGE_SPINE created & locked"
+    },
+    {
+      "order": 3,
+      "action": "Choose asset type",
+      "purpose": "Start production",
+      "options": ["/advertorial", "/salespage", "/email", "/infoproduct", "/vsl"]
+    },
+    {
+      "order": 4,
+      "action": "Run /draft",
+      "purpose": "Generate angles",
+      "expected": "3-10 variations presented"
+    },
+    {
+      "order": 5,
+      "action": "Select angle → /produce",
+      "purpose": "Build asset",
+      "expected": "Full asset with MMA validation"
+    },
+    {
+      "order": 6,
+      "action": "Run /polish",
+      "purpose": "Final finish",
+      "expected": "AI detox + voice consistency"
+    },
+    {
+      "order": 7,
+      "action": "Run /ship",
+      "purpose": "Package deliverables",
+      "expected": "FINAL_ASSET_PACK + QA_REPORT"
+    }
+  ],
+
+  "links": {
+    "quick_start": "ANTIGRAVITY_QUICKSTART.md",
+    "full_guide": "ANTIGRAVITY_WELCOME.md",
+    "deployment_verification": "DEPLOYMENT_COMPLETE.md",
+    "architecture_comparison": "ARCHITECTURE_COMPARISON.md",
+    "philosophy": "ZPWO_PARADOX_EXPLAINED.md",
+    "skills_manifest": ".claude/SKILLS_MANIFEST.yaml",
+    "session_state": ".claude/SESSION_STATE.json"
+  }
+}
