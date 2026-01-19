@@ -73,8 +73,31 @@ node_modules/
 dist/
 build/
 .env
-tmpclaude-*
 .DS_Store
+
+# Claude Code temporary files (16+ tmp files from sessions)
+tmpclaude-*
+tmpclaude*.cwd
+
+# --- DYNAMIC PROJECT FILES (Short-Term Build Assets) ---
+# These are temporary work files for specific client projects
+# They should NOT be backed up with system development
+
+# Assets directory - temporary images/media for projects
+assets/
+!assets/.gitkeep
+
+# Specs directory - client project specifications (PDFs, PPTs, etc.)
+specs/
+!specs/.gitkeep
+
+# Outputs directory structure - keep framework/docs, exclude project outputs
+outputs/deconstruction_reports/
+outputs/test_simulation/
+# Keep system development outputs like framework guides, build logs
+!outputs/FRAMEWORK_*.md
+!outputs/BUILD_LOG_*.md
+!outputs/SPDC_*.md
 
 # --- HEAVY ASSETS (Ignore global video/image/audio) ---
 *.mp4
@@ -86,11 +109,20 @@ tmpclaude-*
 *.tar
 *.iso
 
+# Image files (temporary project assets)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+# Exception: Keep system architecture diagrams if needed
+!docs/**/*.png
+!docs/**/*.jpg
+
 # --- PROJECT SPECIFIC RULES ---
-# Ignore all project assets by default...
+# Old QRX project references (legacy, can be removed if not needed)
 qrx-project/assets/
 
-# ...BUT specifically allow your high-value Brand Kits and VSL suites
-!qrx-project/assets/QRX Brand Kit/
-!qrx-project/assets/QRX VSLs JAN/
-!qrx-project/assets/QRX COPY DOCS/
+# Allow React app lib folder if web app development continues
+!app/src/lib/
+!web/src/lib/*

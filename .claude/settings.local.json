@@ -19,7 +19,10 @@
       "Bash(git remote:*)",
       "Bash(attrib:*)",
       "Bash(findstr:*)",
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Bash(python:*)",
+      "Bash(for file in *.docx)",
+      "Bash(do echo \"=== $file ===\")"
     ]
   }
 }

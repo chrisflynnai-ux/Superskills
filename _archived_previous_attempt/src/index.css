@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* QRX Soft-Touch Editorial System v1.0 */
+:root {
+  /* Softened Color Palette */
+  --bg-primary: #FAFAFA;       /* Warm off-white for eye comfort */
+  --text-primary: #1A2A3A;     /* Soft charcoal for high readability */
+  --text-secondary: #4A5A6A;   /* Muted gray for subheadlines */
+  --accent-teal: #1A5F7A;      /* Calm teal for CTAs and highlights */
+  --accent-gold: #D4A84B;      /* Use gold ONLY for micro-accents */
+  
+  /* Typography Scale (Apple-style Oversized) */
+  --h1-size: clamp(3rem, 8vw, 5rem);   /* Fluid oversized headers */
+  --body-line-height: 1.8;             /* Maximum readability for long copy */
+  --font-main: 'Plus Jakarta Sans', sans-serif;
+  
+  /* Layout & Spacing */
+  --section-padding: clamp(4rem, 10vh, 10rem);
+  --container-width: 1100px;
+  --radius-minimal: 16px;
+  
+  /* Soft Visuals */
+  --soft-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--bg-primary)] text-[var(--text-primary)] font-sans antialiased leading-[var(--body-line-height)] m-0;
+    font-family: var(--font-main);
+  }
+
+  h1, h2 {
+    @apply font-bold tracking-tight mb-6 leading-[1.1];
+  }
+
+  section {
+    @apply px-8 mx-auto max-w-[var(--container-width)];
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+  }
+}
+
+.editorial-img {
+  @apply rounded-[var(--radius-minimal)] shadow-[var(--soft-shadow)] max-w-full h-auto;
+}

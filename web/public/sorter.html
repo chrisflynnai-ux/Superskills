@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slide Sorter</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background: #f0f0f0; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+        .card { background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); cursor: grab; display: flex; flex-direction: column; }
+        .card img { width: 100%; height: auto; border-radius: 4px; pointer-events: none; }
+        .number-input { font-size: 20px; padding: 5px; width: 60px; margin-bottom: 10px; font-weight: bold; }
+        #output { width: 100%; height: 200px; margin-top: 20px; font-family: monospace; }
+        .controls { position: sticky; top: 0; background: white; padding: 20px; z-index: 100; border-bottom: 1px solid #ccc; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="controls">
+    <h1>Slide Sorter</h1>
+    <p>1. Drag and drop slides to reorder them to match your PDF.</p>
+    <p>2. Click "Generate List" below.</p>
+    <p>3. Copy the code and paste it into the chat.</p>
+    <button onclick="generateList()" style="font-size: 18px; padding: 10px 20px; background: #0D2B2D; color: white;">Generate List</button>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<textarea id="output" placeholder="Generated list will appear here..."></textarea>
+
+<script>
+const slideAssets = [
+    "image_e6b98554-5d7d-4d51-8614-4f2c4374dbee.png",
+    "image_dbc42d77-3088-4e09-8b23-39773b5a9039.png",
+    "image_34c1f167-f8ac-4069-a147-3cfbfc19da0c.png",
+    "image_e4639bde-3beb-4eb0-8f70-42de3f45b061.png",
+    "image_572cae21-3d45-458e-a4bc-a92e833671f4.png",
+    "image_6d4e99a1-4127-4baa-9295-466adb69b3a5.png",
+    "image_bcf76fa2-ef76-4c72-b86c-cf56b7712571.png",
+    "image_7ceb77aa-1a3e-4a9c-8a4c-b1e8fb41f412.png",
+    "image_d027d571-1528-43d5-ad01-2065f91f8709.png",
+    "image_2a3e6042-7d8a-4dfa-8e9e-af460e20bdf4.png",
+    "image_903933e2-a186-4186-8954-ae00f432f757.png",
+    "image_aca99b92-74cf-4701-a17b-af19b7358901.png",
+    "image_64e670cd-3507-4f3f-9af6-d8e07576487b.png",
+    "image_caec1265-bc95-467f-8d63-6df8017f6472.png",
+    "image_652328c0-46ce-47c4-8b6b-2846ef1a8f24.png",
+    "image_1bb59120-5e15-45ed-8bc7-dbe751e1eaae.png",
+    "image_aeb63366-8a4c-48bb-969c-52dcf6d6a484.png", 
+    "image_14b1943e-e426-4b24-8333-8d65fde6780a.png",
+    "image_2bb597bd-5dde-469e-b45c-1be0ad1ad0f4.png",
+    "image_4d429fe1-67fe-4d16-8dff-36e5fdd7be10.png",
+    "image_8b8b75c9-cc9b-46f4-ad14-92ca66683600.png",
+    "image_60435b32-0088-4511-8f07-acd4271dbae9.png",
+    "image_e1e51bba-08e2-45c2-847b-6f34eb01707e.png",
+    "Miising image number 24 of 23.png"
+];
+
+const grid = document.getElementById('grid');
+
+slideAssets.forEach((img, idx) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.draggable = true;
+    card.dataset.value = img;
+    card.innerHTML = `
+        <span style="font-weight:bold; color: #888; font-size:12px; margin-bottom:5px;">${img}</span>
+        <img src="/assets/${img}" />
+    `;
+    grid.appendChild(card);
+});
+
+// Drag and Drop Logic
+let dragSrcEl = null;
+
+function handleDragStart(e) {
+    dragSrcEl = this;
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/html', this.innerHTML);
+    this.style.opacity = '0.4';
+}
+
+function handleDragOver(e) {
+    if (e.preventDefault) e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+    return false;
+}
+
+function handleDragEnter(e) { this.classList.add('over'); }
+function handleDragLeave(e) { this.classList.remove('over'); }
+
+function handleDrop(e) {
+    if (e.stopPropagation) e.stopPropagation();
+    if (dragSrcEl !== this) {
+        // Swap content
+        // Better: swap DOM nodes
+        const grid = this.parentNode;
+        const all = [...grid.children];
+        const indexA = all.indexOf(dragSrcEl);
+        const indexB = all.indexOf(this);
+
+        if (indexA < indexB) {
+            grid.insertBefore(dragSrcEl, this.nextSibling);
+        } else {
+            grid.insertBefore(dragSrcEl, this);
+        }
+    }
+    return false;
+}
+
+function handleDragEnd(e) {
+    this.style.opacity = '1';
+    [...grid.children].forEach(col => col.classList.remove('over'));
+}
+
+[...document.querySelectorAll('.card')].forEach(col => {
+    col.addEventListener('dragstart', handleDragStart, false);
+    col.addEventListener('dragenter', handleDragEnter, false);
+    col.addEventListener('dragover', handleDragOver, false);
+    col.addEventListener('dragleave', handleDragLeave, false);
+    col.addEventListener('drop', handleDrop, false);
+    col.addEventListener('dragend', handleDragEnd, false);
+});
+
+function generateList() {
+    const cards = document.querySelectorAll('.card');
+    const ordered = [];
+    cards.forEach(card => ordered.push(card.dataset.value));
+    
+    // Format as TS array
+    const output = `const SLIDE_ASSETS = [\n    "${ordered.join('",\n    "')}"\n];`;
+    document.getElementById('output').value = output;
+    document.getElementById('output').select();
+}
+</script>
+</body>
+</html>
