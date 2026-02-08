@@ -188,6 +188,8 @@ It's a controlled operating environment:
       <Trigger>Run visual validation and QA on UI implementation</Trigger>
       <Trigger>Transform designs into production code</Trigger>
       <Trigger>Add motion and micro-interactions (Framer Motion)</Trigger>
+      <Trigger>Generate AI-powered design system recommendations (/designsystem or /uipro)</Trigger>
+      <Trigger>Look up vertical-specific design patterns (agentic, agency, editorial, SaaS, ecom, coaching)</Trigger>
     </WhenToUse>
     
     <NotFor>
@@ -274,6 +276,175 @@ It's a controlled operating environment:
       </Rules>
     </Integration>
   </Integrations>
+
+  <!-- ================================================================== -->
+  <!-- TOOL INTEGRATIONS (External Design Intelligence)                    -->
+  <!-- ================================================================== -->
+
+  <ToolIntegrations>
+    <Tool name="UI-UX-Pro-Max Design Intelligence" version="2.0.0">
+      <Purpose>BM25-powered design search engine with 67 styles, 96 palettes, 57 font pairings, 100+ reasoning rules</Purpose>
+      <InvocationPattern>python3 tools/ui-ux-pro-max/scripts/search.py</InvocationPattern>
+      <LoadCost>zero (subprocess, not loaded into context)</LoadCost>
+
+      <RoutingRules>
+        <Rule id="RT-UIPRO-001" trigger="design_system_needed">
+          <When>
+            <Condition>User requests a new design system from scratch</Condition>
+            <Condition>No existing STYLE_GUIDE_7PART found in project</Condition>
+            <Condition>User triggers /designsystem or /uipro</Condition>
+          </When>
+          <Action>
+            <![CDATA[
+1. Run: python3 tools/ui-ux-pro-max/scripts/search.py "<project_description>" --design-system
+2. Parse output: style recommendation, color palette, typography, components
+3. Load STYLE_BASE_OVERRIDE.yaml (Aesthetic DNA) as universal constraint layer
+4. Validate against Neuro-Resonance (does palette align with vertical's emotional target?)
+5. Feed validated output into PT-910 (7-Part Style Guide Generator) as seed data
+6. Generate STYLE_GUIDE_7PART with UI-UX-Pro-Max recommendations as foundation
+            ]]>
+          </Action>
+        </Rule>
+
+        <Rule id="RT-UIPRO-002" trigger="vertical_style_lookup">
+          <When>
+            <Condition>PROJECT_BRIEF specifies a vertical (agentic, agency, health, SaaS, ecom, coaching, etc.)</Condition>
+            <Condition>Pre-extracted style layer exists in .claude/skills/design/styles/</Condition>
+          </When>
+          <Action>
+            <![CDATA[
+1. Load STYLE_BASE_OVERRIDE.yaml (Aesthetic DNA — always paired)
+2. Load matching style_*.yaml from .claude/skills/design/styles/
+3. Use as design foundation (pre-validated, no tool call needed)
+4. If style layer insufficient, supplement with:
+   python3 tools/ui-ux-pro-max/scripts/search.py "<vertical> <specific_need>" --domain <relevant_domain>
+            ]]>
+          </Action>
+        </Rule>
+
+        <Rule id="RT-UIPRO-003" trigger="color_palette_exploration">
+          <When>
+            <Condition>User needs color palette options beyond what style layers provide</Condition>
+            <Condition>User asks for industry-specific colors</Condition>
+          </When>
+          <Action>
+            <![CDATA[
+1. Run: python3 tools/ui-ux-pro-max/scripts/search.py "<industry> colors" --domain color
+2. Validate contrast ratios against WCAG AA (use validate_contrast Python tool)
+3. Map to Neuro-Resonance: warm tones = BODY/Dopamine, cool tones = MIND/Acetylcholine
+4. Apply STYLE_BASE_OVERRIDE constraints (diffused shadows, subtle radius)
+5. Present 2-3 options with rationale
+            ]]>
+          </Action>
+        </Rule>
+
+        <Rule id="RT-UIPRO-004" trigger="typography_selection">
+          <When>
+            <Condition>User needs font pairing recommendations</Condition>
+            <Condition>Current font pairing feels "AI-default" (Inter + system)</Condition>
+          </When>
+          <Action>
+            <![CDATA[
+1. Run: python3 tools/ui-ux-pro-max/scripts/search.py "<style intent> typography" --domain typography
+2. Cross-reference with Google Fonts availability
+3. Apply Aesthetic DNA constraint: font_weights ["400", "500", "600"] (no ultra-bold)
+4. Validate readability at body sizes (14-18px)
+5. Present pairing with hierarchy rationale
+            ]]>
+          </Action>
+        </Rule>
+
+        <Rule id="RT-UIPRO-005" trigger="stack_specific_guidelines">
+          <When>
+            <Condition>Building with specific framework (React, Next.js, Vue, etc.)</Condition>
+            <Condition>Need framework-specific implementation patterns</Condition>
+          </When>
+          <Action>
+            <![CDATA[
+1. Run: python3 tools/ui-ux-pro-max/scripts/search.py "<component_type>" --stack react
+2. Apply ULTRAMIND's Tailwind CSS v4 + Framer Motion conventions on top
+3. Merge with PT-960 (Design-to-Code Transformer) output patterns
+            ]]>
+          </Action>
+        </Rule>
+
+        <Rule id="RT-UIPRO-006" trigger="design_system_persistence">
+          <When>
+            <Condition>Design system finalized and validated</Condition>
+            <Condition>User ready to lock design decisions</Condition>
+          </When>
+          <Action>
+            <![CDATA[
+1. Run: python3 tools/ui-ux-pro-max/scripts/search.py "<final_query>" --design-system --persist --output-dir design-system/
+2. Output creates design-system/MASTER.md
+3. For page-specific overrides:
+   python3 tools/ui-ux-pro-max/scripts/search.py "<page_type>" --design-system --persist --page "<page_name>" --output-dir design-system/
+4. Lock as SSOT artifact (checksum for drift protection)
+            ]]>
+          </Action>
+        </Rule>
+      </RoutingRules>
+
+      <NeuroResonanceMapping>
+        <![CDATA[
+NEURO-RESONANCE VALIDATION FOR UI-UX-PRO-MAX OUTPUT:
+
+After receiving design system recommendations, validate against 6 axes:
+
+BODY (Dopamine/Safety):
+  Does the color palette feel safe/trustworthy?
+  Warm neutrals, no harsh contrasts for safety verticals
+
+HEART (GABA/Status):
+  Does the typography convey quality/premium?
+  Serif headings signal authority, sans-serif signals modernity
+
+MIND (Acetylcholine/Logic):
+  Is the spacing system rational and predictable?
+  4px base grid, consistent scale
+
+SPIRIT (Serotonin/Proof):
+  Does the component system support social proof display?
+  Testimonial cards, trust badges, logo bars
+
+PSYCH (Oxytocin/Identity):
+  Does the design feel authentic to the brand's personality?
+  Font pairing matches brand voice
+
+CONSCIENCE (Adrenaline/Action):
+  Does the CTA design create urgency without manipulation?
+  Button contrast ratio > 3:1, clear hierarchy
+        ]]>
+      </NeuroResonanceMapping>
+
+      <StyleLayerDirectory>
+        <![CDATA[
+AVAILABLE STYLE LAYERS (.claude/skills/design/styles/):
+
+BASE:
+  STYLE_BASE_OVERRIDE.yaml — Aesthetic DNA (always load with any vertical)
+
+VERTICALS (Priority 1 — Core Business):
+  style_agentic_ui.yaml     — A2UI / AI Services (MIND/Acetylcholine)
+  style_agency.yaml          — Agency / Services (MIND/Acetylcholine)
+
+VERTICALS (Priority 2 — Platform/Community):
+  style_marketplace.yaml     — Skills Marketplace / Courses (PSYCH/Oxytocin)
+  style_community.yaml       — Groups / Mentoring / Lives (PSYCH/Oxytocin)
+
+VERTICALS (Priority 3 — Conversion Pages):
+  style_editorial.yaml       — Advertorials / Listicles (BODY/Dopamine)
+  style_high_ticket.yaml     — Coaching / VSL (HEART/GABA)
+  style_quiz_funnel.yaml     — Quiz Funnels / Assessments (BODY/Dopamine)
+
+VERTICALS (Priority 4 — Ecom and SaaS):
+  style_ecom_product.yaml    — Product Pages / Ecom (CONSCIENCE/Adrenaline)
+  style_saas_modern.yaml     — SaaS Landing (MIND/Acetylcholine)
+  style_minimal_clean.yaml   — General / Personal Brand (PSYCH/Oxytocin)
+        ]]>
+      </StyleLayerDirectory>
+    </Tool>
+  </ToolIntegrations>
 
   <!-- ================================================================== -->
   <!-- DEPENDENCIES                                                        -->
@@ -1531,6 +1702,23 @@ def validate_component_states(component: dict) -> dict:
         PT-940 (Fix + re-check until pass)
       </RunOrder>
     </Recipe>
+
+    <Recipe name="AI-Powered Design System (with UI-UX-Pro-Max)">
+      <When>Starting a new project and need design direction quickly via /designsystem or /uipro</When>
+      <RunOrder>
+        STYLE_BASE_OVERRIDE.yaml (Load Aesthetic DNA as universal constraint),
+        UI-UX-Pro-Max search.py --design-system (Tool call for seed data),
+        Neuro-Resonance Validation (Validate emotional alignment across 6 axes),
+        PT-910 (7-Part Style Guide — enhance with validated seed),
+        PT-920 (Component System — build on style guide),
+        PT-960 (Design-to-Code — export to Tailwind CSS v4)
+      </RunOrder>
+      <OptionalAdditions>
+        Style Layer loading (if vertical matches pre-extracted YAML — skips tool call),
+        PT-940 (Visual Validation Loop),
+        search.py --persist (Lock design system as SSOT)
+      </OptionalAdditions>
+    </Recipe>
   </Recipes>
 
   <!-- ================================================================== -->
@@ -1556,6 +1744,18 @@ def validate_component_states(component: dict) -> dict:
         <Change>Anti-patterns and failure mode playbook</Change>
         <Change>21st.dev MCP integration notes</Change>
         <Change>ULTRAMIND constitutional compliance</Change>
+      </Changes>
+    </Version>
+
+    <Version number="1.1.0" date="2026-02-07" status="active">
+      <Changes>
+        <Change>Added UI-UX-Pro-Max Tool Integration (ToolIntegrations section)</Change>
+        <Change>6 routing rules for design system generation, vertical lookup, color, typography, stack, persistence</Change>
+        <Change>Neuro-Resonance validation mapping for tool output (6-axis check)</Change>
+        <Change>Style Layer Directory with Aesthetic DNA base + 10 vertical presets</Change>
+        <Change>New Recipe: AI-Powered Design System (with UI-UX-Pro-Max)</Change>
+        <Change>New Scope triggers for /designsystem and /uipro commands</Change>
+        <Change>Integrated with ULTRAMIND SKILLS_MANIFEST v3.0.0 routing table</Change>
       </Changes>
     </Version>
   </VersionHistory>

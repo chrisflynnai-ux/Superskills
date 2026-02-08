@@ -1,0 +1,74 @@
+# ULTRAMIND TOOL INDEX v1.0.0
+# Registry of callable Python/script tools (not loaded into context)
+# Philosophy: Skills + Scripts > MCPs | Tools run OUTSIDE context window
+tool_index_version: "1.0.0"
+updated: "2026-02-07"
+
+tools:
+  ui_ux_pro_max:
+    name: "UI-UX-Pro-Max Design Intelligence"
+    version: "2.0.0"
+    source: "github.com/nextlevelbuilder/ui-ux-pro-max-skill"
+    license: "MIT"
+    location: "tools/ui-ux-pro-max/"
+    runtime: "python"  # Windows: python (not python3). Python 3.14.0 confirmed.
+    requires_venv: false
+    external_dependencies: []  # Pure Python 3 stdlib only
+
+    entry_points:
+      design_system:
+        command: "python3 tools/ui-ux-pro-max/scripts/search.py"
+        args: '"<query>" --design-system -p "<project_name>"'
+        description: "Generate complete design system recommendation"
+        returns: "Structured design system (style, colors, typography, components)"
+
+      domain_search:
+        command: "python3 tools/ui-ux-pro-max/scripts/search.py"
+        args: '"<query>" --domain <domain>'
+        available_domains: [style, prompt, color, chart, landing, product, ux, typography]
+        description: "Search specific design domain"
+        returns: "Top 3 BM25-ranked matches from domain CSV"
+
+      stack_search:
+        command: "python3 tools/ui-ux-pro-max/scripts/search.py"
+        args: '"<query>" --stack <stack>'
+        available_stacks:
+          - html-tailwind
+          - react
+          - nextjs
+          - vue
+          - svelte
+          - astro
+          - shadcn
+          - flutter
+          - swiftui
+          - react-native
+          - jetpack-compose
+          - nuxtjs
+          - nuxt-ui
+        description: "Get stack-specific implementation guidelines"
+        returns: "Framework-specific best practices and patterns"
+
+      persist_design_system:
+        command: "python3 tools/ui-ux-pro-max/scripts/search.py"
+        args: '"<query>" --design-system --persist --output-dir design-system/'
+        description: "Generate and save design system to MASTER.md"
+        returns: "Persisted MASTER.md in design-system/ directory"
+
+      page_override:
+        command: "python3 tools/ui-ux-pro-max/scripts/search.py"
+        args: '"<query>" --design-system --persist --page "<page_name>" --output-dir design-system/'
+        description: "Generate page-specific design override"
+        returns: "Persisted page override in design-system/pages/"
+
+    data_inventory:
+      domain_csvs: 11
+      stack_csvs: 13
+      total_records: "~500+ design patterns"
+      total_size: "~231KB data + ~60KB scripts"
+
+    integration_notes:
+      - "Runs as subprocess, NOT loaded into LLM context"
+      - "Output parsed by Strategic Design Master for Neuro-Resonance validation"
+      - "Default stack: html-tailwind (matches ULTRAMIND web stack)"
+      - "Design system persistence goes to design-system/ directory at project root"

@@ -127,6 +127,8 @@ zpwo_orchestrator:
     - /salespage → salespage_pods
     - /vsl → vsl_pods
     - /design → design_pods
+    - /designsystem → design_pods (via UI-UX-Pro-Max tool)
+    - /uipro → design_pods (alias for /designsystem)
     - /email → email_pods
     - /infoproduct → infoproduct_pods
     
@@ -789,29 +791,62 @@ vsl_pods:
 # ═══════════════════════════════════════════════════════════════════
 
 design_pods:
-  description: "Design system and UI creation workflow"
-  
+  description: "Design system and UI creation workflow (enhanced with UI-UX-Pro-Max v2.0)"
+
   draft:
     style_guide:
-      name: "Style Guide Creator"
+      name: "Style Guide Creator (Enhanced)"
       type: sub_agent
       phase: P1
       model: claude-sonnet
-      
+
       system_prompt: |
-        You are a Style Guide Creator.
-        
+        You are a Style Guide Creator enhanced with AI design intelligence.
+
+        TOOL AVAILABLE:
+        UI-UX-Pro-Max search engine (called via python subprocess):
+        - Design system: python tools/ui-ux-pro-max/scripts/search.py "<query>" --design-system
+        - Color search: python tools/ui-ux-pro-max/scripts/search.py "<query>" --domain color
+        - Typography: python tools/ui-ux-pro-max/scripts/search.py "<query>" --domain typography
+        - Style search: python tools/ui-ux-pro-max/scripts/search.py "<query>" --domain style
+
+        STYLE LAYERS AVAILABLE (.claude/skills/design/styles/):
+        Base: STYLE_BASE_OVERRIDE.yaml (Aesthetic DNA — always load)
+        P1: style_agentic_ui.yaml, style_agency.yaml
+        P2: style_marketplace.yaml, style_community.yaml
+        P3: style_editorial.yaml, style_high_ticket.yaml, style_quiz_funnel.yaml
+        P4: style_ecom_product.yaml, style_saas_modern.yaml, style_minimal_clean.yaml
+
+        WORKFLOW:
+        1. Check if PROJECT_BRIEF specifies a vertical
+        2. If vertical matches a style layer: load STYLE_BASE_OVERRIDE + matching vertical
+        3. If no match or user wants exploration: run UI-UX-Pro-Max search
+        4. Apply Neuro-Resonance validation to selected design direction
+        5. Generate 7-Part Style Guide (PT-910) with validated seed data
+
         OUTPUTS:
-        1. Color system (primary, secondary, accent)
-        2. Typography scale
+        1. Color system (primary, secondary, accent) - from tool or style layer
+        2. Typography scale - from tool font pairing recommendations
         3. Spacing system (4px base)
         4. Border radius scale
         5. Shadow system
         6. Animation principles
         7. Component patterns
-      
+
+        NEURO-RESONANCE CHECK:
+        After design system generated, validate:
+        - BODY: Colors feel safe/trustworthy?
+        - HEART: Typography conveys quality?
+        - MIND: Spacing is rational?
+        - SPIRIT: Components support social proof?
+        - PSYCH: Design feels authentic to brand?
+        - CONSCIENCE: CTA design drives action ethically?
+
       skills:
         - strategic_design_master_v1.0.0.xml
+
+      tools:
+        - ui_ux_pro_max
 
     component_designer:
       name: "Component Designer"
@@ -891,6 +926,33 @@ design_pods:
       tools:
         - python_validators
         - accessibility_scanner
+
+  # Design System Persistence (UI-UX-Pro-Max integration)
+  persistence:
+    design_system_locker:
+      name: "Design System Locker"
+      type: sub_agent
+      phase: P1
+      model: claude-sonnet
+
+      system_prompt: |
+        You lock the finalized design system as SSOT artifact.
+
+        ACTIONS:
+        1. Persist via: python tools/ui-ux-pro-max/scripts/search.py "<query>" --design-system --persist --output-dir design-system/
+        2. For page overrides: add --page "<page_name>"
+        3. Generate DESIGN_TOKENS.json for Tailwind CSS v4 integration
+        4. Create checksum for drift protection
+        5. Update SESSION_STATE.json with design system lock
+
+        OUTPUT:
+        - design-system/MASTER.md (global design system)
+        - design-system/pages/*.md (page-specific overrides)
+        - DESIGN_TOKENS.json (exportable tokens)
+
+      tools:
+        - ui_ux_pro_max
+        - file_system
 
 # ═══════════════════════════════════════════════════════════════════
 # EMAIL AGENTS

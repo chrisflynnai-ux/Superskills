@@ -387,6 +387,74 @@ design_visual:
     consumed_by: []
     specialization: "UI/UX wireframes, layout planning"
 
+  ui_ux_pro_max_tool:
+    name: "UI-UX-Pro-Max Design Intelligence (Tool)"
+    file: "tools/ui-ux-pro-max/scripts/search.py"
+    type: "tool"
+    axis: "CONSCIENCE (Front/Design)"
+    position:
+      dimension: "Z-FRONT"
+      coordinates: [0.7, 0.3, 0.5]
+      color: "#E8A87C"
+    load_cost: zero
+    status: production
+    dependencies: []
+    consumed_by: [strategic_design_master]
+    specialization: "BM25 design intelligence search across 67 styles, 96 palettes, 57 fonts"
+    integration_type: "tool"
+    capabilities:
+      - "Design system generation (--design-system)"
+      - "Domain-specific search (style, color, typography, ux, etc.)"
+      - "Stack-specific guidelines (react, html-tailwind, nextjs, etc.)"
+      - "Master + Override persistence pattern"
+
+  aesthetic_dna_base:
+    name: "ULTRAMIND Aesthetic DNA (Base Override)"
+    file: "skills/design/styles/STYLE_BASE_OVERRIDE.yaml"
+    type: "style_layer"
+    axis: "CONSCIENCE (Front/Design)"
+    position:
+      dimension: "Z-FRONT"
+      coordinates: [0.75, 0.3, 0.4]
+      color: "#D4A574"
+    load_cost: low
+    progressive_layers:
+      L1: 50
+      L2: 150
+    status: production
+    dependencies: []
+    consumed_by: [strategic_design_master, design_wireframe_architect]
+    specialization: "Universal design philosophy — minimal, tactile, futuristic-clean"
+
+  design_style_layers:
+    name: "Vertical-Specific Design Style Layers"
+    file: "skills/design/styles/"
+    type: "style_layer"
+    axis: "CONSCIENCE (Front/Design)"
+    position:
+      dimension: "Z-FRONT"
+      coordinates: [0.75, 0.35, 0.3]
+      color: "#D4A574"
+    load_cost: low
+    progressive_layers:
+      L1: 100
+      L2: 200
+    status: production
+    dependencies: [ui_ux_pro_max_tool, aesthetic_dna_base]
+    consumed_by: [strategic_design_master, design_wireframe_architect]
+    specialization: "10 pre-extracted vertical-specific design presets"
+    verticals:
+      - "agentic_ui (A2UI / AI Services)"
+      - "agency (Services / Portfolio)"
+      - "marketplace (Skills / Courses)"
+      - "community (Groups / Mentoring)"
+      - "editorial (Advertorials / Listicles)"
+      - "high_ticket (Coaching / VSL)"
+      - "quiz_funnel (Assessments)"
+      - "ecom_product (Product Pages)"
+      - "saas_modern (SaaS Landing)"
+      - "minimal_clean (Personal Brand)"
+
 # ============================================================
 # EXTERNAL GOOGLE STACK (Antigravity Edges)
 # ============================================================
@@ -454,6 +522,8 @@ routing:
   "/infoproduct": "quick_info_builder"
   "/vsl": "vsl_writer"
   "/design": "strategic_design_master"
+  "/designsystem": "ui_ux_pro_max_tool"
+  "/uipro": "ui_ux_pro_max_tool"
   "/validate": "mma"
   "/deconstruct": "sales_page_deconstructor"
   "/status": "zpwo"
@@ -523,12 +593,14 @@ antigravity_integration:
 # VALIDATION
 # ============================================================
 validation:
-  last_validated: "2026-01-12"
-  validator: "Claude Sonnet 4.5"
+  last_validated: "2026-02-07"
+  validator: "Claude Opus 4.6"
   checksum_method: "SHA256"
   drift_detection: "validate_ssot_lock.py"
   antigravity_compatible: true
-  total_skills_cataloged: 30
-  skills_production_ready: 18
+  total_skills_cataloged: 33
+  skills_production_ready: 21
   skills_building: 1
   skills_to_build: 11
+  tools_integrated: 1
+  style_layers: 11

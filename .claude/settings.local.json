@@ -22,7 +22,17 @@
       "Bash(dir:*)",
       "Bash(python:*)",
       "Bash(for file in *.docx)",
-      "Bash(do echo \"=== $file ===\")"
+      "Bash(do echo \"=== $file ===\")",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(if [ -d \".claude\" ])",
+      "Bash(then find .claude -type f)",
+      "Bash(else echo \"No .claude directory found\")",
+      "Bash(fi)",
+      "WebFetch(domain:api.github.com)",
+      "Bash(git clone:*)",
+      "Bash(py:*)",
+      "Bash(python tools/ui-ux-pro-max/scripts/search.py:*)"
     ]
   }
 }

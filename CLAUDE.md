@@ -170,6 +170,8 @@ PROJECT COMPLETE
 | `/email` | `email_campaign_copy_genius_v2.0.0.xml` | Heart (Top) | High |
 | `/validate` | `mma_master_monitor_agent_v1.0.0.xml` | Body (Bottom) | Medium |
 | `/polish` | `human_persuasion_editor_v2.1.0.xml` | Spirit (Right) | High |
+| `/designsystem` | `ui-ux-pro-max/search.py` (Tool) | Conscience (Front) | Zero (Tool) |
+| `/uipro` | `ui-ux-pro-max/search.py` (Tool) | Conscience (Front) | Zero (Tool) |
 
 **DISCOVERY:** See `.claude/skills/` or `SKILLS_MANIFEST_v2.1.yaml` for full inventory (30+ skills).
 
@@ -214,9 +216,9 @@ PROJECT COMPLETE
 - Copy/Persuasion: 10 skills (9 production-ready)
 - Product/Offer: 4 skills (3 production-ready)
 - Research/Intelligence: 3 skills (1 production-ready)
-- Design/Visual: 2 skills (1 production-ready)
+- Design/Visual: 3 skills + 1 tool + 11 style layers (all production-ready)
 
-**Total:** 18 production-ready, 1 building, 11 to-build
+**Total:** 21 production-ready, 1 building, 11 to-build, 1 tool integrated
 
 **DO NOT load skill contents unless triggered.** Use manifest as index only.
 
@@ -252,6 +254,11 @@ PROJECT COMPLETE
 - `/email` — Email sequences
 - `/vsl` — Video sales letter
 - `/infoproduct` — Lead magnet
+
+### Design-Specific
+- `/design` — Full design workflow (Strategic Design Master)
+- `/designsystem` — AI-powered design system generation (UI-UX-Pro-Max tool)
+- `/uipro` — Alias for /designsystem
 
 ---
 
@@ -300,6 +307,8 @@ PROJECT COMPLETE
 | ZPWO Skill | `.claude/skills/meta/zpwo_v1_0_0_updated.xml` | Full orchestration logic |
 | SSOT Schemas | `.claude/schemas/SSOT_SCHEMAS_v2_2.yaml` | Object templates |
 | Constitution | `docs/constitution/ULTRAMIND_CONSTITUTION_v2.1.md` | Governing principles |
+| Tool Index | `tools/TOOL_INDEX.yaml` | External tool registry |
+| Style Layers | `.claude/skills/design/styles/` | Vertical-specific design presets |
 
 ---
 
