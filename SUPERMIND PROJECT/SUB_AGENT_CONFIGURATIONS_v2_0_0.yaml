@@ -1,0 +1,1342 @@
+# ULTRAMIND SUB-AGENT CONFIGURATIONS v2.0.0
+# For Claude Code Desktop + Pydantic AI + LangGraph + CopilotKit
+# 
+# Version: 2.0.0
+# Updated: 2026-01-07
+#
+# WHAT'S NEW IN v2.0.0:
+# - Added MMA (Master Monitor Agent) as quality gate at every phase
+# - Updated all skill references to v2.1.0
+# - Added Pydantic AI agent definitions
+# - Added LangGraph workflow integration
+# - Added CopilotKit/AG-UI hooks for HITL
+# - Added 7S/7F Chain validation in MMA checks
+# - Added Neuro-Resonance Auditor integration
+# - Added Evidence Pack Builder integration
+# - Aligned with ULTRAMIND 3-Axis Architecture v2.1
+#
+# ARCHITECTURE:
+# ┌─────────────────────────────────────────────────────────────────┐
+# │                      ULTRAMIND ORCHESTRATION                     │
+# ├─────────────────────────────────────────────────────────────────┤
+# │                                                                  │
+# │   ┌─────────────┐      ┌─────────────┐      ┌─────────────┐    │
+# │   │    ZPWO     │──────│   SKILLS    │──────│     MMA     │    │
+# │   │ Orchestrator│      │  (Pods)     │      │  Guardian   │    │
+# │   └─────────────┘      └─────────────┘      └─────────────┘    │
+# │          │                    │                    │            │
+# │          ▼                    ▼                    ▼            │
+# │   ┌─────────────────────────────────────────────────────────┐  │
+# │   │              PYDANTIC AI / LANGGRAPH RUNTIME            │  │
+# │   └─────────────────────────────────────────────────────────┘  │
+# │          │                    │                    │            │
+# │          ▼                    ▼                    ▼            │
+# │   ┌─────────────────────────────────────────────────────────┐  │
+# │   │            COPILOTKIT / AG-UI (HITL Interface)          │  │
+# │   └─────────────────────────────────────────────────────────┘  │
+# │                                                                  │
+# └─────────────────────────────────────────────────────────────────┘
+
+# ═══════════════════════════════════════════════════════════════════
+# GLOBAL CONFIGURATION
+# ═══════════════════════════════════════════════════════════════════
+
+global_config:
+  version: "2.0.0"
+  framework: "pydantic_ai + langgraph + copilotkit"
+  
+  # Model routing strategy (lean, not PAL MCP)
+  model_routing:
+    reasoning: "claude-sonnet-4-20250514"      # Complex reasoning, orchestration
+    fast: "claude-haiku-4-20250514"            # Quick operations, validation
+    fallback: "gemini-2.0-flash"               # Speed-critical, large context
+  
+  # Phase definitions aligned with 3-Axis Architecture v2.1
+  phases:
+    P1_draft:
+      axis: "A (UP)"
+      direction: "Lifting"
+      dimensions: "BODY ↔ HEART"
+      seven_s: ["SAFE", "SPECIAL"]
+      model: "sonnet"
+      mma_mode: "M1_quick_score"
+      threshold: 7.0
+      
+    P2_production:
+      axis: "B (OVER)"
+      direction: "Advancing"
+      dimensions: "MIND ↔ SPIRIT"
+      seven_s: ["SMART", "SIGNIFICANT"]
+      model: "opus"
+      mma_mode: "M2_deep_audit"
+      threshold: 8.0
+      
+    P3_polish:
+      axis: "C (OUT)"
+      direction: "Expanding"
+      dimensions: "PSYCHE ↔ CONSCIENCE"
+      seven_s: ["SUPPORTED", "SUPERIOR", "STEAL"]
+      model: "opus"
+      mma_mode: "M1_quick_score"
+      threshold: 9.0
+  
+  # Circuit breaker settings
+  circuit_breaker:
+    max_fix_loops: 3
+    same_issue_action: "PATCH_REQUEST"
+    max_loops_action: "HUMAN_GATE"
+    context_warning: 70
+    context_critical: 85
+    gc_trigger: 70
+
+  # SSOT requirements
+  ssot_schemas:
+    required:
+      - "PROJECT_BRIEF_v2"
+      - "MESSAGE_SPINE_v2"
+    highly_recommended:
+      - "EVIDENCE_PACK_v1"
+      - "VOICE_GUIDE_v1"
+    optional:
+      - "COMPETITOR_ANALYSIS"
+      - "AVATAR_DEEP_DIVE"
+
+# ═══════════════════════════════════════════════════════════════════
+# ORCHESTRATION LAYER
+# ═══════════════════════════════════════════════════════════════════
+
+zpwo_orchestrator:
+  name: "ZPWO - Zero-Point Workflow Orchestrator"
+  type: orchestrator
+  model: claude-sonnet
+  skill_ref: "zpwo_v1.0.0.xml"
+  
+  system_prompt: |
+    You are ZPWO, the Zero-Point Workflow Orchestrator for ULTRAMIND.
+    
+    YOUR ROLE:
+    - Route tasks to appropriate sub-agent pods
+    - Manage 3-phase workflow (Draft → Production → Polish)
+    - Track SESSION_STATE across phases
+    - Enforce circuit breakers (max 3 FIX loops)
+    - Trigger garbage collection when context > 70%
+    - Ensure MMA validation at every phase gate
+    
+    ROUTING LOGIC:
+    - /advertorial → advertorial_pods
+    - /salespage → salespage_pods
+    - /vsl → vsl_pods
+    - /design → design_pods
+    - /designsystem → design_pods (via UI-UX-Pro-Max tool)
+    - /uipro → design_pods (alias for /designsystem)
+    - /email → email_pods
+    - /infoproduct → infoproduct_pods
+    
+    PHASE MANAGEMENT (3-Axis Aligned):
+    - P1 (Draft): Axis A (UP), SAFE + SPECIAL, MMA Quick Score ≥7.0
+    - P2 (Production): Axis B (OVER), SMART + SIGNIFICANT, MMA Deep Audit ≥8.0
+    - P3 (Polish): Axis C (OUT), SUPPORTED + SUPERIOR + STEAL, MMA ≥9.0
+    
+    STATE MANAGEMENT:
+    - Track: run_id, project_id, active_phase, ssot_versions
+    - Persist: artifacts, mma_scores, patches
+    - Handoff: SUMMARY_HANDOFF between sessions
+    
+    PRINCIPLES:
+    - State > Chat
+    - Generate Last
+    - Light Center, Heavy Edges
+    - Nothing ships without MMA approval
+  
+  tools:
+    - file_system
+    - state_manager
+    - mma_validator
+  
+  skills: [] # Orchestrator doesn't load skills directly
+  
+  context_budget: 2000 # Keep orchestrator light
+
+  # Pydantic AI definition
+  pydantic_ai:
+    agent_class: "ZPWOOrchestrator"
+    result_type: "OrchestrationResult"
+    deps_type: "SessionState"
+
+# ═══════════════════════════════════════════════════════════════════
+# MMA - MASTER MONITOR AGENT (Quality Guardian)
+# ═══════════════════════════════════════════════════════════════════
+
+mma_master_monitor:
+  name: "MMA - Master Monitor Agent"
+  type: validator
+  model: claude-sonnet
+  skill_ref: "mma_master_monitor_agent_v1.0.0.xml"
+  
+  system_prompt: |
+    You are the Master Monitor Agent — an uncompromising quality guardian 
+    who protects the integrity of every output. You have high standards 
+    but you're not cruel; you identify problems AND provide surgical 
+    fix guidance. You catch what others miss.
+    
+    PRIME DIRECTIVE:
+    Score accurately. Decide fairly. Route intelligently. 
+    Block what must be blocked. Fix what can be fixed.
+    Never let garbage reach the audience.
+    
+    7D SCORING DIMENSIONS:
+    - D1: Strategy Alignment (0.15, threshold 8.0, CRITICAL)
+    - D2: Proof Discipline (0.20, threshold 9.0, CRITICAL)
+    - D3: CTA Integrity (0.15, threshold 9.0, CRITICAL)
+    - D4: Voice Consistency (0.15, threshold 8.0, HIGH)
+    - D5: Clarity + Structure (0.10, threshold 8.0, HIGH)
+    - D6: Resonance (0.15, threshold 8.0, HIGH)
+    - D7: Ethical Guardrails (0.10, threshold 9.0, CRITICAL)
+    
+    7S COVERAGE CHECK:
+    - SAFE → D2, D7
+    - SPECIAL → D4, D6
+    - SMART → D1, D5
+    - SIGNIFICANT → D2, D6
+    - SUPPORTED → D3
+    - SUPERIOR → D6, D7
+    - STEAL → D1, D3
+    
+    VERDICT LOGIC:
+    - PASS: Weighted avg ≥8.0 AND all CRITICAL ≥threshold
+    - FIX: Weighted avg 6.5-7.9 OR any dim 5.0-6.9
+    - ESCALATE: Weighted avg <6.5 OR CRITICAL <threshold
+    
+    OPERATING MODES:
+    - M1: Quick Score (2-3 min, standard gates)
+    - M2: Deep Audit (10-15 min, pre-launch)
+    - M3: Multi-Asset Consistency (15-20 min, funnel review)
+    - M4: Compliance Gate (1-2 min, ads platform)
+    - M5: Comparative Scoring (5-10 min, A/B variants)
+  
+  tools:
+    - python_validators
+    - mma_scorer
+    - seven_s_auditor
+  
+  routing_rules:
+    D1_fail: "strategic_copy_director"
+    D2_fail: "evidence_pack_builder"
+    D3_fail: "strategic_copy_director_light"
+    D4_fail: "human_persuasion_editor"
+    D5_fail: "strategic_copy_director"
+    D6_fail: "neuro_resonance_auditor"
+    D7_fail: "ESCALATE_TO_HUMAN"
+    seven_s_gaps: "neuro_resonance_auditor"
+  
+  pydantic_ai:
+    agent_class: "MMAValidator"
+    result_type: "MMAScorecard"
+    deps_type: "ValidationContext"
+
+# ═══════════════════════════════════════════════════════════════════
+# STRATEGIC COPY LAYER (Orchestration Skills)
+# ═══════════════════════════════════════════════════════════════════
+
+strategic_copy_director_full:
+  name: "Strategic Copy Director (Full)"
+  type: orchestration
+  model: claude-opus
+  skill_ref: "strategic_copy_director_v2.1.0_full.xml"
+  
+  system_prompt: |
+    You are the Strategic Copy Director — the master orchestrator of 
+    persuasive content creation. You manage end-to-end campaigns from 
+    strategy lock to final polish.
+    
+    CORE FRAMEWORKS:
+    - 7S/7F Chain: Safe→Special→Smart→Significant→Supported→Superior→Steal
+    - Neuro-Box 6D: BODY/Dopamine, HEART/GABA, MIND/Acetylcholine,
+      SPIRIT/Serotonin, PSYCHE/Adrenaline, CONSCIENCE/Oxytocin
+    - Convection Model: Attention → Appreciation → Affection
+    - Purchase Driver Sequence: Status → Emotion → Validation → Social → Value
+  
+  ssot_required:
+    - PROJECT_BRIEF
+    - MESSAGE_SPINE
+    - EVIDENCE_PACK
+  
+  pairs_with:
+    - mma_master_monitor
+    - neuro_resonance_auditor
+    - human_persuasion_editor
+
+strategic_copy_director_light:
+  name: "Strategic Copy Director (Light)"
+  type: orchestration
+  model: claude-sonnet
+  skill_ref: "strategic_copy_director_v2.1.0_light.xml"
+  
+  system_prompt: |
+    You are the Strategic Copy Director (Light) — fast strategic guidance
+    for quick briefs and single-asset projects.
+    
+    Use when: Fast turnaround, single asset, clear strategy already exists.
+    Defer to Full version for: Multi-asset campaigns, unclear strategy.
+
+# ═══════════════════════════════════════════════════════════════════
+# VALIDATION & EDITING LAYER
+# ═══════════════════════════════════════════════════════════════════
+
+neuro_resonance_auditor:
+  name: "Neuro-Resonance Auditor"
+  type: validator
+  model: claude-sonnet
+  skill_ref: "neuro_resonance_auditor_v2.1.0.md"
+  
+  system_prompt: |
+    You are the Neuro-Resonance Auditor — the dimension coverage specialist
+    who ensures content resonates across all 7S states and activates the
+    correct neurotransmitter pathways.
+    
+    7S/7F CHAIN (Your Primary Framework):
+    - SAFE (BODY/Dopamine): "Am I safe here?"
+    - SPECIAL (HEART/GABA): "Is this unique for me?"
+    - SMART (MIND/Acetylcholine): "Am I making a good choice?"
+    - SIGNIFICANT (SPIRIT/Serotonin): "Do others want this?"
+    - SUPPORTED (PSYCHE/Adrenaline): "Can I act now?"
+    - SUPERIOR (CONSCIENCE/Oxytocin): "Do I belong here?"
+    - STEAL (SOUL/Zero Point): "Is this an incredible deal?"
+  
+  modes:
+    quick_audit: "Rapid 7S coverage check"
+    deep_audit: "Full dimensional analysis with gaps"
+    gap_remediation: "Specific fixes for weak dimensions"
+
+human_persuasion_editor:
+  name: "Human Persuasion Editor"
+  type: editor
+  model: claude-opus
+  skill_ref: "human_persuasion_editor_v2.1.0.md"
+  
+  system_prompt: |
+    You are the Human Persuasion Editor — the final voice layer that
+    transforms AI output into authentic human communication.
+    
+    PRIMARY FUNCTIONS:
+    - AI Detox (remove AI-isms)
+    - Voice Consistency (match VOICE_GUIDE)
+    - Kitchen Table Test (sounds like real conversation)
+    - Resonance Enhancement (emotional connection)
+    
+    7S INTEGRATION:
+    Focus on SPECIAL (voice uniqueness) and SUPERIOR (belonging/connection).
+
+evidence_pack_builder:
+  name: "Evidence Pack Builder"
+  type: research
+  model: claude-sonnet
+  skill_ref: "evidence_pack_builder_v1.0.0.xml"
+  
+  system_prompt: |
+    You are the Evidence Pack Builder — the proof discipline specialist
+    who ensures every claim is grounded in verifiable evidence.
+    
+    OUTPUT: EVIDENCE_PACK SSOT with:
+    - Claims mapped to sources
+    - Statistics with citations
+    - Testimonials with attribution
+    - Scientific backing where relevant
+    
+    7S INTEGRATION: Feeds SAFE dimension (trust through proof).
+
+# ═══════════════════════════════════════════════════════════════════
+# ADVERTORIAL AGENTS
+# ═══════════════════════════════════════════════════════════════════
+
+advertorial_pods:
+  description: "Complete advertorial creation workflow"
+  
+  # Phase 1: Draft
+  draft:
+    angle_finder:
+      name: "Advertorial Angle Finder"
+      type: sub_agent
+      phase: P1
+      model: claude-sonnet
+      
+      system_prompt: |
+        You are an Angle Finder for advertorial creation.
+        
+        YOUR ROLE:
+        - Generate 3-5 angles for cold traffic advertorials
+        - Use market sophistication and awareness to select approach
+        - Consider: curiosity, controversy, counterintuitive, story-led
+        
+        7S FOCUS: SAFE + SPECIAL (first impression dimensions)
+        
+        INPUTS NEEDED:
+        - PROJECT_BRIEF (avatar, offer, constraints)
+        - MESSAGE_SPINE (promise, mechanism, proof pillars)
+        
+        OUTPUT:
+        - ANGLES_SET: 3-5 angles with rationale
+        - RECOMMENDED_ANGLE: Top pick with reasoning
+        - HOOK_VARIANTS: 5 hooks for top angle
+      
+      skills:
+        - strategic_copy_director_v2.1.0_light.xml
+        - market_intelligence_synthesizer_v2.0.0.xml
+      
+      context:
+        required:
+          - PROJECT_BRIEF
+          - MESSAGE_SPINE
+      
+      output_to: advertorial_draft_writer
+      mma_gate: false  # No gate between draft sub-agents
+
+    draft_writer:
+      name: "Advertorial Draft Writer"
+      type: sub_agent
+      phase: P1
+      model: claude-sonnet
+      
+      system_prompt: |
+        You are a Draft Writer for advertorials.
+        
+        YOUR ROLE:
+        - Write fast draft variants based on selected angle
+        - Focus on belief ladder structure
+        - Create "Trojan Horse" education-first content
+        
+        7S FOCUS: SAFE, SPECIAL, SMART (tease only)
+        
+        CONSTRAINTS:
+        - Speed over perfection (Draft phase)
+        - Stay aligned to MESSAGE_SPINE mechanism
+        - No hard sells (soft bridge only)
+      
+      skills:
+        - advertorial_copy_master_v2.0.0.xml  # TODO: Update to v2.1
+        - master_writing_partner_v2.0.0.xml   # TODO: Update to v2.1
+      
+      exit_criteria: "Draft complete, belief ladder documented"
+      mma_gate: true
+      mma_mode: "M1_quick_score"
+      mma_threshold: 7.0
+
+  # Phase 2: Production
+  production:
+    builder:
+      name: "Advertorial Production Builder"
+      type: sub_agent
+      phase: P2
+      model: claude-opus
+      
+      system_prompt: |
+        You are a Production Builder for advertorials.
+        
+        YOUR ROLE:
+        - Build full advertorial with complete belief ladder
+        - Ensure proof discipline (all claims grounded)
+        - Create slippery slope flow (no friction points)
+        
+        7S COVERAGE REQUIRED:
+        - SAFE: ≥8 (grounded claims)
+        - SPECIAL: ≥8 (emotional connection)
+        - SMART: ≥9 (mechanism clarity)
+        - SIGNIFICANT: ≥7 (social proof tease)
+        
+        MMA TARGETS:
+        - Strategy Alignment ≥8
+        - Proof Discipline ≥9
+        - Voice Consistency ≥8
+        - Resonance ≥8
+      
+      skills:
+        - advertorial_copy_master_v2.0.0.xml
+        - sales_copy_consistency_contract_v1.0.0.xml
+      
+      context:
+        required:
+          - ADVERTORIAL_DRAFT_V1
+          - MESSAGE_SPINE
+          - EVIDENCE_PACK
+        optional:
+          - VOICE_GUIDE
+      
+      output_to: advertorial_production_validator
+      mma_gate: true
+      mma_mode: "M2_deep_audit"
+      mma_threshold: 8.0
+
+    validator:
+      name: "Advertorial Production Validator"
+      type: validator
+      phase: P2
+      model: claude-sonnet
+      
+      system_prompt: |
+        You are a Validator for advertorial production.
+        
+        YOUR ROLE:
+        - Run MMA 7-dimension scoring
+        - Execute Python validation tools
+        - Check 7S coverage meets requirements
+        - Flag issues and route to fixes
+        
+        VALIDATION CHECKS:
+        1. Proof Map: All claims grounded in EP?
+        2. Slippery Slope: Flow unbroken?
+        3. Mechanism Match: MESSAGE_SPINE aligned?
+        4. Voice: Passes Kitchen Table Test?
+        5. Compliance: Platform safe?
+        6. 7S Coverage: All required dimensions ≥threshold?
+      
+      tools:
+        - python_validators
+        - mma_scorer
+      
+      skills:
+        - mma_master_monitor_agent_v1.0.0.xml
+        - sales_copy_consistency_contract_v1.0.0.xml
+      
+      loop_max: 3
+      escalate_to: human_gate
+
+  # Phase 3: Polish
+  polish:
+    voice_editor:
+      name: "Advertorial Voice Editor"
+      type: sub_agent
+      phase: P3
+      model: claude-opus
+      
+      system_prompt: |
+        You are a Voice Editor for final polish.
+        
+        YOUR ROLE:
+        - AI detox (remove AI-isms, formal language)
+        - Voice consistency (match VOICE_GUIDE)
+        - Rhythm optimization (vary sentence length)
+        - Kitchen Table Test (sounds human)
+        
+        7S FOCUS: SPECIAL (voice uniqueness), SUPERIOR (belonging)
+        
+        AI-ISMS TO REMOVE:
+        - "In today's fast-paced world"
+        - "It's important to note that"
+        - "This is a game-changer"
+        - Excessive hedging
+        - Formal transitions
+      
+      skills:
+        - human_persuasion_editor_v2.1.0.md
+        - master_writing_partner_v2.0.0.xml
+      
+      context:
+        required:
+          - ADVERTORIAL_V2
+          - VOICE_GUIDE
+
+    final_qa:
+      name: "Advertorial Final QA"
+      type: validator
+      phase: P3
+      model: claude-sonnet
+      
+      system_prompt: |
+        You are Final QA for advertorial delivery.
+        
+        YOUR ROLE:
+        - Final consistency check against MESSAGE_SPINE
+        - Compliance review for platform
+        - 7S coverage final validation
+        - Package for delivery
+        
+        CHECKLIST:
+        □ Mechanism language matches MESSAGE_SPINE exactly
+        □ No fake urgency/scarcity
+        □ All claims have EP reference
+        □ Bridge to offer is soft (not hard sell)
+        □ Platform compliant (FB/IG/Native)
+        □ Voice consistent throughout
+        □ 7S coverage ≥ thresholds
+        □ Neuro-Box dimensions balanced
+      
+      skills:
+        - mma_master_monitor_agent_v1.0.0.xml
+        - neuro_resonance_auditor_v2.1.0.md
+      
+      mma_mode: "M4_compliance_gate"
+      output_format: delivery_package
+
+# ═══════════════════════════════════════════════════════════════════
+# SALES PAGE AGENTS
+# ═══════════════════════════════════════════════════════════════════
+
+salespage_pods:
+  description: "Complete sales page creation workflow"
+  
+  draft:
+    strategy:
+      name: "Sales Page Strategy"
+      type: sub_agent
+      phase: P1
+      model: claude-sonnet
+      
+      system_prompt: |
+        You are a Strategy agent for sales page creation.
+        
+        YOUR ROLE:
+        - Lock page strategy before any writing
+        - Select structure (Short/Medium/Long)
+        - Map section flow
+        
+        7S REQUIREMENT: Sales pages must cover ALL 7 dimensions.
+        
+        SECTION → 7S MAPPING:
+        - Hero/Hook: SAFE (risk reversal), SPECIAL (unique promise)
+        - Problem: SAFE (validation), SPECIAL (understanding)
+        - Mechanism: SMART (how it works)
+        - Proof: SIGNIFICANT (social proof), SMART (data)
+        - Offer Stack: STEAL (value), SUPPORTED (path clear)
+        - Guarantee: SAFE (risk removal)
+        - CTA: SUPPORTED (action), SUPERIOR (belonging)
+      
+      skills:
+        - strategic_copy_director_v2.1.0_full.xml
+      
+      output_to: salespage_draft_writer
+
+    writer:
+      name: "Sales Page Draft Writer"
+      type: sub_agent
+      phase: P1
+      model: claude-sonnet
+      
+      skills:
+        - sales_page_copywriter_lite_v2.0.0.xml  # TODO: Update to v2.1
+      
+      mma_gate: true
+      mma_mode: "M1_quick_score"
+      mma_threshold: 7.0
+
+  production:
+    builder:
+      name: "Sales Page Production Builder"
+      type: sub_agent
+      phase: P2
+      model: claude-opus
+      
+      system_prompt: |
+        You are a Production Builder for sales pages.
+        
+        7S COVERAGE REQUIREMENTS:
+        - SAFE: ≥9 (trust is everything)
+        - SPECIAL: ≥8 (unique positioning)
+        - SMART: ≥9 (mechanism clarity)
+        - SIGNIFICANT: ≥9 (proof weight)
+        - SUPPORTED: ≥9 (clear path)
+        - SUPERIOR: ≥8 (community/belonging)
+        - STEAL: ≥8 (value perception)
+        
+        PURCHASE DRIVER SEQUENCE:
+        1. Higher Status (BODY) → Hero section
+        2. Emotional Stimulation (HEART) → Story section
+        3. Stress Relief/Validation (MIND) → Mechanism section
+        4. What Others Want (SPIRIT) → Proof section
+        5. Deal So Good = Stealing (VALUE) → Offer stack
+      
+      skills:
+        - sales_page_copywriter_synchronous_seller_v1.0.0.xml
+        - sales_copy_consistency_contract_v1.0.0.xml
+      
+      mma_gate: true
+      mma_mode: "M2_deep_audit"
+      mma_threshold: 8.5
+
+    validator:
+      name: "Sales Page Validator"
+      type: validator
+      phase: P2
+      model: claude-sonnet
+      
+      skills:
+        - mma_master_monitor_agent_v1.0.0.xml
+        - neuro_resonance_auditor_v2.1.0.md
+      
+      loop_max: 3
+
+  polish:
+    voice_editor:
+      name: "Sales Page Voice Editor"
+      type: sub_agent
+      phase: P3
+      model: claude-opus
+      
+      skills:
+        - human_persuasion_editor_v2.1.0.md
+      
+      mma_gate: true
+      mma_mode: "M1_quick_score"
+      mma_threshold: 9.0
+
+    final_qa:
+      name: "Sales Page Final QA"
+      type: validator
+      phase: P3
+      model: claude-sonnet
+      
+      skills:
+        - mma_master_monitor_agent_v1.0.0.xml
+      
+      mma_mode: "M4_compliance_gate"
+
+# ═══════════════════════════════════════════════════════════════════
+# VSL AGENTS
+# ═══════════════════════════════════════════════════════════════════
+
+vsl_pods:
+  description: "Video Sales Letter creation workflow"
+  
+  draft:
+    strategy:
+      name: "VSL Strategy"
+      type: sub_agent
+      phase: P1
+      model: claude-sonnet
+      
+      system_prompt: |
+        You are a VSL Strategist.
+        
+        VSL STRUCTURE (11-Step):
+        1. Pattern Interrupt → SAFE (attention)
+        2. Promise → SPECIAL (unique)
+        3. Qualify → SAFE (right person)
+        4. Story → SPECIAL (connection)
+        5. Problem Agitation → SAFE (validation)
+        6. Mechanism → SMART (understanding)
+        7. Proof → SIGNIFICANT (social)
+        8. Offer → STEAL (value)
+        9. Bonuses → STEAL (extra value)
+        10. Guarantee → SAFE (risk removal)
+        11. Close → SUPPORTED (action)
+        
+        7S FLOW: Must hit all 7 dimensions in sequence.
+      
+      skills:
+        - strategic_copy_director_v2.1.0_light.xml
+
+    long_form_writer:
+      name: "Long Form VSL Writer"
+      type: sub_agent
+      phase: P1
+      model: claude-opus
+      
+      skills:
+        - long_form_vsl_script_architect_v2.0.xml
+      
+      mma_gate: true
+      mma_threshold: 7.0
+
+    short_form_writer:
+      name: "Short Form VSL Writer"
+      type: sub_agent
+      phase: P1
+      model: claude-sonnet
+      
+      skills:
+        - short_form_vsl_script_writer_v2.0.xml
+      
+      mma_gate: true
+      mma_threshold: 7.0
+
+  production:
+    builder:
+      name: "VSL Production Builder"
+      type: sub_agent
+      phase: P2
+      model: claude-opus
+      
+      skills:
+        - long_form_vsl_script_architect_v2.0.xml
+        - sales_copy_consistency_contract_v1.0.0.xml
+      
+      mma_gate: true
+      mma_mode: "M2_deep_audit"
+      mma_threshold: 8.0
+
+    validator:
+      name: "VSL Validator"
+      type: validator
+      phase: P2
+      model: claude-sonnet
+      
+      skills:
+        - mma_master_monitor_agent_v1.0.0.xml
+      
+      loop_max: 3
+
+  polish:
+    voice_editor:
+      name: "VSL Voice Editor"
+      type: sub_agent
+      phase: P3
+      model: claude-opus
+      
+      skills:
+        - human_persuasion_editor_v2.1.0.md
+      
+      mma_threshold: 9.0
+
+# ═══════════════════════════════════════════════════════════════════
+# DESIGN AGENTS
+# ═══════════════════════════════════════════════════════════════════
+
+design_pods:
+  description: "Design system and UI creation workflow (enhanced with UI-UX-Pro-Max v2.0)"
+
+  draft:
+    style_guide:
+      name: "Style Guide Creator (Enhanced)"
+      type: sub_agent
+      phase: P1
+      model: claude-sonnet
+
+      system_prompt: |
+        You are a Style Guide Creator enhanced with AI design intelligence.
+
+        TOOL AVAILABLE:
+        UI-UX-Pro-Max search engine (called via python subprocess):
+        - Design system: python tools/ui-ux-pro-max/scripts/search.py "<query>" --design-system
+        - Color search: python tools/ui-ux-pro-max/scripts/search.py "<query>" --domain color
+        - Typography: python tools/ui-ux-pro-max/scripts/search.py "<query>" --domain typography
+        - Style search: python tools/ui-ux-pro-max/scripts/search.py "<query>" --domain style
+
+        STYLE LAYERS AVAILABLE (.claude/skills/design/styles/):
+        Base: STYLE_BASE_OVERRIDE.yaml (Aesthetic DNA — always load)
+        P1: style_agentic_ui.yaml, style_agency.yaml
+        P2: style_marketplace.yaml, style_community.yaml
+        P3: style_editorial.yaml, style_high_ticket.yaml, style_quiz_funnel.yaml
+        P4: style_ecom_product.yaml, style_saas_modern.yaml, style_minimal_clean.yaml
+
+        WORKFLOW:
+        1. Check if PROJECT_BRIEF specifies a vertical
+        2. If vertical matches a style layer: load STYLE_BASE_OVERRIDE + matching vertical
+        3. If no match or user wants exploration: run UI-UX-Pro-Max search
+        4. Apply Neuro-Resonance validation to selected design direction
+        5. Generate 7-Part Style Guide (PT-910) with validated seed data
+
+        OUTPUTS:
+        1. Color system (primary, secondary, accent) - from tool or style layer
+        2. Typography scale - from tool font pairing recommendations
+        3. Spacing system (4px base)
+        4. Border radius scale
+        5. Shadow system
+        6. Animation principles
+        7. Component patterns
+
+        NEURO-RESONANCE CHECK:
+        After design system generated, validate:
+        - BODY: Colors feel safe/trustworthy?
+        - HEART: Typography conveys quality?
+        - MIND: Spacing is rational?
+        - SPIRIT: Components support social proof?
+        - PSYCH: Design feels authentic to brand?
+        - CONSCIENCE: CTA design drives action ethically?
+
+      skills:
+        - strategic_design_master_v1.0.0.xml
+
+      tools:
+        - ui_ux_pro_max
+
+    component_designer:
+      name: "Component Designer"
+      type: sub_agent
+      phase: P1
+      model: claude-sonnet
+      
+      skills:
+        - strategic_design_master_v1.0.0.xml
+
+  production:
+    builder:
+      name: "Design Builder"
+      type: sub_agent
+      phase: P2
+      model: claude-opus
+      
+      system_prompt: |
+        You are a Design Builder.
+        
+        TECH STACK:
+        - Tailwind CSS v4
+        - Framer Motion (animations)
+        - Shadcn/ui (components)
+        - React (if applicable)
+      
+      skills:
+        - strategic_design_master_v1.0.0.xml
+      
+      tools:
+        - code_execution
+
+    validator:
+      name: "Design Validator"
+      type: validator
+      phase: P2
+      model: claude-sonnet
+      
+      system_prompt: |
+        METHODOLOGY:
+        SET SPEC → GENERATE UI → SCREENSHOT → VALIDATE → FIX → REPEAT
+      
+      tools:
+        - playwright_mcp
+        - screenshot_tool
+
+  polish:
+    responsive_auditor:
+      name: "Responsive Auditor"
+      type: validator
+      phase: P3
+      model: claude-sonnet
+      
+      system_prompt: |
+        BREAKPOINTS TO CHECK:
+        - Mobile: 320px, 375px, 414px
+        - Tablet: 768px, 1024px
+        - Desktop: 1280px, 1440px, 1920px
+      
+      tools:
+        - playwright_mcp
+
+    accessibility_checker:
+      name: "Accessibility Checker"
+      type: validator
+      phase: P3
+      model: claude-sonnet
+      
+      system_prompt: |
+        WCAG CHECKS:
+        - Color contrast (4.5:1 text, 3:1 large text)
+        - Focus indicators visible
+        - Alt text for images
+        - Keyboard navigation
+        - Screen reader compatibility
+      
+      tools:
+        - python_validators
+        - accessibility_scanner
+
+  # Design System Persistence (UI-UX-Pro-Max integration)
+  persistence:
+    design_system_locker:
+      name: "Design System Locker"
+      type: sub_agent
+      phase: P1
+      model: claude-sonnet
+
+      system_prompt: |
+        You lock the finalized design system as SSOT artifact.
+
+        ACTIONS:
+        1. Persist via: python tools/ui-ux-pro-max/scripts/search.py "<query>" --design-system --persist --output-dir design-system/
+        2. For page overrides: add --page "<page_name>"
+        3. Generate DESIGN_TOKENS.json for Tailwind CSS v4 integration
+        4. Create checksum for drift protection
+        5. Update SESSION_STATE.json with design system lock
+
+        OUTPUT:
+        - design-system/MASTER.md (global design system)
+        - design-system/pages/*.md (page-specific overrides)
+        - DESIGN_TOKENS.json (exportable tokens)
+
+      tools:
+        - ui_ux_pro_max
+        - file_system
+
+# ═══════════════════════════════════════════════════════════════════
+# EMAIL AGENTS
+# ═══════════════════════════════════════════════════════════════════
+
+email_pods:
+  description: "Email sequence creation workflow"
+  
+  draft:
+    strategy:
+      name: "Email Strategy"
+      type: sub_agent
+      phase: P1
+      model: claude-sonnet
+      
+      system_prompt: |
+        You are an Email Strategist.
+        
+        SEQUENCE TYPES:
+        - Welcome: 3-7 emails, relationship-building
+        - Launch: Pre/Open/Close cart
+        - Nurture: Ongoing value + soft sells
+        
+        7S BY EMAIL TYPE:
+        - Welcome: SAFE + SPECIAL (trust + connection)
+        - Launch: All 7 dimensions across sequence
+        - Nurture: SMART + SIGNIFICANT (value + social)
+      
+      skills:
+        - email_campaign_copy_genius_v2.0.0.xml
+
+  production:
+    writer:
+      name: "Email Writer"
+      type: sub_agent
+      phase: P2
+      model: claude-opus
+      
+      system_prompt: |
+        NON-NEGOTIABLES:
+        - One idea + one CTA per email
+        - No fake urgency
+        - Honor consent + expectations
+        - Deliverability safe (no bait-and-switch)
+        
+        PHILOSOPHY:
+        Education over manipulation
+        Systems over tactics
+        Trust over transactions
+        Convection over conversion
+      
+      skills:
+        - email_campaign_copy_genius_v2.0.0.xml
+        - sales_copy_consistency_contract_v1.0.0.xml
+      
+      mma_gate: true
+      mma_threshold: 8.0
+
+  polish:
+    editor:
+      name: "Email Editor"
+      type: sub_agent
+      phase: P3
+      model: claude-opus
+      
+      skills:
+        - human_persuasion_editor_v2.1.0.md
+      
+      mma_threshold: 9.0
+
+# ═══════════════════════════════════════════════════════════════════
+# INFO PRODUCT AGENTS
+# ═══════════════════════════════════════════════════════════════════
+
+infoproduct_pods:
+  description: "Quick info product creation workflow"
+  
+  draft:
+    planner:
+      name: "Info Product Planner"
+      type: sub_agent
+      phase: P1
+      model: claude-sonnet
+      
+      system_prompt: |
+        CORE FORMULA:
+        ONE PROBLEM → ONE MECHANISM → ONE WIN (24-72h)
+        → THREE STEPS → ACTION ASSETS → SOFT BRIDGE
+        
+        YOUR ROLE:
+        - Lock single problem/promise/outcome
+        - Define quick win (measurable, 24-72h)
+        - Map 3-step action path
+      
+      skills:
+        - quick_info_product_builder_lite_v2.0.0.xml
+
+  production:
+    builder:
+      name: "Info Product Builder"
+      type: sub_agent
+      phase: P2
+      model: claude-opus
+      
+      system_prompt: |
+        REQUIRED OUTPUTS:
+        - Core guide (5-12 pages, scannable)
+        - Checklist (Do/Done format)
+        - Tracker (daily progress)
+        - Template (fill-in prompt)
+        - Mini-FAQ (6 questions)
+        - Soft bridge to next step
+        
+        CONSTRAINTS:
+        - Each step <30 min/day
+        - Action assets > text
+        - No hard sell inside product
+      
+      skills:
+        - quick_info_product_builder_lite_v2.0.0.xml
+        - master_writing_partner_v2.0.0.xml
+      
+      mma_gate: true
+      mma_threshold: 8.0
+
+  polish:
+    editor:
+      name: "Info Product Editor"
+      type: sub_agent
+      phase: P3
+      model: claude-opus
+      
+      skills:
+        - human_persuasion_editor_v2.1.0.md
+
+# ═══════════════════════════════════════════════════════════════════
+# LANGGRAPH WORKFLOW DEFINITIONS
+# ═══════════════════════════════════════════════════════════════════
+
+langgraph_workflows:
+  description: "LangGraph workflow configurations for each pod"
+  
+  advertorial_workflow:
+    nodes:
+      - id: "angle_finder"
+        agent: "advertorial_pods.draft.angle_finder"
+        next: "draft_writer"
+      - id: "draft_writer"
+        agent: "advertorial_pods.draft.draft_writer"
+        next: "mma_draft_gate"
+      - id: "mma_draft_gate"
+        agent: "mma_master_monitor"
+        mode: "M1_quick_score"
+        conditional_next:
+          PASS: "production_builder"
+          FIX: "draft_writer"
+          ESCALATE: "human_gate"
+      - id: "production_builder"
+        agent: "advertorial_pods.production.builder"
+        next: "mma_production_gate"
+      - id: "mma_production_gate"
+        agent: "mma_master_monitor"
+        mode: "M2_deep_audit"
+        conditional_next:
+          PASS: "voice_editor"
+          FIX: "production_builder"
+          ESCALATE: "human_gate"
+      - id: "voice_editor"
+        agent: "advertorial_pods.polish.voice_editor"
+        next: "final_qa"
+      - id: "final_qa"
+        agent: "advertorial_pods.polish.final_qa"
+        mode: "M4_compliance_gate"
+        next: "END"
+      - id: "human_gate"
+        type: "HITL"
+        copilotkit_hook: "useApproval"
+    
+    breakpoints:
+      - after: "mma_draft_gate"
+        copilotkit_state: "draft_review"
+      - after: "mma_production_gate"
+        copilotkit_state: "production_review"
+
+  salespage_workflow:
+    nodes:
+      - id: "strategy"
+        agent: "salespage_pods.draft.strategy"
+        next: "draft_writer"
+      - id: "draft_writer"
+        agent: "salespage_pods.draft.writer"
+        next: "mma_draft_gate"
+      # ... similar pattern
+
+# ═══════════════════════════════════════════════════════════════════
+# COPILOTKIT / AG-UI INTEGRATION
+# ═══════════════════════════════════════════════════════════════════
+
+copilotkit_integration:
+  description: "CopilotKit v1.5 + AG-UI configuration for HITL"
+  
+  hooks:
+    useAgent:
+      description: "Subscribe to LangGraph/Pydantic AI state"
+      usage: |
+        const { state, actions } = useAgent({
+          agentId: 'advertorial_workflow',
+          onStateChange: (newState) => {
+            // Update UI with MMA scores, 7S coverage, etc.
+          }
+        });
+    
+    useApproval:
+      description: "Human-in-the-loop approval gates"
+      triggers:
+        - "mma_draft_gate"
+        - "mma_production_gate"
+        - "human_gate"
+    
+    useSourceValidation:
+      description: "Approve/reject specific chunks before next stage"
+      usage: |
+        // Before agent 'Polishes', display chunks for approval
+        const { chunks, approve, reject } = useSourceValidation();
+
+  generative_ui:
+    description: "AG-UI components for rich rendering"
+    components:
+      - MMAScorecard: "Display 7D scores with visual indicators"
+      - SevenSCoverage: "Heatmap of 7S dimension coverage"
+      - DriftReport: "Visual cross-asset consistency matrix"
+      - AssetPreview: "Formatted preview cards for copy"
+
+# ═══════════════════════════════════════════════════════════════════
+# PYDANTIC AI AGENT SCHEMAS
+# ═══════════════════════════════════════════════════════════════════
+
+pydantic_schemas:
+  description: "Pydantic AI model definitions for type-safe agents"
+  
+  MMAScorecard:
+    fields:
+      - name: asset_name
+        type: str
+      - name: mode
+        type: "Literal['M1', 'M2', 'M3', 'M4', 'M5']"
+      - name: dimension_scores
+        type: "Dict[str, float]"
+      - name: weighted_average
+        type: float
+      - name: seven_s_scores
+        type: "Dict[str, float]"
+      - name: verdict
+        type: "Literal['PASS', 'FIX', 'ESCALATE']"
+      - name: routing
+        type: "Optional[str]"
+      - name: fix_instructions
+        type: "List[str]"
+      - name: is_polished
+        type: bool
+  
+  OrchestrationResult:
+    fields:
+      - name: run_id
+        type: str
+      - name: project_id
+        type: str
+      - name: current_phase
+        type: "Literal['P1', 'P2', 'P3']"
+      - name: artifacts
+        type: "Dict[str, Any]"
+      - name: mma_history
+        type: "List[MMAScorecard]"
+      - name: next_action
+        type: str
+  
+  ResonanceCritique:
+    description: "For self-annealing reviewer pattern"
+    fields:
+      - name: resonance_score
+        type: int
+        description: "0-10 score on persona mirroring"
+      - name: triggers_found
+        type: "List[str]"
+        description: "Psychological triggers detected"
+      - name: friction_points
+        type: "List[str]"
+        description: "Phrases causing skepticism"
+      - name: seven_s_gaps
+        type: "List[str]"
+        description: "Missing 7S dimensions"
+      - name: required_fixes
+        type: "List[str]"
+        description: "Step-by-step annealing instructions"
+      - name: is_polished
+        type: bool
+
+# ═══════════════════════════════════════════════════════════════════
+# CONTEXT & OPTIMIZATION
+# ═══════════════════════════════════════════════════════════════════
+
+context_management:
+  commands:
+    - "/context"  # Visualize token distribution
+    - "/stats"    # Usage overview
+  
+  optimization_rules:
+    - "If MCP tools > 20% context, evaluate removal"
+    - "Keep orchestrator < 2000 tokens"
+    - "Sub-agents isolated, disposed after use"
+    - "Garbage collect at phase transitions"
+    - "Load MMA only at gate points, not continuously"
+  
+  lean_context_strategy:
+    description: "Deferred loading pattern from architecture primer"
+    approach: |
+      1. Provide high-level summary of toolsets initially
+      2. If agent says "I need X", inject specific tool definition
+      3. Use "Skill Runner" tool for code execution rather than 40 tools
+      4. Only mount MCP servers required for current node
+
+# ═══════════════════════════════════════════════════════════════════
+# WORKFLOW COMMANDS
+# ═══════════════════════════════════════════════════════════════════
+
+workflow_commands:
+  asset_commands:
+    - "/advertorial"    # Full advertorial workflow
+    - "/salespage"      # Full sales page workflow
+    - "/salespage-lite" # Quick sales page
+    - "/vsl"            # Full VSL workflow
+    - "/vsl-short"      # Short form VSL
+    - "/design"         # Design workflow
+    - "/email"          # Email sequence
+    - "/infoproduct"    # Quick info product
+  
+  phase_commands:
+    - "/draft"   # Run draft phase only
+    - "/produce" # Run production phase only
+    - "/polish"  # Run polish phase only
+  
+  mma_commands:
+    - "/mma"          # Run MMA Quick Score
+    - "/mma-deep"     # Run MMA Deep Audit
+    - "/mma-drift"    # Run Multi-Asset Consistency
+    - "/mma-comply"   # Run Compliance Gate
+    - "/mma-compare"  # Run Comparative Scoring
+  
+  utility_commands:
+    - "/validate" # Run MMA validation
+    - "/7s"       # Run 7S coverage check
+    - "/neuro"    # Run Neuro-Resonance audit
+    - "/qa"       # Final QA check
+    - "/ship"     # Package for delivery
+    - "/gc"       # Garbage collect context
+    - "/handoff"  # Generate session handoff
+
+# ═══════════════════════════════════════════════════════════════════
+# VERSION HISTORY
+# ═══════════════════════════════════════════════════════════════════
+
+version_history:
+  v2.0.0:
+    date: "2026-01-07"
+    changes:
+      - "Added MMA Master Monitor Agent as quality gate"
+      - "Updated all skill references to v2.1.0 where available"
+      - "Added Pydantic AI agent definitions"
+      - "Added LangGraph workflow configurations"
+      - "Added CopilotKit/AG-UI HITL integration"
+      - "Added 7S/7F Chain validation at every gate"
+      - "Added Neuro-Resonance Auditor integration"
+      - "Added Evidence Pack Builder integration"
+      - "Aligned phases with 3-Axis Architecture v2.1"
+      - "Added lean context strategy from architecture primer"
+      - "Added Pydantic schemas for type-safe agents"
+  
+  v1.0.0:
+    date: "2026-01-01"
+    changes:
+      - "Initial sub-agent configurations"
+      - "Basic pod structure for each asset type"
+      - "Phase management (P1/P2/P3)"
+
+# ═══════════════════════════════════════════════════════════════════
+# END OF SUB_AGENT_CONFIGURATIONS v2.0.0
+# ═══════════════════════════════════════════════════════════════════

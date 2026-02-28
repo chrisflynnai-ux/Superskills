@@ -1,0 +1,236 @@
+{
+  "skill_id": "agentic_browser_orchestrator",
+  "skill_name": "Agentic Browser Orchestrator",
+  "version": "2.0.0",
+  "codename": "OAF",
+  "domain": "tools",
+  "paradigm": "code_generation",
+  
+  "description": "Generate Playwright/Python scripts on-demand from task descriptions. Execute at 100K/day scale via Modal/Trigger.dev. Self-healing via recursive annealing. Zero context rot via sandbox filtering.",
+  
+  "doctrine": {
+    "zero_point_context": "Load only required skill (98% context reduction)",
+    "pce_framework": "Planning (SOP) → Coordination (Agent) → Execution (Script)",
+    "double_ii": "Information Layer (.md) vs Implementation Layer (.py)",
+    "sandbox_filtering": "Process in container, return only JSON (never raw HTML)",
+    "recursive_annealing": "Errors become training data → update constraints → regenerate"
+  },
+  
+  "core_insight": "Tool orchestration treats LLM as CPU (expensive). Code generation treats LLM as Engineer building a specialized CPU (cheap). Use LLM once to write the tool, tool runs forever.",
+  
+  "triggers": [
+    "scrape", "extract", "enrich", "verify", "validate",
+    "apollo", "linkedin", "directory", "google maps",
+    "competitor", "ads", "funnel", "landing page",
+    "lead generation", "browser automation", "playwright",
+    "crawl", "spider", "monitor", "screenshot"
+  ],
+  
+  "playbooks": {
+    "apollo_url_handoff": {
+      "purpose": "Bypass Apollo export limits ($59/1000 → $0.70/1000)",
+      "tools": ["Apify", "Ample Leads", "PhantomBuster"],
+      "output": "leads.json"
+    },
+    "linkedin_waterfall_enrichment": {
+      "purpose": "Transform profiles to >95% valid leads",
+      "tools": ["Sales Navigator", "Apify", "Wiza", "Bounceban"],
+      "output": "enriched_leads.json"
+    },
+    "niche_directory_deep_build": {
+      "purpose": "30+ pages deep for specific attributes",
+      "tools": ["Crawl4AI", "Firecrawl"],
+      "output": "directory_data.json"
+    },
+    "competitor_ad_monitoring": {
+      "purpose": "Scrape ad libraries for winning angles",
+      "tools": ["Firecrawl", "Gemini"],
+      "output": "competitor_intel.json"
+    },
+    "enrichment_waterfall": {
+      "purpose": "Zero-Trust cascade to >95% email validity",
+      "tools": ["ICPS", "Lead Magic", "Wiza", "Bounceban"],
+      "output": "validated_leads.json"
+    }
+  },
+  
+  "phases": {
+    "planning": {
+      "component": "Zero-Point Router",
+      "input": "Natural language task",
+      "output": "Task spec + Skill selection",
+      "context_reduction": "98%"
+    },
+    "code_generation": {
+      "component": "Double-II Engine",
+      "input": "Task spec + Playbook + Expertise",
+      "output": "Standalone Python script (.py)",
+      "validation": "Linting before execution"
+    },
+    "execution": {
+      "component": "Serverless Runtime",
+      "platforms": ["Modal", "Trigger.dev"],
+      "pattern": "Spawn container → Execute Playwright → Return JSON",
+      "never": "Send raw HTML to LLM"
+    },
+    "self_healing": {
+      "component": "Annealing Agent",
+      "trigger": "Exit code != 0 OR stderr output",
+      "flow": "Capture → Classify → Fix code → Update constraint → Retry"
+    },
+    "output": {
+      "component": "SSOT Writer",
+      "destination": "Supabase/Postgres",
+      "return_to_agent": "Job ID + Summary only (never raw data)"
+    }
+  },
+  
+  "integrations": {
+    "cold_outreach_architect": {
+      "role": "Hunter + Validator",
+      "skill_calls": ["run_lead_pipeline", "verify_leads", "enrich_contact"],
+      "triggers": ["low_inventory", "interest_signal"],
+      "handoff": "leads_table in Supabase"
+    },
+    "lead_gen_funnel_architect": {
+      "role": "Spy + QA Engineer",
+      "skill_calls": ["deep_funnel_scan", "competitor_ad_spy", "test_deployment"],
+      "triggers": ["weekly_spy", "deployment_push"],
+      "handoff": "competitor_intel table + screenshot URLs"
+    },
+    "assessment_lead_gen_architect": {
+      "role": "Researcher",
+      "skill_calls": ["mine_reviews", "scrape_benchmarks", "verify_claims"],
+      "triggers": ["review_alert", "quiz_completion"],
+      "handoff": "pain_database + industry_benchmarks"
+    }
+  },
+  
+  "scale_target": "100000_executions_per_day",
+  
+  "cost_model": {
+    "script_generation": "LLM tokens (once per new task type)",
+    "script_execution": "Pennies per 1000 runs (Modal compute)",
+    "comparison": "1000x cheaper than running LLM chain 100K times",
+    "example": "$5 Modal credits = months of standard automation"
+  },
+  
+  "quality_gates": {
+    "email_validity": {
+      "threshold": ">95% Safe",
+      "action_on_fail": "Do not send. Route to manual or discard."
+    },
+    "data_density": {
+      "threshold": "3 contacts per company",
+      "action_on_fail": "Trigger AI agent for alternate contacts"
+    },
+    "spam_traps": {
+      "threshold": "0 allowed",
+      "action": "Use Bounce Protect or global blocklists"
+    },
+    "company_status": {
+      "threshold": "Active <60 days",
+      "check": "Ads, posts, hiring activity"
+    }
+  },
+  
+  "self_healing": {
+    "error_classification": {
+      "rate_limit": {
+        "patterns": ["429", "rate limit", "too many requests"],
+        "action": "switch_provider",
+        "fallbacks": ["PhantomBuster", "BrightData"]
+      },
+      "captcha": {
+        "patterns": ["captcha", "recaptcha", "verify human"],
+        "action": "switch_mode",
+        "fallback": "headed_browser"
+      },
+      "ip_blocked": {
+        "patterns": ["403", "forbidden", "blocked"],
+        "action": "rotate_proxy",
+        "fallback": "residential_proxy"
+      },
+      "auth_expired": {
+        "patterns": ["401", "unauthorized", "login required"],
+        "action": "refresh_session"
+      },
+      "selector_failed": {
+        "patterns": ["not found", "timeout", "no element"],
+        "action": "regenerate_selectors"
+      }
+    },
+    "constraint_learning": {
+      "on_failure": "Update skill.md with learned constraint",
+      "format": "Do not use X selector on Y site; use Z instead"
+    }
+  },
+  
+  "safeguards": {
+    "budget_caps": {
+      "per_run": "$10 default",
+      "daily": "$50",
+      "monthly": "$500",
+      "action_on_exceed": "Abort + Slack alert"
+    },
+    "rate_limits": {
+      "concurrent_browsers": 5,
+      "requests_per_minute": 30,
+      "pages_per_session": 100
+    },
+    "loop_guards": {
+      "max_iterations": 100,
+      "max_retries_per_item": 3,
+      "timeout_seconds": 300
+    },
+    "idempotency": {
+      "mechanism": "Job ID tracking in database",
+      "prevents": "Duplicate runs, double charges"
+    }
+  },
+  
+  "observability": {
+    "logging": {
+      "every_action": true,
+      "structured": true,
+      "destination": "Supabase logs table"
+    },
+    "alerting": {
+      "success": "Log quietly (silence is gold)",
+      "failure": "Slack immediately (alerts are red)",
+      "escalation": "If retry_count > 3, flag for human"
+    },
+    "evidence": {
+      "screenshots": "On every error + key states",
+      "action_log": "Full trace per run",
+      "storage": "R2/S3 with URL references"
+    }
+  },
+  
+  "deployment": {
+    "modal": {
+      "use_case": "High-performance compute, single-purpose agents",
+      "config": "Ephemeral containers, pay per second",
+      "decorator": "@app.function(timeout=300, retries=3)"
+    },
+    "trigger_dev": {
+      "use_case": "Durable workflows, human-in-loop delays",
+      "config": "Long-polling, built-in queues",
+      "retry": "Exponential backoff with maxAttempts=3"
+    }
+  },
+  
+  "token_budget": {
+    "zero_point": 100,
+    "active": 1200,
+    "max_execution": 6000
+  },
+  
+  "dependencies": {
+    "mcp_tools": ["playwright_skill", "firecrawl_mcp"],
+    "libraries": ["playwright", "httpx", "pydantic"],
+    "platforms": ["Modal", "Trigger.dev", "Supabase"],
+    "upstream_modules": ["M1_Orchestrator", "M3_Workflow_Translator"],
+    "downstream_modules": ["M5_Intelligence_Agent", "M6_Conversation_Agent"]
+  }
+}
