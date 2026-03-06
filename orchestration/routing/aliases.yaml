@@ -1,0 +1,564 @@
+# SUPERMIND Skill Aliases v1.0
+# Maps legacy filenames, commands, and nicknames → canonical skill_ids
+# Per REFACTOR PLAN v1.4
+#
+# Format:
+#   skill_id:  canonical ID (domain_function)
+#   domain:    skill domain folder
+#   file:      current XML filename
+#   command:   slash command trigger
+#   aliases:   list of alternative names/triggers
+#
+# Generated: 2026-03-05
+# Run: python tools/alias_resolver.py --validate
+
+skills:
+
+  # ============================================================
+  # DOMAIN: ads (Meta Ads)
+  # ============================================================
+
+  - skill_id: ads_andromeda_engine
+    domain: ads
+    file: KB-META-ADS-ANDROMEDA-CREATIVE-ENGINE-v1.0.xml
+    command: /ads-creative
+    aliases:
+      - andromeda
+      - creative_engine
+      - ads_creative
+
+  - skill_id: ads_campaign_architecture
+    domain: ads
+    file: KB-META-ADS-CAMPAIGN-ARCHITECTURE-v1.0.xml
+    command: /ads-campaign
+    aliases:
+      - campaign_architecture
+      - ads_campaign
+
+  - skill_id: ads_image_analyzer
+    domain: ads
+    file: KB-META-ADS-IMAGE-ANALYZER-v1.0.xml
+    command: /ads-analyze
+    aliases:
+      - image_analyzer
+      - ads_analyze
+
+  - skill_id: ads_image_generator
+    domain: ads
+    file: KB-META-ADS-IMAGE-GENERATOR-v1.0.xml
+    command: /ads-image
+    aliases:
+      - image_generator
+      - ads_image
+
+  - skill_id: ads_measurement
+    domain: ads
+    file: KB-META-ADS-MEASUREMENT-ATTRIBUTION-v1.0.xml
+    command: /ads-measure
+    aliases:
+      - measurement_attribution
+      - ads_attribution
+
+  - skill_id: ads_diagnostics
+    domain: ads
+    file: KB-META-ADS-PERFORMANCE-DIAGNOSTICS-v1.0.xml
+    command: /ads-diagnose
+    aliases:
+      - performance_diagnostics
+      - ads_performance
+
+  - skill_id: ads_scaling
+    domain: ads
+    file: KB-META-ADS-SCALING-STRATEGIST-v1.0.xml
+    command: /ads-scale
+    aliases:
+      - scaling_strategist
+      - ads_scale
+
+  - skill_id: ads_generator
+    domain: ads
+    file: meta_ads_generator_v1.0.0.xml
+    command: /ads
+    aliases:
+      - meta_ads_generator
+      - ads_gen
+
+  # ============================================================
+  # DOMAIN: advisor
+  # ============================================================
+
+  - skill_id: advisor_business_mentor
+    domain: advisor
+    file: strategic_business_mentor_v1.0.xml
+    command: /mentor
+    aliases:
+      - strategic_business_mentor
+      - business_mentor
+
+  - skill_id: advisor_viral_theme
+    domain: advisor
+    file: viral_theme_developer_v1.0.xml
+    command: /viraltheme
+    aliases:
+      - viral_theme_developer
+
+  # ============================================================
+  # DOMAIN: copy (Copywriting)
+  # ============================================================
+
+  - skill_id: copy_advertorial
+    domain: copy
+    file: advertorial_copy_master_v2.0.0.xml
+    command: /advertorial
+    aliases:
+      - advertorial_copy_master
+      - advertorial
+      - advert
+
+  - skill_id: copy_lfva
+    domain: copy
+    file: "long_form_vsl_script_architect_v3_0_0 (1).xml"
+    command: /vsl
+    aliases:
+      - long_form_vsl_script_architect
+      - lfva
+      - vsl_architect
+      - long_form_vsl
+
+  - skill_id: copy_sfvw
+    domain: copy
+    file: short_form_vsl_script_writer_v3_0_0.xml
+    command: /shortvsl
+    aliases:
+      - short_form_vsl_script_writer
+      - sfvw
+      - short_form_vsl
+
+  - skill_id: copy_director
+    domain: copy
+    file: skill_copy_director_v3_0_0_FINAL.xml
+    command: /copydirect
+    aliases:
+      - skill_copy_director
+      - copy_director
+      - strategic_copy_director
+
+  - skill_id: copy_lead
+    domain: copy
+    file: skill.copy_lead.v1_0_0.xml
+    command: /copylead
+    aliases:
+      - copy_lead
+
+  - skill_id: copy_sales_page
+    domain: copy
+    file: sales_page_copywriter_lite_v2.0.0.xml
+    command: /salespage
+    aliases:
+      - sales_page_copywriter
+      - salespage
+      - sales_page_copywriter_lite
+
+  - skill_id: copy_writing_partner
+    domain: copy
+    file: master_writing_partner_v2.0.xml
+    command: /write
+    aliases:
+      - master_writing_partner
+      - writing_partner
+
+  - skill_id: copy_consistency
+    domain: copy
+    file: sales_copy_consistency_contract_v1.0.xml
+    command: /consistency
+    aliases:
+      - sales_copy_consistency_contract
+      - consistency_contract
+
+  - skill_id: copy_offer_architect
+    domain: copy
+    file: offer_architect_v3_0_0.xml
+    command: /offer
+    aliases:
+      - offer_architect
+
+  - skill_id: copy_director_light
+    domain: copy
+    file: strategic_copy_director_light_v2_1_0.xml
+    command: /copydirect-light
+    aliases:
+      - strategic_copy_director_light
+      - copy_director_light
+
+  # ============================================================
+  # DOMAIN: design
+  # ============================================================
+
+  - skill_id: design_wireframe
+    domain: design
+    file: design_wireframe_architect_v1.1.xml
+    command: /wireframe
+    aliases:
+      - wireframe_architect
+      - wireframe
+
+  - skill_id: design_image_planner
+    domain: design
+    file: image_planner_coordinator_v1.0.xml
+    command: /imageplan
+    aliases:
+      - image_planner_coordinator
+      - image_planner
+
+  - skill_id: design_master
+    domain: design
+    file: strategic_design_master_v1.0.0.xml
+    command: /design
+    aliases:
+      - strategic_design_master
+      - design_master
+
+  - skill_id: design_vertical_advertorial
+    domain: design
+    file: vertical_advertorial_v1_0_0.xml
+    command: /style-advertorial
+    aliases:
+      - vertical_advertorial
+
+  - skill_id: design_vertical_agency
+    domain: design
+    file: vertical_agency_v1_0_0.xml
+    command: /style-agency
+    aliases:
+      - vertical_agency
+
+  - skill_id: design_vertical_agentic_ui
+    domain: design
+    file: vertical_agentic_ui_v1_0_0.xml
+    command: /style-agentic
+    aliases:
+      - vertical_agentic_ui
+
+  - skill_id: design_vertical_ecom
+    domain: design
+    file: vertical_ecom_product_v1_0_0.xml
+    command: /style-ecom
+    aliases:
+      - vertical_ecom_product
+      - vertical_ecom
+
+  - skill_id: design_vertical_saas
+    domain: design
+    file: vertical_saas_landing_v1_0_0.xml
+    command: /style-saas
+    aliases:
+      - vertical_saas_landing
+      - vertical_saas
+
+  - skill_id: design_vertical_sales
+    domain: design
+    file: vertical_sales_page_v1_0_0.xml
+    command: /style-sales
+    aliases:
+      - vertical_sales_page
+      - vertical_sales
+
+  # ============================================================
+  # DOMAIN: email
+  # ============================================================
+
+  - skill_id: email_architecture
+    domain: email
+    file: KB-EMAIL-ARCHITECTURE-v1.0.xml
+    command: /email
+    aliases:
+      - email_architecture
+      - email_campaign
+
+  - skill_id: email_consciousness_mapper
+    domain: email
+    file: KB-EMAIL-CONSCIOUSNESS-MAPPER-v1.0.xml
+    command: /email-consciousness
+    aliases:
+      - consciousness_mapper
+
+  - skill_id: email_convection_tracker
+    domain: email
+    file: KB-EMAIL-CONVECTION-TRACKER-v1.0.xml
+    command: /email-convection
+    aliases:
+      - convection_tracker
+
+  - skill_id: email_launch_sequence
+    domain: email
+    file: KB-EMAIL-LAUNCH-SEQUENCE-v1.0.xml
+    command: /email-launch
+    aliases:
+      - launch_sequence
+
+  - skill_id: email_relationship_ladder
+    domain: email
+    file: KB-EMAIL-RELATIONSHIP-LADDER-v1.0.xml
+    command: /email-relationship
+    aliases:
+      - relationship_ladder
+
+  - skill_id: email_segmentation
+    domain: email
+    file: KB-EMAIL-SEGMENTATION-v1.0.xml
+    command: /email-segment
+    aliases:
+      - segmentation
+
+  - skill_id: email_sideways_sales
+    domain: email
+    file: KB-EMAIL-SIDEWAYS-SALES-v1.0.xml
+    command: /email-sideways
+    aliases:
+      - sideways_sales
+
+  - skill_id: email_subject_lines
+    domain: email
+    file: KB-EMAIL-SUBJECT-LINES-v1.0.xml
+    command: /email-subjects
+    aliases:
+      - subject_lines
+
+  # ============================================================
+  # DOMAIN: leadgen
+  # ============================================================
+
+  - skill_id: leadgen_assessment
+    domain: leadgen
+    file: assessment_lead_gen_architect_v1.0.xml
+    command: /leadgen-assess
+    aliases:
+      - assessment_lead_gen
+      - assessment_architect
+
+  - skill_id: leadgen_cold_outreach
+    domain: leadgen
+    file: cold_outreach_architect_v1.0.xml
+    command: /outreach
+    aliases:
+      - cold_outreach_architect
+      - cold_outreach
+
+  - skill_id: leadgen_funnel
+    domain: leadgen
+    file: lead_gen_funnel_architect_v1.0.xml
+    command: /funnel
+    aliases:
+      - lead_gen_funnel_architect
+      - funnel_architect
+
+  - skill_id: leadgen_power_trio
+    domain: leadgen
+    file: power_trio_router_v1.0.xml
+    command: /powertrio
+    aliases:
+      - power_trio_router
+      - power_trio
+
+  - skill_id: leadgen_onboarding
+    domain: leadgen
+    file: KB-ONBOARDING-RETENTION-v1.0.xml
+    command: /onboarding
+    aliases:
+      - onboarding_retention
+
+  # ============================================================
+  # DOMAIN: meta (System/Orchestration)
+  # ============================================================
+
+  - skill_id: meta_mma
+    domain: meta
+    file: mma_master_monitor_agent_v1_0_0.xml
+    command: /validate
+    aliases:
+      - mma
+      - mma_master_monitor_agent
+      - master_monitor_agent
+      - quality_gate
+
+  - skill_id: meta_skill_builder
+    domain: meta
+    file: skill_builder_v1.2.0.xml
+    command: /buildskill
+    aliases:
+      - skill_builder
+
+  - skill_id: meta_zpwo
+    domain: meta
+    file: zpwo_v3_MICRO.xml
+    command: /zpwo
+    aliases:
+      - zpwo
+      - zero_point
+      - orchestrator
+
+  # ============================================================
+  # DOMAIN: product
+  # ============================================================
+
+  - skill_id: product_offer_architect
+    domain: product
+    file: offer_architect_v2.0.xml
+    command: /offerarch
+    aliases:
+      - offer_architect
+      - offer_arch
+
+  - skill_id: product_creation_genius
+    domain: product
+    file: product_creation_genius_v2.0.xml
+    command: /infoproduct
+    aliases:
+      - product_creation_genius
+      - product_genius
+
+  - skill_id: product_quick_builder
+    domain: product
+    file: quick_info_product_builder_lite_v2.0.0.xml
+    command: /quickproduct
+    aliases:
+      - quick_info_product_builder
+      - product_builder_lite
+
+  - skill_id: product_transformation
+    domain: product
+    file: transformation_ecosystem_architect_v2.0.xml
+    command: /transform
+    aliases:
+      - transformation_ecosystem_architect
+      - transformation_architect
+
+  - skill_id: product_transformation_kb
+    domain: product
+    file: KB-TRANSFORMATION-ARCHITECTURE-v1.0.xml
+    command: /transform-kb
+    aliases:
+      - transformation_architecture_kb
+
+  # ============================================================
+  # DOMAIN: research
+  # ============================================================
+
+  - skill_id: research_market_intel
+    domain: research
+    file: market_intelligence_synthesizer_v2.1.xml
+    command: /intake
+    aliases:
+      - market_intelligence_synthesizer
+      - market_intel
+
+  - skill_id: research_market_scout
+    domain: research
+    file: skill.market_scout.v1_2_0.xml
+    command: /scout
+    aliases:
+      - market_scout
+      - scout
+
+  - skill_id: research_ops
+    domain: research
+    file: skill.research_ops.v1_0_0.xml
+    command: /researchops
+    aliases:
+      - research_ops
+
+  - skill_id: research_synthesizer
+    domain: research
+    file: skill.research_synthesizer.v3_0_0.xml
+    command: /synthesize
+    aliases:
+      - research_synthesizer
+
+  - skill_id: research_deconstructor
+    domain: research
+    file: sales_page_deconstructor_v2.1.0.xml
+    command: /deconstruct
+    aliases:
+      - sales_page_deconstructor
+      - deconstructor
+
+  - skill_id: research_vsl_analyzer
+    domain: research
+    file: vsl_script_analyzer_v1.0.0.xml
+    command: /analyzevsl
+    aliases:
+      - vsl_script_analyzer
+      - vsl_analyzer
+
+  # ============================================================
+  # DOMAIN: systems
+  # ============================================================
+
+  - skill_id: systems_workflow_architect
+    domain: systems
+    file: tools_workflow_architect_v1.0.0.xml
+    command: /workflow
+    aliases:
+      - tools_workflow_architect
+      - workflow_architect
+
+  - skill_id: systems_workflow_engineer
+    domain: systems
+    file: tools_workflow_engineer.xml
+    command: /engineer
+    aliases:
+      - tools_workflow_engineer
+      - workflow_engineer
+
+  # ============================================================
+  # DOMAIN: writing
+  # ============================================================
+
+  - skill_id: writing_viral_theme
+    domain: writing
+    file: viral_theme_developer_v1.0.xml
+    command: /viraltheme
+    aliases:
+      - viral_theme_developer
+      - viral_theme
+
+  # ============================================================
+  # DEPRECATED / SUPERSEDED (kept for backward compatibility)
+  # ============================================================
+
+  - skill_id: copy_lfva_v2
+    domain: copy
+    file: long_form_vsl_script_architect_v2.0.xml
+    command: ""
+    aliases:
+      - lfva_v2
+      - long_form_vsl_v2
+
+  - skill_id: copy_sfvw_v2
+    domain: copy
+    file: short_form_vsl_script_writer_v2.0.xml
+    command: ""
+    aliases:
+      - sfvw_v2
+      - short_form_vsl_v2
+
+  - skill_id: copy_director_v2
+    domain: copy
+    file: strategic_copy_director_v2_1_0.xml
+    command: ""
+    aliases:
+      - strategic_copy_director_v2
+
+  - skill_id: research_deconstructor_v2
+    domain: research
+    file: sales_page_deconstructor_v2.0.0.xml
+    command: ""
+    aliases:
+      - deconstructor_v2
+
+  - skill_id: research_offer_architect
+    domain: research
+    file: offer_architect_v2.0.xml
+    command: ""
+    aliases:
+      - research_offer_arch

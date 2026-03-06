@@ -126,3 +126,4 @@ qrx-project/assets/
 # Allow React app lib folder if web app development continues
 !app/src/lib/
 !web/src/lib/*
+.claude/worktrees/

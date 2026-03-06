@@ -1,606 +1,1002 @@
-# ULTRAMIND SKILLS MANIFEST v3.0.0 (ANTIGRAVITY-READY)
-manifest_version: "3.0.0"
-updated: "2026-01-12"
-philosophy: "Progressive Disclosure - Light Center, Heavy Edges"
-antigravity_compatible: true
+# SUPERMIND Skills Manifest
+# Generated: 2026-03-05T23:33:43.270716
+# Generator: manifest_builder v1.0
 
-# ============================================================
-# VISUAL MAPPING (For Antigravity IDE 3D Visualization)
-# ============================================================
-neuro_box_axes:
-  x_axis:
-    name: "MIND ↔ SPIRIT"
-    poles:
-      left: "MIND (Logic/Acetylcholine/1.25Hz)"
-      right: "SPIRIT (Proof/Serotonin/0.75Hz)"
-    tracking: "Technical Resonance ↔ Agentic Persuasion"
+version: "3.0.0"
+generated: "2026-03-05T23:33:43.270716"
+skills_dir: ".claude\skills"
 
-  y_axis:
-    name: "BODY ↔ HEART"
-    poles:
-      bottom: "BODY (Safety/Dopamine/1.5Hz)"
-      top: "HEART (Status/GABA/1.0Hz)"
-    tracking: "Safety Foundation ↔ Status Elevation"
+summary:
+  total: 65
+  healthy: 0
+  parse_errors: 44
+  validation_failures: 21
+  domains: 11
 
-  z_axis:
-    name: "PSYCH ↔ COSMIC"
-    poles:
-      back: "PSYCH (Identity/Oxytocin/0.3Hz)"
-      front: "COSMIC (Action/Adrenaline/0.5Hz)"
-    tracking: "Inner Development ↔ Outer Design"
+domains:
+  ads:
+    count: 8
+    healthy: 0
+    skills:
+      - skill_id: ""
+        name: "KB-META-ADS-ANDROMEDA-CREATIVE-ENGINE-v1.0"
+        file: "KB-META-ADS-ANDROMEDA-CREATIVE-ENGINE-v1.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "not well-formed (invalid token): line 93, column 49"
 
-  center:
-    name: "FLOW (Zero-Point)"
-    dimension: 7
-    function: "Fragment & Facilitate - Absolute FLOW"
-    color: "#FFFFFF"
+      - skill_id: ""
+        name: ""
+        file: "KB-META-ADS-CAMPAIGN-ARCHITECTURE-v1.0.xml"
+        version: ""
+        status: ""
+        health: "NEEDS_FIX"
+        size_kb: 96.5
+        validation_score: "1/19"
+        failed_checks:
+          - "root_is_skill"
+          - "has_skill_id"
+          - "skill_id_convention"
+          - "has_version"
+          - "version_semver"
+          - "has_status"
+          - "has_meta"
+          - "has_contract"
+          - "has_executionprotocol"
+          - "has_selfcheck"
+          - "has_patchlog"
+          - "selfcheck_min_3"
+          - "has_mma_gate"
+          - "layer_contract"
+          - "layer_rules"
+          - "layer_reasoning"
+          - "layer_impl"
+          - "all_4_layers"
 
-# ============================================================
-# META & ORCHESTRATION (The Conductor Layer)
-# ============================================================
-meta_orchestration:
-  zpwo:
-    name: "Zero-Point Workflow Orchestrator (Micro)"
-    file: "skills/meta/zpwo_v3_MICRO.xml"
-    axis: "CENTER (7th Dimension)"
-    position:
-      dimension: 7
-      coordinates: [0, 0, 0]
-      color: "#FFFFFF"
-    load_cost: high
-    progressive_layers:
-      L1: 400
-      L2: 1500
-      L3: 1000
-      L4: 600
-    status: production
-    dependencies: []
-    consumed_by: [advertorial_master, sales_page_lite, email_genius, market_intel]
+      - skill_id: ""
+        name: "KB-META-ADS-IMAGE-ANALYZER-v1.0"
+        file: "KB-META-ADS-IMAGE-ANALYZER-v1.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "not well-formed (invalid token): line 54, column 55"
 
-  mma:
-    name: "MMA Master Monitor Agent"
-    file: "skills/meta/mma_master_monitor_agent_v1_0_0.xml"
-    axis: "BODY (Bottom/Safety)"
-    position:
-      dimension: "Y-BOTTOM"
-      coordinates: [0, -1, 0]
-      color: "#FF6B6B"
-    load_cost: medium
-    status: building
-    dependencies: []
-    consumed_by: [zpwo, advertorial_master, sales_page_lite]
+      - skill_id: ""
+        name: "KB-META-ADS-IMAGE-GENERATOR-v1.0"
+        file: "KB-META-ADS-IMAGE-GENERATOR-v1.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "not well-formed (invalid token): line 119, column 46"
 
-  skill_builder:
-    name: "Skill Builder v1.2.0"
-    file: "skills/meta/skill_builder_v1.2.0.xml"
-    axis: "MIND (Left/Logic)"
-    position:
-      dimension: "X-LEFT"
-      coordinates: [-1, 0, 0]
-      color: "#4A90E2"
-    load_cost: medium
-    status: production
-    dependencies: []
-    consumed_by: []
+      - skill_id: ""
+        name: "KB-META-ADS-MEASUREMENT-ATTRIBUTION-v1.0"
+        file: "KB-META-ADS-MEASUREMENT-ATTRIBUTION-v1.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "not well-formed (invalid token): line 32, column 135"
 
-  tools_workflow_engineer:
-    name: "Tools & Workflow Engineer"
-    file: "skills/systems/tools_workflow_architect_v1.0.0.xml"
-    axis: "MIND (Left/Logic)"
-    position:
-      dimension: "X-LEFT"
-      coordinates: [-0.8, 0, 0]
-      color: "#4A90E2"
-    load_cost: medium
-    status: production
-    dependencies: []
-    consumed_by: [zpwo]
+      - skill_id: ""
+        name: "KB-META-ADS-PERFORMANCE-DIAGNOSTICS-v1.0"
+        file: "KB-META-ADS-PERFORMANCE-DIAGNOSTICS-v1.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "not well-formed (invalid token): line 68, column 65"
 
-# ============================================================
-# COPY & PERSUASION (The Resonance Layer)
-# ============================================================
-copy_persuasion:
-  advertorial_master:
-    name: "Advertorial Copy Master"
-    file: "skills/copy/advertorial_copy_master_v2.0.0.xml"
-    axis: "MIND-SPIRIT (X-Axis)"
-    position:
-      dimension: "X-AXIS"
-      coordinates: [-0.5, 0, 0.2]
-      color: "#4ECDC4"
-    load_cost: high
-    progressive_layers:
-      L1: 600
-      L2: 4000
-      L3: 3000
-      L4: 2000
-    status: production
-    dependencies: [market_intel, zpwo]
-    consumed_by: [sales_page_lite]
-    awareness_journey: "Unaware → Solution-Aware"
+      - skill_id: ""
+        name: "KB-META-ADS-SCALING-STRATEGIST-v1.0"
+        file: "KB-META-ADS-SCALING-STRATEGIST-v1.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "not well-formed (invalid token): line 33, column 114"
 
-  sales_page_lite:
-    name: "Sales Page Copywriter Lite"
-    file: "skills/copy/sales_page_copywriter_lite_v2.0.0.xml"
-    axis: "MIND-SPIRIT (X-Axis)"
-    position:
-      dimension: "X-AXIS"
-      coordinates: [0, 0, 0.3]
-      color: "#4ECDC4"
-    load_cost: high
-    progressive_layers:
-      L1: 500
-      L2: 3500
-      L3: 2500
-      L4: 1500
-    status: production
-    dependencies: [advertorial_master, zpwo]
-    consumed_by: [email_genius]
-    awareness_journey: "Solution-Aware → Most-Aware"
+      - skill_id: ""
+        name: "meta_ads_generator_v1.0.0"
+        file: "meta_ads_generator_v1.0.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "not well-formed (invalid token): line 233, column 58"
 
-  human_persuasion_editor:
-    name: "Human Persuasion Editor"
-    file: "skills/copy/human_persuasion_editor_v2.1.0.xml"
-    axis: "SPIRIT (Right/Proof)"
-    position:
-      dimension: "X-RIGHT"
-      coordinates: [1, 0, 0]
-      color: "#95E1D3"
-    load_cost: high
-    status: production
-    dependencies: []
-    consumed_by: [advertorial_master, sales_page_lite, email_genius]
-    specialization: "7S/7F optimization, AI detox"
+  advisor:
+    count: 2
+    healthy: 0
+    skills:
+      - skill_id: ""
+        name: ""
+        file: "strategic_business_mentor_v1.0.xml"
+        version: ""
+        status: ""
+        health: "NEEDS_FIX"
+        size_kb: 69.4
+        validation_score: "1/19"
+        failed_checks:
+          - "root_is_skill"
+          - "has_skill_id"
+          - "skill_id_convention"
+          - "has_version"
+          - "version_semver"
+          - "has_status"
+          - "has_meta"
+          - "has_contract"
+          - "has_executionprotocol"
+          - "has_selfcheck"
+          - "has_patchlog"
+          - "selfcheck_min_3"
+          - "has_mma_gate"
+          - "layer_contract"
+          - "layer_rules"
+          - "layer_reasoning"
+          - "layer_impl"
+          - "all_4_layers"
 
-  strategic_copy_director:
-    name: "Strategic Copy Director"
-    file: "skills/copy/strategic_copy_director_v2_1_0.xml"
-    axis: "SPIRIT (Right/Proof)"
-    position:
-      dimension: "X-RIGHT"
-      coordinates: [0.8, 0, 0]
-      color: "#95E1D3"
-    load_cost: high
-    status: production
-    dependencies: []
-    consumed_by: [advertorial_master, sales_page_lite]
+      - skill_id: ""
+        name: "viral_theme_developer_v1.0"
+        file: "viral_theme_developer_v1.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "not well-formed (invalid token): line 1178, column 9"
 
-  neuro_resonance_auditor:
-    name: "Neuro-Resonance Auditor"
-    file: "skills/copy/neuro_resonance_auditor_v2.1.0.xml"
-    axis: "SPIRIT (Right/Proof)"
-    position:
-      dimension: "X-RIGHT"
-      coordinates: [0.9, 0.2, 0]
-      color: "#95E1D3"
-    load_cost: medium
-    status: production
-    dependencies: []
-    consumed_by: [human_persuasion_editor]
-    specialization: "6D axis balance validation"
+  copy:
+    count: 13
+    healthy: 0
+    skills:
+      - skill_id: ""
+        name: "advertorial_copy_master_v2.0.0"
+        file: "advertorial_copy_master_v2.0.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "mismatched tag: line 223, column 85"
 
-  email_genius:
-    name: "Email Campaign Copy Genius"
-    file: "skills/email/EMAIL_COPY_GENIUS_v2_0_COMPLETE.md"
-    axis: "HEART (Top/Status)"
-    position:
-      dimension: "Y-TOP"
-      coordinates: [0, 1, 0]
-      color: "#FFE66D"
-    load_cost: high
-    status: production
-    dependencies: [sales_page_lite, zpwo]
-    consumed_by: []
-    awareness_journey: "Varies → +1 Level per email"
+      - skill_id: ""
+        name: "long_form_vsl_script_architect_v2.0"
+        file: "long_form_vsl_script_architect_v2.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "mismatched tag: line 202, column 8"
 
-  vsl_writer:
-    name: "VSL Script Writer (Long Form)"
-    file: "skills/copy/long_form_vsl_script_architect_v2.0.xml"
-    axis: "COSMIC (Front/Action)"
-    position:
-      dimension: "Z-FRONT"
-      coordinates: [0, 0, 1]
-      color: "#F38181"
-    load_cost: high
-    status: production
-    dependencies: [zpwo]
-    consumed_by: []
-    awareness_journey: "Problem-Aware → Most-Aware"
+      - skill_id: "skill.copy.long_form_vsl_script_architect.v3_0_0"
+        name: "Long-Form VSL Script Architect"
+        file: "long_form_vsl_script_architect_v3_0_0 (1).xml"
+        version: "3.0.0"
+        status: "active"
+        health: "NEEDS_FIX"
+        size_kb: 89.3
+        description: "Writes AND directs 12-20 minute documentary-style VSL scripts for cold/cool traffic.
+      Transforms complex mechanisms"
+        selfcheck_count: 6
+        validation_score: "8/19"
+        failed_checks:
+          - "skill_id_convention"
+          - "has_contract"
+          - "has_executionprotocol"
+          - "has_selfcheck"
+          - "has_patchlog"
+          - "has_mma_gate"
+          - "layer_contract"
+          - "layer_rules"
+          - "layer_reasoning"
+          - "layer_impl"
+          - "all_4_layers"
 
-  master_writing_partner:
-    name: "Master Writing Partner"
-    file: "skills/copy/master_writing_partner_v2.0.xml"
-    axis: "SPIRIT (Right/Proof)"
-    position:
-      dimension: "X-RIGHT"
-      coordinates: [0.7, 0.1, 0]
-      color: "#95E1D3"
-    load_cost: medium
-    status: production
-    dependencies: []
-    consumed_by: []
-    specialization: "Voice matching, polish, AI detox"
+      - skill_id: ""
+        name: "master_writing_partner_v2.0"
+        file: "master_writing_partner_v2.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "not well-formed (invalid token): line 152, column 94"
 
-  sales_page_deconstructor:
-    name: "Sales Page Deconstructor"
-    file: "skills/copy/sales_page_deconstructor_revision_architect_v1.0.0.xml"
-    axis: "MIND (Left/Logic)"
-    position:
-      dimension: "X-LEFT"
-      coordinates: [-0.6, 0, 0.1]
-      color: "#4A90E2"
-    load_cost: medium
-    status: production
-    dependencies: []
-    consumed_by: []
-    specialization: "Analyze & improve existing pages"
+      - skill_id: ""
+        name: "offer_architect_v3_0_0"
+        file: "offer_architect_v3_0_0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "not well-formed (invalid token): line 556, column 55"
 
-# ============================================================
-# RESEARCH & INTELLIGENCE (The Back/Psych Layer)
-# ============================================================
-research_intelligence:
-  market_intel:
-    name: "Market Intelligence Synthesizer"
-    file: "skills/research/market_intelligence_synthesizer_v2.1.xml"
-    axis: "PSYCH (Back/Identity)"
-    position:
-      dimension: "Z-BACK"
-      coordinates: [0, 0, -1]
-      color: "#7B68EE"
-    load_cost: medium
-    status: production
-    dependencies: []
-    consumed_by: [advertorial_master, sales_page_lite, zpwo]
-    specialization: "Research synthesis, insight extraction"
+      - skill_id: "sales_copy_consistency_contract"
+        name: ""
+        file: "sales_copy_consistency_contract_v1.0.xml"
+        version: "1.0.0"
+        status: "draft"
+        health: "NEEDS_FIX"
+        size_kb: 11.6
+        description: "Creates and validates a canonical \"lock file\" so all funnel assets (advertorial, VSL, sales page, emails) share the sa"
+        validation_score: "9/19"
+        failed_checks:
+          - "has_executionprotocol"
+          - "has_selfcheck"
+          - "has_patchlog"
+          - "selfcheck_min_3"
+          - "has_mma_gate"
+          - "layer_contract"
+          - "layer_rules"
+          - "layer_reasoning"
+          - "layer_impl"
+          - "all_4_layers"
 
-  framework_extractor:
-    name: "Framework Extractor"
-    file: "skills/research/framework_extractor_v1.0.xml"
-    axis: "PSYCH (Back/Identity)"
-    position:
-      dimension: "Z-BACK"
-      coordinates: [-0.3, 0, -0.8]
-      color: "#7B68EE"
-    load_cost: medium
-    status: to_build
-    dependencies: []
-    consumed_by: [market_intel]
-    specialization: "Pattern mining from successful content"
+      - skill_id: ""
+        name: "sales_page_copywriter_lite_v2.0.0"
+        file: "sales_page_copywriter_lite_v2.0.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "mismatched tag: line 236, column 106"
 
-  skeptic_avatar_red_team:
-    name: "Skeptic Avatar Red Team"
-    file: "skills/research/skeptic_avatar_red_team_v1.0.xml"
-    axis: "PSYCH (Back/Identity)"
-    position:
-      dimension: "Z-BACK"
-      coordinates: [0.3, 0, -0.8]
-      color: "#7B68EE"
-    load_cost: medium
-    status: to_build
-    dependencies: []
-    consumed_by: [advertorial_master, sales_page_lite]
-    specialization: "Objection stress testing, belief gap analysis"
+      - skill_id: ""
+        name: "short_form_vsl_script_writer_v2.0"
+        file: "short_form_vsl_script_writer_v2.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "mismatched tag: line 187, column 8"
 
-# ============================================================
-# PRODUCT & OFFER (The Cosmic/Action Layer)
-# ============================================================
-product_offer:
-  quick_info_builder:
-    name: "Quick Info Product Builder Lite"
-    file: "skills/product/quick_info_product_builder_lite_v2.0.0.xml"
-    axis: "COSMIC (Front/Action)"
-    position:
-      dimension: "Z-FRONT"
-      coordinates: [0, -0.3, 0.8]
-      color: "#F38181"
-    load_cost: medium
-    status: production
-    dependencies: [zpwo]
-    consumed_by: []
-    specialization: "Lead magnets, tripwires, bonuses"
+      - skill_id: "skill.copy.short_form_vsl_script_writer.v3_0_0"
+        name: "Short-Form VSL Script Writer"
+        file: "short_form_vsl_script_writer_v3_0_0.xml"
+        version: "3.0.0"
+        status: "active"
+        health: "NEEDS_FIX"
+        size_kb: 70.6
+        description: "Write and direct 5-10 minute VSL scripts for warm/hot traffic using multi-channel 
+      production engineering. Scripts"
+        selfcheck_count: 7
+        validation_score: "8/19"
+        failed_checks:
+          - "skill_id_convention"
+          - "has_contract"
+          - "has_executionprotocol"
+          - "has_selfcheck"
+          - "has_patchlog"
+          - "has_mma_gate"
+          - "layer_contract"
+          - "layer_rules"
+          - "layer_reasoning"
+          - "layer_impl"
+          - "all_4_layers"
 
-  product_creation_genius:
-    name: "Product Creation Genius"
-    file: "skills/product/product_creation_genius_v2.0.xml"
-    axis: "COSMIC (Front/Action)"
-    position:
-      dimension: "Z-FRONT"
-      coordinates: [0, 0, 0.9]
-      color: "#F38181"
-    load_cost: high
-    status: production
-    dependencies: []
-    consumed_by: []
-    specialization: "End-to-end product development"
+      - skill_id: "skill.copy_lead.v1_0_0"
+        name: "Copy Lead"
+        file: "skill.copy_lead.v1_0_0.xml"
+        version: "1.0.0"
+        status: "active"
+        health: "NEEDS_FIX"
+        size_kb: 46.7
+        description: "Build high-converting sales pages, landing pages, and offer pages using
+      the Neuro-Box 3-axis trust bridge (Resonat"
+        validation_score: "7/19"
+        failed_checks:
+          - "skill_id_convention"
+          - "has_contract"
+          - "has_executionprotocol"
+          - "has_selfcheck"
+          - "has_patchlog"
+          - "selfcheck_min_3"
+          - "has_mma_gate"
+          - "layer_contract"
+          - "layer_rules"
+          - "layer_reasoning"
+          - "layer_impl"
+          - "all_4_layers"
 
-  transformation_ecosystem_architect:
-    name: "Transformation Ecosystem Architect"
-    file: "skills/product/transformation_ecosystem_architect_v2.0.xml"
-    axis: "COSMIC (Front/Action)"
-    position:
-      dimension: "Z-FRONT"
-      coordinates: [0, 0.2, 0.9]
-      color: "#F38181"
-    load_cost: high
-    status: production
-    dependencies: []
-    consumed_by: []
-    specialization: "90-day arcs, milestones, support architecture"
+      - skill_id: "skill.copy_director.v3_0_0"
+        name: "Copy Director"
+        file: "skill_copy_director_v3_0_0_FINAL.xml"
+        version: "3.0.0"
+        status: "active"
+        health: "NEEDS_FIX"
+        size_kb: 38.6
+        description: "Routes campaigns through the 4-phase production track. Reads a campaign brief or
+      MarketIntelPacket, diagnoses traf"
+        validation_score: "7/19"
+        failed_checks:
+          - "skill_id_convention"
+          - "has_contract"
+          - "has_executionprotocol"
+          - "has_selfcheck"
+          - "has_patchlog"
+          - "selfcheck_min_3"
+          - "has_mma_gate"
+          - "layer_contract"
+          - "layer_rules"
+          - "layer_reasoning"
+          - "layer_impl"
+          - "all_4_layers"
 
-  offer_architect:
-    name: "Offer Architect"
-    file: "skills/product/offer_architect_v2.0.xml"
-    axis: "COSMIC (Front/Action)"
-    position:
-      dimension: "Z-FRONT"
-      coordinates: [0, 0.1, 0.85]
-      color: "#F38181"
-    load_cost: high
-    status: to_build
-    dependencies: []
-    consumed_by: [sales_page_lite]
-    specialization: "Value Equation, tiers, pricing, positioning"
+      - skill_id: ""
+        name: "strategic_copy_director_light_v2_1_0"
+        file: "strategic_copy_director_light_v2_1_0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "mismatched tag: line 158, column 89"
 
-# ============================================================
-# DESIGN & VISUAL (The Spirit/Right Layer)
-# ============================================================
-design_visual:
-  strategic_design_master:
-    name: "Strategic Design Master"
-    file: "skills/design/strategic_design_master_v1.0.0.xml"
-    axis: "SPIRIT (Right/Proof)"
-    position:
-      dimension: "X-RIGHT"
-      coordinates: [0.9, 0.3, 0]
-      color: "#95E1D3"
-    load_cost: high
-    status: production
-    dependencies: []
-    consumed_by: []
-    specialization: "Brand direction, visual systems"
+      - skill_id: ""
+        name: "strategic_copy_director_v2_1_0"
+        file: "strategic_copy_director_v2_1_0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "mismatched tag: line 368, column 8"
 
-  image_planner:
-    name: "Image Planner & Coordinator"
-    file: "skills/design/image_planner_coordinator_v1.0.xml"
-    axis: "SPIRIT (Right/Proof)"
-    position:
-      dimension: "X-RIGHT"
-      coordinates: [0.85, 0.4, 0]
-      color: "#95E1D3"
-    load_cost: medium
-    status: production
-    dependencies: []
-    consumed_by: []
-    specialization: "Asset creation briefs, visual concepts"
+  design:
+    count: 9
+    healthy: 0
+    skills:
+      - skill_id: ""
+        name: "design_wireframe_architect_v1.1"
+        file: "design_wireframe_architect_v1.1.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "mismatched tag: line 224, column 8"
 
-  design_wireframe_architect:
-    name: "Design Wireframe Architect"
-    file: "skills/design/design_wireframe_architect_v1.1.xml"
-    axis: "SPIRIT (Right/Proof)"
-    position:
-      dimension: "X-RIGHT"
-      coordinates: [0.8, 0.35, 0]
-      color: "#95E1D3"
-    load_cost: medium
-    status: production
-    dependencies: []
-    consumed_by: []
-    specialization: "UI/UX wireframes, layout planning"
+      - skill_id: ""
+        name: "image_planner_coordinator_v1.0"
+        file: "image_planner_coordinator_v1.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "mismatched tag: line 223, column 8"
 
-  ui_ux_pro_max_tool:
-    name: "UI-UX-Pro-Max Design Intelligence (Tool)"
-    file: "tools/ui-ux-pro-max/scripts/search.py"
-    type: "tool"
-    axis: "CONSCIENCE (Front/Design)"
-    position:
-      dimension: "Z-FRONT"
-      coordinates: [0.7, 0.3, 0.5]
-      color: "#E8A87C"
-    load_cost: zero
-    status: production
-    dependencies: []
-    consumed_by: [strategic_design_master]
-    specialization: "BM25 design intelligence search across 67 styles, 96 palettes, 57 fonts"
-    integration_type: "tool"
-    capabilities:
-      - "Design system generation (--design-system)"
-      - "Domain-specific search (style, color, typography, ux, etc.)"
-      - "Stack-specific guidelines (react, html-tailwind, nextjs, etc.)"
-      - "Master + Override persistence pattern"
+      - skill_id: ""
+        name: "strategic_design_master_v1.0.0"
+        file: "strategic_design_master_v1.0.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "not well-formed (invalid token): line 1686, column 25"
 
-  aesthetic_dna_base:
-    name: "ULTRAMIND Aesthetic DNA (Base Override)"
-    file: "skills/design/styles/STYLE_BASE_OVERRIDE.yaml"
-    type: "style_layer"
-    axis: "CONSCIENCE (Front/Design)"
-    position:
-      dimension: "Z-FRONT"
-      coordinates: [0.75, 0.3, 0.4]
-      color: "#D4A574"
-    load_cost: low
-    progressive_layers:
-      L1: 50
-      L2: 150
-    status: production
-    dependencies: []
-    consumed_by: [strategic_design_master, design_wireframe_architect]
-    specialization: "Universal design philosophy — minimal, tactile, futuristic-clean"
+      - skill_id: "skill.vertical_advertorial.v1_0_0"
+        name: "Advertorial Page"
+        file: "vertical_advertorial_v1_0_0.xml"
+        version: "1.0.0"
+        status: "active"
+        health: "NEEDS_FIX"
+        size_kb: 11.1
+        validation_score: "6/19"
+        failed_checks:
+          - "root_is_skill"
+          - "skill_id_convention"
+          - "has_contract"
+          - "has_executionprotocol"
+          - "has_selfcheck"
+          - "has_patchlog"
+          - "selfcheck_min_3"
+          - "has_mma_gate"
+          - "layer_contract"
+          - "layer_rules"
+          - "layer_reasoning"
+          - "layer_impl"
+          - "all_4_layers"
 
-  design_style_layers:
-    name: "Vertical-Specific Design Style Layers"
-    file: "skills/design/styles/"
-    type: "style_layer"
-    axis: "CONSCIENCE (Front/Design)"
-    position:
-      dimension: "Z-FRONT"
-      coordinates: [0.75, 0.35, 0.3]
-      color: "#D4A574"
-    load_cost: low
-    progressive_layers:
-      L1: 100
-      L2: 200
-    status: production
-    dependencies: [ui_ux_pro_max_tool, aesthetic_dna_base]
-    consumed_by: [strategic_design_master, design_wireframe_architect]
-    specialization: "10 pre-extracted vertical-specific design presets"
-    verticals:
-      - "agentic_ui (A2UI / AI Services)"
-      - "agency (Services / Portfolio)"
-      - "marketplace (Skills / Courses)"
-      - "community (Groups / Mentoring)"
-      - "editorial (Advertorials / Listicles)"
-      - "high_ticket (Coaching / VSL)"
-      - "quiz_funnel (Assessments)"
-      - "ecom_product (Product Pages)"
-      - "saas_modern (SaaS Landing)"
-      - "minimal_clean (Personal Brand)"
+      - skill_id: "skill.vertical_agency.v1_0_0"
+        name: "Agency Landing Page"
+        file: "vertical_agency_v1_0_0.xml"
+        version: "1.0.0"
+        status: "active"
+        health: "NEEDS_FIX"
+        size_kb: 16.4
+        description: "We identify bottlenecks and opportunities"
+        validation_score: "6/19"
+        failed_checks:
+          - "root_is_skill"
+          - "skill_id_convention"
+          - "has_contract"
+          - "has_executionprotocol"
+          - "has_selfcheck"
+          - "has_patchlog"
+          - "selfcheck_min_3"
+          - "has_mma_gate"
+          - "layer_contract"
+          - "layer_rules"
+          - "layer_reasoning"
+          - "layer_impl"
+          - "all_4_layers"
 
-# ============================================================
-# EXTERNAL GOOGLE STACK (Antigravity Edges)
-# ============================================================
-google_stack:
-  stitch:
-    name: "Stitch UI Designer"
-    capability: "UI Design → Figma/Code"
-    axis: "SPIRIT (Right/Proof)"
-    position:
-      dimension: "X-RIGHT"
-      coordinates: [1, 0.5, 0.2]
-      color: "#34A853"
-    integration_type: "external"
-    provider: "Google AI"
-    status: available
+      - skill_id: ""
+        name: "vertical_agentic_ui_v1_0_0"
+        file: "vertical_agentic_ui_v1_0_0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "not well-formed (invalid token): line 375, column 5"
 
-  opal:
-    name: "Opal Mini-App Builder"
-    capability: "No-Code Prototypes"
-    axis: "COSMIC (Front/Action)"
-    position:
-      dimension: "Z-FRONT"
-      coordinates: [0.2, 0, 1]
-      color: "#4285F4"
-    integration_type: "external"
-    provider: "Google AI"
-    status: available
+      - skill_id: "skill.vertical_ecom_product.v1_0_0"
+        name: "Ecom Product Page"
+        file: "vertical_ecom_product_v1_0_0.xml"
+        version: "1.0.0"
+        status: "active"
+        health: "NEEDS_FIX"
+        size_kb: 14.8
+        validation_score: "6/19"
+        failed_checks:
+          - "root_is_skill"
+          - "skill_id_convention"
+          - "has_contract"
+          - "has_executionprotocol"
+          - "has_selfcheck"
+          - "has_patchlog"
+          - "selfcheck_min_3"
+          - "has_mma_gate"
+          - "layer_contract"
+          - "layer_rules"
+          - "layer_reasoning"
+          - "layer_impl"
+          - "all_4_layers"
 
-  veo_flow:
-    name: "Veo 3 & Flow"
-    capability: "Cinematic Video with Audio"
-    axis: "HEART (Top/Status)"
-    position:
-      dimension: "Y-TOP"
-      coordinates: [0, 1, 0.3]
-      color: "#EA4335"
-    integration_type: "external"
-    provider: "Google AI"
-    status: available
+      - skill_id: "skill.vertical_saas_landing.v1_0_0"
+        name: "SaaS Landing Page"
+        file: "vertical_saas_landing_v1_0_0.xml"
+        version: "1.0.0"
+        status: "active"
+        health: "NEEDS_FIX"
+        size_kb: 17.8
+        description: "Focus on end result, not the tool"
+        validation_score: "6/19"
+        failed_checks:
+          - "root_is_skill"
+          - "skill_id_convention"
+          - "has_contract"
+          - "has_executionprotocol"
+          - "has_selfcheck"
+          - "has_patchlog"
+          - "selfcheck_min_3"
+          - "has_mma_gate"
+          - "layer_contract"
+          - "layer_rules"
+          - "layer_reasoning"
+          - "layer_impl"
+          - "all_4_layers"
 
-  antigravity_ide:
-    name: "Antigravity IDE"
-    capability: "Visual project management & 3D skill mapping"
-    axis: "CENTER (7th Dimension)"
-    position:
-      dimension: 7
-      coordinates: [0, 0, 0]
-      color: "#FBBC04"
-    integration_type: "external"
-    provider: "Google AI"
-    status: available
-    sync_with: [SESSION_STATE.json, SKILLS_MANIFEST.yaml]
+      - skill_id: "skill.vertical_sales_page.v1_0_0"
+        name: "Sales Page"
+        file: "vertical_sales_page_v1_0_0.xml"
+        version: "1.0.0"
+        status: "active"
+        health: "NEEDS_FIX"
+        size_kb: 19.2
+        validation_score: "6/19"
+        failed_checks:
+          - "root_is_skill"
+          - "skill_id_convention"
+          - "has_contract"
+          - "has_executionprotocol"
+          - "has_selfcheck"
+          - "has_patchlog"
+          - "selfcheck_min_3"
+          - "has_mma_gate"
+          - "layer_contract"
+          - "layer_rules"
+          - "layer_reasoning"
+          - "layer_impl"
+          - "all_4_layers"
 
-# ============================================================
-# ROUTING TABLE (Command → Skill Mapping)
-# ============================================================
-routing:
-  "/intake": "market_intel"
-  "/draft": "zpwo"
-  "/produce": "zpwo"
-  "/polish": "human_persuasion_editor"
-  "/advertorial": "advertorial_master"
-  "/salespage": "sales_page_lite"
-  "/email": "email_genius"
-  "/infoproduct": "quick_info_builder"
-  "/vsl": "vsl_writer"
-  "/design": "strategic_design_master"
-  "/designsystem": "ui_ux_pro_max_tool"
-  "/uipro": "ui_ux_pro_max_tool"
-  "/validate": "mma"
-  "/deconstruct": "sales_page_deconstructor"
-  "/status": "zpwo"
-  "/ship": "zpwo"
-  "/gc": "zpwo"
+  email:
+    count: 8
+    healthy: 0
+    skills:
+      - skill_id: ""
+        name: "KB-EMAIL-ARCHITECTURE-v1.0"
+        file: "KB-EMAIL-ARCHITECTURE-v1.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "not well-formed (invalid token): line 583, column 36"
 
-# ============================================================
-# LOAD DISCIPLINE
-# ============================================================
-load_rules:
-  always_loaded:
-    - "This manifest (metadata only)"
+      - skill_id: ""
+        name: "KB-EMAIL-CONSCIOUSNESS-MAPPER-v1.0"
+        file: "KB-EMAIL-CONSCIOUSNESS-MAPPER-v1.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "not well-formed (invalid token): line 194, column 93"
 
-  load_on_command:
-    - "L1 (Quick Reference) when skill triggered"
-    - "L2 (Core Procedure) when executing"
-    - "L3 (Advanced Patterns) when complexity detected"
-    - "L4 (Output Templates) when generating deliverables"
+      - skill_id: ""
+        name: "KB-EMAIL-CONVECTION-TRACKER-v1.0"
+        file: "KB-EMAIL-CONVECTION-TRACKER-v1.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "not well-formed (invalid token): line 203, column 79"
 
-  unload_after:
-    - "Phase completion"
-    - "Context usage >70%"
-    - "Manual /gc trigger"
+      - skill_id: ""
+        name: "KB-EMAIL-LAUNCH-SEQUENCE-v1.0"
+        file: "KB-EMAIL-LAUNCH-SEQUENCE-v1.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "not well-formed (invalid token): line 315, column 37"
 
-# ============================================================
-# CONTEXT BUDGET TARGETS
-# ============================================================
-context_targets:
-  manifest: "< 500 tokens"
-  claude_md: "< 2000 tokens"
-  skill_l1: "< 600 tokens"
-  skill_l2: "< 4000 tokens"
-  skill_l3: "< 3000 tokens"
-  skill_l4: "< 2000 tokens"
-  total_baseline: "< 3000 tokens (manifest + claude.md + 1 skill L1)"
+      - skill_id: ""
+        name: "KB-EMAIL-RELATIONSHIP-LADDER-v1.0"
+        file: "KB-EMAIL-RELATIONSHIP-LADDER-v1.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "not well-formed (invalid token): line 236, column 60"
 
-# ============================================================
-# ANTIGRAVITY INTEGRATION
-# ============================================================
-antigravity_integration:
-  session_state_sync:
-    path: ".claude/SESSION_STATE.json"
-    auto_update: true
-    sync_frequency: "on_phase_transition"
+      - skill_id: ""
+        name: "KB-EMAIL-SEGMENTATION-v1.0"
+        file: "KB-EMAIL-SEGMENTATION-v1.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "not well-formed (invalid token): line 138, column 17"
 
-  visual_tracking:
-    enabled: true
-    axes_display: "3D"
-    progress_indicators:
-      x_axis: "Mind-Spirit Balance"
-      y_axis: "Safety-Status Foundation"
-      z_axis: "Identity-Action Drive"
+      - skill_id: ""
+        name: "KB-EMAIL-SIDEWAYS-SALES-v1.0"
+        file: "KB-EMAIL-SIDEWAYS-SALES-v1.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "not well-formed (invalid token): line 85, column 100"
 
-  manager_view:
-    skill_graph: "enabled"
-    dependency_visualization: "enabled"
-    context_monitor: "real-time"
-    gc_alerts: "enabled_at_70_percent"
+      - skill_id: ""
+        name: "KB-EMAIL-SUBJECT-LINES-v1.0"
+        file: "KB-EMAIL-SUBJECT-LINES-v1.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "not well-formed (invalid token): line 140, column 112"
 
-  state_persistence:
-    ssot_objects: ["PROJECT_BRIEF", "MESSAGE_SPINE", "EVIDENCE_PACK", "VOICE_GUIDE"]
-    runtime_state: "SESSION_STATE.json"
-    checksum_validation: "enabled"
-    drift_detection: "continuous"
+  leadgen:
+    count: 5
+    healthy: 0
+    skills:
+      - skill_id: ""
+        name: "assessment_lead_gen_architect_v1.0"
+        file: "assessment_lead_gen_architect_v1.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "mismatched tag: line 179, column 84"
 
-# ============================================================
-# VALIDATION
-# ============================================================
-validation:
-  last_validated: "2026-02-07"
-  validator: "Claude Opus 4.6"
-  checksum_method: "SHA256"
-  drift_detection: "validate_ssot_lock.py"
-  antigravity_compatible: true
-  total_skills_cataloged: 33
-  skills_production_ready: 21
-  skills_building: 1
-  skills_to_build: 11
-  tools_integrated: 1
-  style_layers: 11
+      - skill_id: ""
+        name: "cold_outreach_architect_v1.0"
+        file: "cold_outreach_architect_v1.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "mismatched tag: line 180, column 82"
+
+      - skill_id: ""
+        name: "KB-ONBOARDING-RETENTION-v1.0"
+        file: "KB-ONBOARDING-RETENTION-v1.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "not well-formed (invalid token): line 848, column 58"
+
+      - skill_id: ""
+        name: "lead_gen_funnel_architect_v1.0"
+        file: "lead_gen_funnel_architect_v1.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "mismatched tag: line 153, column 73"
+
+      - skill_id: ""
+        name: "power_trio_router_v1.0"
+        file: "power_trio_router_v1.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "mismatched tag: line 178, column 81"
+
+  meta:
+    count: 3
+    healthy: 0
+    skills:
+      - skill_id: ""
+        name: "mma_master_monitor_agent_v1_0_0"
+        file: "mma_master_monitor_agent_v1_0_0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "not well-formed (invalid token): line 769, column 21"
+
+      - skill_id: ""
+        name: "skill_builder_v1.2.0"
+        file: "skill_builder_v1.2.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "mismatched tag: line 419, column 4"
+
+      - skill_id: "skill.meta.zpwo.v3_0_0_micro"
+        name: "Zero-Point Workflow Orchestrator (Micro)"
+        file: "zpwo_v3_MICRO.xml"
+        version: "3.0.0"
+        status: "active"
+        health: "NEEDS_FIX"
+        size_kb: 20.9
+        description: "Ultra-lean meta-orchestrator. Routes commands to specialized skills,
+      manages SSOT state, enforces circuit breakers"
+        validation_score: "7/19"
+        failed_checks:
+          - "skill_id_convention"
+          - "has_contract"
+          - "has_executionprotocol"
+          - "has_selfcheck"
+          - "has_patchlog"
+          - "selfcheck_min_3"
+          - "has_mma_gate"
+          - "layer_contract"
+          - "layer_rules"
+          - "layer_reasoning"
+          - "layer_impl"
+          - "all_4_layers"
+
+  product:
+    count: 6
+    healthy: 0
+    skills:
+      - skill_id: ""
+        name: "KB-TRANSFORMATION-ARCHITECTURE-v1.0"
+        file: "KB-TRANSFORMATION-ARCHITECTURE-v1.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "not well-formed (invalid token): line 330, column 48"
+
+      - skill_id: "skill.offer_architect.v2_0_0"
+        name: "Offer Architect"
+        file: "offer_architect_v2.0.xml"
+        version: "2.0.0"
+        status: "active"
+        health: "NEEDS_FIX"
+        size_kb: 50.4
+        description: "Strategic offer engineer who makes offers \"stupid to say no\" by developing unique mechanisms 
+      (UMP/UMS), enginee"
+        selfcheck_count: 4
+        validation_score: "9/19"
+        failed_checks:
+          - "skill_id_convention"
+          - "has_executionprotocol"
+          - "has_selfcheck"
+          - "has_patchlog"
+          - "has_mma_gate"
+          - "layer_contract"
+          - "layer_rules"
+          - "layer_reasoning"
+          - "layer_impl"
+          - "all_4_layers"
+
+      - skill_id: "skill.product_creation_genius.v2_0_0"
+        name: "Product Creation Genius"
+        file: "product_creation_genius_v2.0.xml"
+        version: "2.0.0"
+        status: "active"
+        health: "NEEDS_FIX"
+        size_kb: 68.5
+        description: "Automatically compound winning content structures across Business OS surfaces.
+          One winning structure → 5+ outp"
+        selfcheck_count: 27
+        validation_score: "9/19"
+        failed_checks:
+          - "skill_id_convention"
+          - "has_executionprotocol"
+          - "has_selfcheck"
+          - "has_patchlog"
+          - "has_mma_gate"
+          - "layer_contract"
+          - "layer_rules"
+          - "layer_reasoning"
+          - "layer_impl"
+          - "all_4_layers"
+
+      - skill_id: ""
+        name: "PT_Skillpack Product Creation Light"
+        file: "PT_Skillpack Product Creation Light.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "not well-formed (invalid token): line 1, column 0"
+
+      - skill_id: "skill.quick_info_product_builder_lite.v2_0_0"
+        name: "Quick Info Product Builder (LITE)"
+        file: "quick_info_product_builder_lite_v2.0.0.xml"
+        version: "2.0.0"
+        status: "active"
+        health: "NEEDS_FIX"
+        size_kb: 39.7
+        description: "Rapidly turns one validated problem + mechanism into a scannable quick-win info product
+      (guide/checklist/mini-play"
+        validation_score: "7/19"
+        failed_checks:
+          - "skill_id_convention"
+          - "has_contract"
+          - "has_executionprotocol"
+          - "has_selfcheck"
+          - "has_patchlog"
+          - "selfcheck_min_3"
+          - "has_mma_gate"
+          - "layer_contract"
+          - "layer_rules"
+          - "layer_reasoning"
+          - "layer_impl"
+          - "all_4_layers"
+
+      - skill_id: ""
+        name: "transformation_ecosystem_architect_v2.0"
+        file: "transformation_ecosystem_architect_v2.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "mismatched tag: line 186, column 86"
+
+  research:
+    count: 8
+    healthy: 0
+    skills:
+      - skill_id: "skill.market_intelligence_synthesizer.v2_1_0"
+        name: "Market Intelligence Synthesizer"
+        file: "market_intelligence_synthesizer_v2.1.xml"
+        version: "2.1.0"
+        status: "active"
+        health: "NEEDS_FIX"
+        size_kb: 41.6
+        description: "Synthesize provided market/voice research into copywriter-ready strategy: angles, VOC language, 
+      belief shifts, ho"
+        selfcheck_count: 13
+        validation_score: "8/19"
+        failed_checks:
+          - "skill_id_convention"
+          - "has_contract"
+          - "has_executionprotocol"
+          - "has_selfcheck"
+          - "has_patchlog"
+          - "has_mma_gate"
+          - "layer_contract"
+          - "layer_rules"
+          - "layer_reasoning"
+          - "layer_impl"
+          - "all_4_layers"
+
+      - skill_id: "skill.offer_architect.v2_0_0"
+        name: "Offer Architect"
+        file: "offer_architect_v2.0.xml"
+        version: "2.0.0"
+        status: "active"
+        health: "NEEDS_FIX"
+        size_kb: 50.4
+        description: "Strategic offer engineer who makes offers \"stupid to say no\" by developing unique mechanisms 
+      (UMP/UMS), enginee"
+        selfcheck_count: 4
+        validation_score: "9/19"
+        failed_checks:
+          - "skill_id_convention"
+          - "has_executionprotocol"
+          - "has_selfcheck"
+          - "has_patchlog"
+          - "has_mma_gate"
+          - "layer_contract"
+          - "layer_rules"
+          - "layer_reasoning"
+          - "layer_impl"
+          - "all_4_layers"
+
+      - skill_id: ""
+        name: "sales_page_deconstructor_v2.0.0"
+        file: "sales_page_deconstructor_v2.0.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "not well-formed (invalid token): line 668, column 64"
+
+      - skill_id: ""
+        name: "sales_page_deconstructor_v2.1.0"
+        file: "sales_page_deconstructor_v2.1.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "not well-formed (invalid token): line 371, column 11"
+
+      - skill_id: "skill.market_scout.v1_2_0"
+        name: "Market Scout"
+        file: "skill.market_scout.v1_2_0.xml"
+        version: "1.2.0"
+        status: "active"
+        health: "NEEDS_FIX"
+        size_kb: 65.3
+        description: "Mines the live web (Reddit, Amazon, G2, YouTube, competitor funnels, forums)
+      to produce 4 Foundational Documents: "
+        validation_score: "7/19"
+        failed_checks:
+          - "skill_id_convention"
+          - "has_contract"
+          - "has_executionprotocol"
+          - "has_selfcheck"
+          - "has_patchlog"
+          - "selfcheck_min_3"
+          - "has_mma_gate"
+          - "layer_contract"
+          - "layer_rules"
+          - "layer_reasoning"
+          - "layer_impl"
+          - "all_4_layers"
+
+      - skill_id: "skill.research_ops.v1_0_0"
+        name: "Research Ops"
+        file: "skill.research_ops.v1_0_0.xml"
+        version: "1.0.0"
+        status: "active"
+        health: "NEEDS_FIX"
+        size_kb: 26.1
+        description: "The execution layer for research skills. Automates web scraping, multimodal
+      visual analysis, ad creative forensics"
+        validation_score: "7/19"
+        failed_checks:
+          - "skill_id_convention"
+          - "has_contract"
+          - "has_executionprotocol"
+          - "has_selfcheck"
+          - "has_patchlog"
+          - "selfcheck_min_3"
+          - "has_mma_gate"
+          - "layer_contract"
+          - "layer_rules"
+          - "layer_reasoning"
+          - "layer_impl"
+          - "all_4_layers"
+
+      - skill_id: "skill.research_synthesizer.v3_0_0"
+        name: "Research Synthesizer"
+        file: "skill.research_synthesizer.v3_0_0.xml"
+        version: "3.0.0"
+        status: "active"
+        health: "NEEDS_FIX"
+        size_kb: 29.6
+        description: "Consumes the 4 Foundational Documents from Market Scout and packages them
+      into structured handoff artifacts for ev"
+        selfcheck_count: 12
+        validation_score: "8/19"
+        failed_checks:
+          - "skill_id_convention"
+          - "has_contract"
+          - "has_executionprotocol"
+          - "has_selfcheck"
+          - "has_patchlog"
+          - "has_mma_gate"
+          - "layer_contract"
+          - "layer_rules"
+          - "layer_reasoning"
+          - "layer_impl"
+          - "all_4_layers"
+
+      - skill_id: ""
+        name: "vsl_script_analyzer_v1.0.0"
+        file: "vsl_script_analyzer_v1.0.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "not well-formed (invalid token): line 332, column 37"
+
+  systems:
+    count: 2
+    healthy: 0
+    skills:
+      - skill_id: ""
+        name: "tools_workflow_architect_v1.0.0"
+        file: "tools_workflow_architect_v1.0.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "not well-formed (invalid token): line 34, column 15"
+
+      - skill_id: ""
+        name: "tools_workflow_engineer"
+        file: "tools_workflow_engineer.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "mismatched tag: line 122, column 8"
+
+  writing:
+    count: 1
+    healthy: 0
+    skills:
+      - skill_id: ""
+        name: "viral_theme_developer_v1.0"
+        file: "viral_theme_developer_v1.0.xml"
+        version: ""
+        status: "parse_error"
+        health: "ERROR"
+        size_kb: 0
+        validation_score: "0/1"
+        parse_error: "not well-formed (invalid token): line 1178, column 9"

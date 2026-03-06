@@ -1,0 +1,432 @@
+# SUPERMIND Routing Table v4.0
+# 4-Track Pipeline Model per REFACTOR PLAN v1.4
+#
+# Tracks: T1 Research → T2 Drafts → T3 Production → T4 Polish
+# Each route maps: command → skill_id → track → team → MMA gate
+#
+# Generated: 2026-03-05
+
+version: "4.0.0"
+
+# ============================================================
+# TRACK DEFINITIONS
+# ============================================================
+
+tracks:
+  T1:
+    name: Research
+    purpose: Intelligence gathering, market analysis, deconstructing competitors
+    mma_gate: none
+    brain: Left (Technical/Analytical)
+    slash_command: /run-research
+    max_team_size: 2
+
+  T2:
+    name: Drafts
+    purpose: Fast angle exploration, high-volume creative generation
+    mma_gate: "M1 Quick Score >= 6.0"
+    brain: Right (Strategic/Creative)
+    slash_command: /run-draft
+    max_team_size: 2
+
+  T3:
+    name: Production
+    purpose: Publishable assets with full proof grounding
+    mma_gate: "M2 Deep Audit >= 8.0"
+    brain: Both (Two-Brain Pod)
+    slash_command: /run-production
+    max_team_size: 3
+
+  T4:
+    name: Polish
+    purpose: Human Personance, AI detox, voice calibration
+    mma_gate: "M3 Full Audit >= 9.0"
+    brain: Right (Strategic/Creative)
+    slash_command: /run-polish
+    max_team_size: 2
+
+# ============================================================
+# CORE WORKFLOW ROUTES
+# ============================================================
+
+routes:
+
+  # --- INTAKE / RESEARCH (T1) ---
+
+  - command: /intake
+    skill_id: research_market_intel
+    track: T1
+    team_role: builder
+    brain: Left
+    description: "Lock SSOT objects — PROJECT_BRIEF, MESSAGE_SPINE, EVIDENCE_PACK"
+    chain_next: null
+    requires_ssot: false
+    produces_ssot:
+      - PROJECT_BRIEF.yaml
+      - MESSAGE_SPINE.yaml
+      - EVIDENCE_PACK.yaml
+
+  - command: /scout
+    skill_id: research_market_scout
+    track: T1
+    team_role: specialist
+    brain: Left
+    description: "Market scouting and competitive intelligence"
+    chain_next: /intake
+    requires_ssot: false
+
+  - command: /deconstruct
+    skill_id: research_deconstructor
+    track: T1
+    team_role: specialist
+    brain: Left
+    description: "Deconstruct competitor sales pages for structure and strategy"
+    chain_next: null
+    requires_ssot: false
+
+  - command: /analyzevsl
+    skill_id: research_vsl_analyzer
+    track: T1
+    team_role: specialist
+    brain: Left
+    description: "Analyze VSL scripts for hooks, structure, and persuasion patterns"
+    chain_next: null
+    requires_ssot: false
+
+  - command: /synthesize
+    skill_id: research_synthesizer
+    track: T1
+    team_role: specialist
+    brain: Left
+    description: "Synthesize research findings into actionable insights"
+    chain_next: null
+    requires_ssot: false
+
+  - command: /researchops
+    skill_id: research_ops
+    track: T1
+    team_role: coordinator
+    brain: Left
+    description: "Coordinate research operations and team dispatch"
+    chain_next: null
+    requires_ssot: false
+
+  # --- DRAFTS (T2) ---
+
+  - command: /draft
+    skill_id: copy_director
+    track: T2
+    team_role: coordinator
+    brain: Right
+    description: "Fast angle exploration — routes to appropriate copy specialist"
+    chain_next: null
+    requires_ssot: true
+    mma_gate: "M1 >= 6.0"
+
+  - command: /advertorial
+    skill_id: copy_advertorial
+    track: T2
+    team_role: builder
+    brain: Right
+    description: "Cold traffic pre-sell advertorial drafts"
+    chain_next: /validate
+    requires_ssot: true
+    mma_gate: "M1 >= 6.0"
+
+  - command: /salespage
+    skill_id: copy_sales_page
+    track: T2
+    team_role: builder
+    brain: Right
+    description: "Conversion page drafts"
+    chain_next: /validate
+    requires_ssot: true
+    mma_gate: "M1 >= 6.0"
+
+  - command: /vsl
+    skill_id: copy_lfva
+    track: T2
+    team_role: builder
+    brain: Right
+    description: "Long-form video sales letter script drafts"
+    chain_next: /validate
+    requires_ssot: true
+    mma_gate: "M1 >= 6.0"
+
+  - command: /shortvsl
+    skill_id: copy_sfvw
+    track: T2
+    team_role: builder
+    brain: Right
+    description: "Short-form VSL script drafts"
+    chain_next: /validate
+    requires_ssot: true
+    mma_gate: "M1 >= 6.0"
+
+  - command: /email
+    skill_id: email_architecture
+    track: T2
+    team_role: builder
+    brain: Right
+    description: "Email campaign architecture and sequence drafts"
+    chain_next: /validate
+    requires_ssot: true
+    mma_gate: "M1 >= 6.0"
+
+  - command: /write
+    skill_id: copy_writing_partner
+    track: T2
+    team_role: builder
+    brain: Right
+    description: "General writing partner for content creation"
+    chain_next: null
+    requires_ssot: false
+
+  # --- PRODUCTION (T3) ---
+
+  - command: /produce
+    skill_id: copy_director
+    track: T3
+    team_role: coordinator
+    brain: Both
+    description: "Looped refinement — publishable assets with proof grounding"
+    chain_next: /validate
+    requires_ssot: true
+    mma_gate: "M2 >= 8.0"
+    circuit_breaker: "3 fix loops max"
+
+  - command: /offer
+    skill_id: copy_offer_architect
+    track: T3
+    team_role: builder
+    brain: Both
+    description: "Offer architecture and value stack construction"
+    chain_next: /validate
+    requires_ssot: true
+    mma_gate: "M2 >= 8.0"
+
+  - command: /infoproduct
+    skill_id: product_creation_genius
+    track: T3
+    team_role: builder
+    brain: Both
+    description: "Information product / lead magnet creation"
+    chain_next: /validate
+    requires_ssot: true
+    mma_gate: "M2 >= 8.0"
+
+  # --- POLISH (T4) ---
+
+  - command: /polish
+    skill_id: meta_zpwo
+    track: T4
+    team_role: coordinator
+    brain: Right
+    description: "Human Personance + AI detox + voice calibration"
+    chain_next: /ship
+    requires_ssot: true
+    mma_gate: "M3 >= 9.0"
+
+  # --- QUALITY / VALIDATION (Cross-Track) ---
+
+  - command: /validate
+    skill_id: meta_mma
+    track: cross
+    team_role: reviewer
+    brain: Left
+    description: "MMA 7-dimension quality scoring"
+    chain_next: null
+    requires_ssot: true
+
+  - command: /consistency
+    skill_id: copy_consistency
+    track: cross
+    team_role: reviewer
+    brain: Left
+    description: "Sales copy consistency contract check"
+    chain_next: null
+    requires_ssot: true
+
+  # --- DESIGN (Cross-Track) ---
+
+  - command: /design
+    skill_id: design_master
+    track: cross
+    team_role: builder
+    brain: Both
+    description: "Full design workflow — strategic design master"
+    chain_next: null
+    requires_ssot: false
+
+  - command: /wireframe
+    skill_id: design_wireframe
+    track: cross
+    team_role: builder
+    brain: Left
+    description: "Wireframe architecture and layout"
+    chain_next: null
+    requires_ssot: false
+
+  # --- ADS (T3-adjacent) ---
+
+  - command: /ads
+    skill_id: ads_generator
+    track: T3
+    team_role: builder
+    brain: Both
+    description: "Meta ads copy generation"
+    chain_next: /validate
+    requires_ssot: true
+    mma_gate: "M2 >= 8.0"
+
+  - command: /ads-creative
+    skill_id: ads_andromeda_engine
+    track: T3
+    team_role: specialist
+    brain: Right
+    description: "Andromeda creative engine for ad variations"
+    chain_next: null
+    requires_ssot: false
+
+  # --- LEADGEN (T2-T3) ---
+
+  - command: /funnel
+    skill_id: leadgen_funnel
+    track: T3
+    team_role: builder
+    brain: Both
+    description: "Lead gen funnel architecture"
+    chain_next: null
+    requires_ssot: true
+
+  - command: /outreach
+    skill_id: leadgen_cold_outreach
+    track: T2
+    team_role: builder
+    brain: Right
+    description: "Cold outreach sequence architecture"
+    chain_next: null
+    requires_ssot: true
+
+  - command: /powertrio
+    skill_id: leadgen_power_trio
+    track: T2
+    team_role: coordinator
+    brain: Both
+    description: "Power trio router for lead gen strategy"
+    chain_next: null
+    requires_ssot: true
+
+  # --- SYSTEMS / META ---
+
+  - command: /zpwo
+    skill_id: meta_zpwo
+    track: cross
+    team_role: coordinator
+    brain: Both
+    description: "Zero-Point Workflow Orchestrator — master coordinator"
+    chain_next: null
+    requires_ssot: false
+
+  - command: /buildskill
+    skill_id: meta_skill_builder
+    track: cross
+    team_role: builder
+    brain: Left
+    description: "Create new skills using SkillML template"
+    chain_next: null
+    requires_ssot: false
+
+  - command: /workflow
+    skill_id: systems_workflow_architect
+    track: cross
+    team_role: builder
+    brain: Left
+    description: "Design and architect new workflows"
+    chain_next: null
+    requires_ssot: false
+
+  - command: /mentor
+    skill_id: advisor_business_mentor
+    track: cross
+    team_role: specialist
+    brain: Right
+    description: "Strategic business mentorship and guidance"
+    chain_next: null
+    requires_ssot: false
+
+# ============================================================
+# CHAIN DEFINITIONS (Multi-step workflows)
+# ============================================================
+
+chains:
+  full_copy_pipeline:
+    description: "End-to-end copy production pipeline"
+    steps:
+      - command: /intake
+        track: T1
+        human_gate: true
+      - command: /draft
+        track: T2
+        human_gate: true
+      - command: /produce
+        track: T3
+        human_gate: false
+      - command: /validate
+        track: cross
+        human_gate: false
+      - command: /polish
+        track: T4
+        human_gate: true
+
+  advertorial_pipeline:
+    description: "Advertorial-specific pipeline"
+    steps:
+      - command: /intake
+        track: T1
+        human_gate: true
+      - command: /advertorial
+        track: T2
+        human_gate: true
+      - command: /produce
+        track: T3
+        human_gate: false
+      - command: /validate
+        track: cross
+        human_gate: false
+      - command: /polish
+        track: T4
+        human_gate: true
+
+  research_deep_dive:
+    description: "Deep research pipeline"
+    steps:
+      - command: /scout
+        track: T1
+        human_gate: false
+      - command: /deconstruct
+        track: T1
+        human_gate: false
+      - command: /synthesize
+        track: T1
+        human_gate: true
+      - command: /intake
+        track: T1
+        human_gate: true
+
+# ============================================================
+# TEAM COMPOSITION RULES
+# ============================================================
+
+team_rules:
+  max_agents_per_task: 3
+  require_reviewer: true
+  brain_pairing:
+    T1: "Left-dominant (analytical)"
+    T2: "Right-dominant (creative)"
+    T3: "Both (Two-Brain Pod)"
+    T4: "Right-dominant (human voice)"
+  human_gates:
+    - "Between T1 and T2 (angle approval)"
+    - "Between T3 and T4 (production approval)"
+    - "Final ship approval"
